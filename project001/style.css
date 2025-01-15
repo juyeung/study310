@@ -128,7 +128,10 @@ img {
     display: flex;
     width: 654px;
     height: 144px;
-    background-color: lightblue;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-top-left-radius: 10px;
+    border: 1px solid #fff;
+    box-sizing: border-box;
     justify-content: center;
     align-items: center;
     position: absolute;
@@ -146,45 +149,74 @@ img {
 
 .boxA .box01 {
     width: 50%;
-    height: 20px;
-    background-color: bisque;
+    height: auto;
+    font-size: 18px;
+    font-weight: normal;
+    font-family: 'NanumGothic';
+    color: #fff;
 }
 
 .boxA .box02 {
     width: 50%;
-    height: 20px;
-    background-color: chartreuse;
+    height: auto;
+    font-size: 18px;
+    font-weight: normal;
+    font-family: 'NanumGothic';
+    color: #fff;
+    margin-left: 88px;
 }
 
 .box03 {
     width: 50%;
-    height: 40px;
-    background-color: coral;
+    height: auto;
+    font-size: 70px;
+    font-weight: normal;
+    font-family: 'inter';
+    color: #fff;
 }
 
 .boxB {
     width: 50%;
+    text-align: center;
 }
 
 .boxB .box04 {
-    height: 20px;
-    background-color: #3787ff;
+    height: auto;
 }
 
 .boxB .box05 {
-    height: 20px;
-    background-color: crimson;
+    height: auto;
+    font-size: 12px;
+    font-weight: normal;
+    font-family: 'NanumGothic';
+    color: #fff;
+    margin-top: 8px;
 }
 
 .boxC {
     width: 50%;
     display: flex;
+    align-items: center;
 }
 
 .box06 {
     width: 50%;
-    height: 40px;
-    background-color: darkviolet;
+    height: auto;
+    margin-left: 88px;
+}
+
+.box06 .num {
+    font-size: 70px;
+    font-weight: normal;
+    font-family: 'inter';
+    color: #fff;
+}
+
+.box06 .txt {
+    font-size: 28px;
+    font-weight: normal;
+    font-family: 'NanumGothic';
+    color: #fff;
 }
 
 .boxD {
