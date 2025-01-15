@@ -1,0 +1,135 @@
+/* 언어설정 */
+@charset 'utf-8';
+
+/* 전체설정 */
+
+* {
+    margin: 0 auto;
+    padding: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+img {
+    border: none;
+    vertical-align: bottom;
+}
+
+/* header */
+.header {
+    display: flex;
+    height: 100px;
+}
+
+.header .logo {
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.header .logo a {}
+
+.header .navi {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.header .navi a {
+    background-color: aqua;
+    padding: 8px;
+}
+
+.header .navi .lng {
+    margin-right: 40px;
+}
+
+.header .navi .toggle {
+
+}
+
+.header .navi .gnb {}
+
+.header .navi .gnb .menu {}
+
+/* landing */
+.landing {
+    background-image: url(img/landing_bg_005.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 53.3333vw;
+    position: relative;
+}
+
+.landing .title {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+/* 공지사항 */
+.notice {
+    width: 100%;
+    height: 1230px;
+    background-color: antiquewhite;
+}
+
+/* 동물이야기 */
+.story {
+    width: 100%;
+    height: 1230px;
+    background-color: coral;
+}
+
+/* 테마존 */
+.theme {
+    width: 100%;
+    height: 1860px;
+    background-color: cornflowerblue;
+}
+
+/* 예매하기 */
+.ticket {
+    width: 100%;
+    height: 1000px;
+    background-color: khaki;
+}
+
+/* 오시는길 */
+.map {
+    width: 100%;
+    height: 1000px;
+    background-color: hotpink;
+}
+
+/* 편의시설 */
+.gallery {
+    width: 100%;
+    height: 1600px;
+    background-color: darkseagreen;
+}
+
+/* sns */
+.sns {
+    width: 100%;
+    height: 1000px;
+    background-color: darkcyan;
+}
+
+/* 자주하는질문 */
+.faq {
+    width: 100%;
+    height: 900px;
+    background-color: #000;
+}
