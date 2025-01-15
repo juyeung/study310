@@ -124,36 +124,85 @@ img {
 }
 
 /* 스크롤 */
-.landing .sidebar {
+.boxF {
     display: flex;
+    width: 654px;
+    height: 144px;
+    background-color: lightblue;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     right: 0;
     bottom: 0;
 }
 
-.sidebar .slide {
+.boxE {
+    width: 80%;
+}
+
+.boxA {
     display: flex;
-    width: 654px;
-    height: 144px;
-    background-color: rgba(0, 0, 0, 0.1);
 }
 
-.sidebar .slide .weather {
-
+.boxA .box01 {
+    width: 50%;
+    height: 20px;
+    background-color: bisque;
 }
 
-.sidebar .slide .info {
-
+.boxA .box02 {
+    width: 50%;
+    height: 20px;
+    background-color: chartreuse;
 }
 
-.sidebar .scroll {
-    width: 40px;
-    height: 144px;
+.box03 {
+    width: 50%;
+    height: 40px;
+    background-color: coral;
+}
+
+.boxB {
+    width: 50%;
+}
+
+.boxB .box04 {
+    height: 20px;
     background-color: #3787ff;
 }
 
-.sidebar .scroll a {
+.boxB .box05 {
+    height: 20px;
+    background-color: crimson;
+}
+
+.boxC {
+    width: 50%;
     display: flex;
+}
+
+.box06 {
+    width: 50%;
+    height: 40px;
+    background-color: darkviolet;
+}
+
+.boxD {
+    display: flex;
+}
+
+
+
+.landing .sidebar .scroll {
+    
+}
+
+.scroll a {
+    display: flex;
+    flex-direction: column;
+    width: 40px;
+    height: 144px;
+    background-color: #3787ff;
     color: #fff;
     text-align: center;
     align-items: center;
@@ -161,7 +210,19 @@ img {
     font-size: 16px;
     font-weight: normal;
     font-family: 'inter';
-    transform:rotate(90deg)
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+}
+
+.scroll a span {
+    display: inline-block;
+    transform: rotate(90deg);
+}
+
+.scroll a img {
+    margin-top: 35px;
 }
 
 /* 공지사항 */
