@@ -78,7 +78,7 @@ img {
 }
 
 .landing .title_inner {
-    display: flex;
+    /* display: flex; */
     height: 53vw;
     position: relative;
 }
@@ -123,14 +123,14 @@ img {
     font-family: 'NanumGothinc';
 }
 
-/* 스크롤 */
+/* 슬라이드바 */
 .boxF {
     display: flex;
     width: 654px;
     height: 144px;
     background-color: rgba(0, 0, 0, 0.1);
     border-top-left-radius: 10px;
-    border: 1px solid #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     box-sizing: border-box;
     justify-content: center;
     align-items: center;
@@ -139,8 +139,15 @@ img {
     bottom: 0;
 }
 
+.boxF .line {
+    width: 1px;
+    height: 80px;
+    background-color: rgba(255, 255, 255, 0.2);
+    position: absolute;
+}
+
 .boxE {
-    width: 80%;
+    width: 90%;
 }
 
 .boxA {
@@ -163,7 +170,7 @@ img {
     font-weight: normal;
     font-family: 'NanumGothic';
     color: #fff;
-    margin-left: 88px;
+    margin-left: 78px;
 }
 
 .box03 {
@@ -202,7 +209,7 @@ img {
 .box06 {
     width: 50%;
     height: auto;
-    margin-left: 88px;
+    margin-left: 78px;
 }
 
 .box06 .num {
@@ -223,12 +230,7 @@ img {
     display: flex;
 }
 
-
-
-.landing .sidebar .scroll {
-    
-}
-
+/* 스크롤버튼 */
 .scroll a {
     display: flex;
     flex-direction: column;
@@ -258,11 +260,78 @@ img {
 }
 
 /* 공지사항 */
-.notice {
-    width: 100%;
-    height: 1230px;
-    background-color: antiquewhite;
+
+/* 탭바 */
+.boad {
+    background-image: url(img/notice_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 64vw;
+    position: relative;
 }
+
+.boad .con_box {
+    height: 36.6vw;
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    margin-top: -294px;
+    background-color: aquamarine;
+}
+
+.boad .con_box .title_inner {
+    /* display: flex; */
+    height: 64vw;
+    position: relative;
+}
+
+.title_box {}
+
+.title_box ul {
+    display: flex;
+}
+
+.title_box ul li {
+    display: flex;
+    color: #fff;
+    border-bottom: solid 1px #fff;
+    width: 174px;
+    height: 52px;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.title_box ul li:nth-child(1) {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+    border-top: 1px solid #fff;
+    /* box-sizing: border-box; */
+}
+
+.boad .con_box .list_box {
+    width: 1200px;
+    height: 520px;
+    background-color: red;
+}
+.boad .list_box .notice {}
+.boad .list_box .notice ul {}
+.boad .con_box .list_box .notice ul li {}
+.boad .list_box .notice ul li img {
+    height: 520px;
+}
+.boad .list_box .notice ul li a {
+    display: flex;
+}
+.boad .list_box .notice ul li a .sub {}
+.boad .list_box .notice ul li a h3 {}
+.boad .list_box .notice ul li a p {}
+.boad .list_box .notice ul li a .date {}
+.boad .list_box .event {}
+
+
 
 /* 동물이야기 */
 .story {
