@@ -318,12 +318,15 @@ img {
 }
 .boad .list_box .notice {}
 .boad .list_box .notice ul {}
-.boad .con_box .list_box .notice ul li {}
+.boad .con_box .list_box .notice ul li {
+    display: flex;
+}
 .boad .list_box .notice ul li img {
     height: 520px;
 }
 .boad .list_box .notice ul li a {
     display: flex;
+    background-color: antiquewhite;
 }
 .boad .list_box .notice ul li a .sub {}
 .boad .list_box .notice ul li a h3 {}
