@@ -1,5 +1,6 @@
 /* 언어설정 */
 @charset 'utf-8';
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jua&family=Nanum+Gothic&display=swap');
 
 /* 전체설정 */
 
@@ -23,7 +24,7 @@ img {
     vertical-align: bottom;
 }
 
-/* header */
+/* header ###########################################################################*/
 .header {
     display: flex;
     height: 100px;
@@ -68,7 +69,7 @@ img {
 
 .header .navi .gnb .menu {}
 
-/* landing */
+/* landing ##############################################################################*/
 .landing {
     background-image: url(img/landing_bg_005.png);
     background-repeat: no-repeat;
@@ -93,14 +94,14 @@ img {
     font-size: 70px;
     color: #fff;
     font-weight: normal;
-    font-family: 'jua';
+    font-family: "Jua", serif;
 }
 
 .landing .title p {
     font-size: 20px;
     color: #fff;
     font-weight: normal;
-    font-family: 'NanumGothinc';
+    font-family: "Nanum Gothic", serif;
     margin-top: 16px;
 }
 
@@ -120,10 +121,10 @@ img {
     justify-content: center;
     font-size: 20px;
     font-weight: bold;
-    font-family: 'NanumGothinc';
+    font-family: "Nanum Gothic", serif;
 }
 
-/* 슬라이드바 */
+/* 슬라이드바 ############################################################################*/
 .slideBar {
     display: flex;
     width: 654px;
@@ -159,7 +160,7 @@ img {
     height: auto;
     font-size: 18px;
     font-weight: normal;
-    font-family: 'NanumGothic';
+    font-family: "Nanum Gothic", serif;
     color: #fff;
 }
 
@@ -168,7 +169,7 @@ img {
     height: auto;
     font-size: 18px;
     font-weight: normal;
-    font-family: 'NanumGothic';
+    font-family: "Nanum Gothic", serif;
     color: #fff;
     margin-left: 78px;
 }
@@ -178,7 +179,7 @@ img {
     height: auto;
     font-size: 70px;
     font-weight: normal;
-    font-family: 'inter';
+    font-family: "Inter", serif;
     color: #fff;
 }
 
@@ -195,7 +196,7 @@ img {
     height: auto;
     font-size: 12px;
     font-weight: normal;
-    font-family: 'NanumGothic';
+    font-family: "Nanum Gothic", serif;
     color: #fff;
     margin-top: 8px;
 }
@@ -215,14 +216,14 @@ img {
 .info span:nth-child(1) {
     font-size: 70px;
     font-weight: normal;
-    font-family: 'inter';
+    font-family: "Inter", serif;
     color: #fff;
 }
 
 .info span:nth-child(2) {
     font-size: 28px;
     font-weight: normal;
-    font-family: 'NanumGothic';
+    font-family: "Nanum Gothic", serif;
     color: #fff;
 }
 
@@ -230,7 +231,7 @@ img {
     display: flex;
 }
 
-/* 스크롤버튼 */
+/* 스크롤버튼 #############################################################################*/
 .scroll a {
     display: flex;
     flex-direction: column;
@@ -243,7 +244,7 @@ img {
     justify-content: center;
     font-size: 16px;
     font-weight: normal;
-    font-family: 'inter';
+    font-family: "Inter", serif;
     position: absolute;
     right: 0;
     bottom: 0;
@@ -259,14 +260,15 @@ img {
     margin-top: 35px;
 }
 
-/* 공지사항 */
+/* 공지사항 #################################################################################*/
 
 /* 탭바 */
 .boad {
     background-image: url(img/notice_bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 64vw;
+    /* height: 64vw; */
+    height: 52vw;
     position: relative;
 }
 
@@ -275,27 +277,13 @@ img {
     color: #fff;
     font-size: 48px;
     font-weight: normal;
-    font-family: 'jua';
+    font-family: "Jua", serif;
     padding-top: 140px;
 }
 
-.boad .con_box {
-    /* height: auto;
-    position: absolute;
-    left: 10%;
-    top: 50%;
-    margin-top: -294px;
-    background-color: aquamarine; */
-}
+.boad .con_box {}
 
-.boad .con_box .title_inner {
-    /* height: auto;
-    position: absolute;
-    left: 10%;
-    top: 50%;
-    margin-top: -294px; */
-    /* background-color: aquamarine; */
-}
+.boad .con_box .title_inner {}
 
 .title_box {}
 
@@ -321,7 +309,7 @@ img {
     border-left: 1px solid #fff;
     border-right: 1px solid #fff;
     border-top: 1px solid #fff;
-    /* box-sizing: border-box; */
+    
 }
 
 .boad .con_box .list_box {}
@@ -332,7 +320,7 @@ img {
     display: flex;
     flex-wrap: nowrap;
     margin-top: 16px;
-    width: 3561px;
+    width: 3130px;
     padding-left: 68px;
 }
 
@@ -344,79 +332,193 @@ img {
     border-radius: 20px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(20px);
-    position: relative;
+}
+
+.boad .con_box .list_box .notice ul li .imgBox {
+    display: flex;
+    width: 374px;
+    height: 220px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+
+.boad .con_box .list_box .notice ul li a .imgBox img {
+    width: 374px;
 }
 
 .boad .con_box .list_box .notice ul li a {
     display: flex;
     flex-direction: column;
+    height: 520px;
     color: #fff;
-    padding: 32px 24px;
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
-    
+    position: relative;
+    /* background-color: brown; */
 }
 
 .boad .con_box .list_box .notice ul li a .wrap {
-    position: relative;
-    width: 326px;
-    height: 456px;
-    background-color: #f00;
+    margin: 32px 24px;
+    /* background-color: #3787ff; */
 }
 
 .boad .con_box .list_box .notice ul li a .wrap .sub {
+    display: block;
     font-size: 20px;
     font-weight: bold;
-    font-family: 'NanumGothic';
+    font-family: "Nanum Gothic", serif;
 }
 
 .boad .con_box .list_box .notice ul li a .wrap h3 {
     font-size: 24px;
     font-weight: bold;
-    font-family: 'NanumGothic';
+    font-family: "Nanum Gothic", serif;
     margin-top: 28px;
 }
 .boad .con_box .list_box .notice ul li a .wrap p {
     font-size: 16px;
     font-weight: normal;
-    font-family: 'NanumGothic';
+    font-family: "Nanum Gothic", serif;
     margin-top: 20px;
 }
 .boad .con_box .list_box .notice ul li a .wrap .date {
+    display: block;
     font-size: 14px;
     font-weight: normal;
-    font-family: 'NanumGothic';
+    font-family: "Nanum Gothic", serif;
     position: absolute;
-    left: 0;
-    bottom: 0;
+    left: 24px;
+    bottom: 32px;
 }
 
 .boad .con_box .list_box .notice ul li:nth-child(1) {
     display: flex;
-    width: 374px;
     height: 520px;
-    background-color: rgba(0, 0, 0, 0.6);
-    border-radius: 20px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(20px);
+    width:1120px;
 }
 
-.boad .list_box .notice ul li:nth-child(1) img {
+.boad .con_box .list_box .notice ul li:nth-child(1) a {
+    width: 374px;
+}
+
+.boad .con_box .list_box .notice ul li:nth-child(1) .video {
+    display: flex;
+    width: 747px;
     height: 520px;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+
+.boad .con_box .list_box .notice ul li:nth-child(1) .video img {
+    height: 520px;
 }
 
 .boad .list_box .event {}
 
 
 
-/* 동물이야기 */
+/* 동물이야기 #################################################################*/
 .story {
     width: 100%;
     height: 1230px;
     background-color: coral;
+    background-image: url(img/story_bg.png);
+    background-repeat: no-repeat;
+    margin-top: 100px;
 }
+
+.story .bg {
+    
+}
+
+.story .bg img {}
+
+.story .wrap {
+    display: flex;
+    width: 100%;
+    height: 1200px;
+    background-color: bisque;
+    margin-top: 200px;
+}
+
+.story .wrap .title {
+    width: 41px;
+}
+
+.story .wrap .title h2 {
+    color: #3a3a3a;
+    font-size: 48px;
+    font-weight: normal;
+    font-family: "Black Han Sans", serif;
+    line-height: 40px;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.story .wrap .imgBox {
+    width: 1000px;
+    height: 900px;
+    display: flex;
+    position: relative;
+    background-color: blueviolet;
+    margin-left: 56px;
+}
+
+.story .wrap .imgBox ul {
+
+}
+
+.story .wrap .imgBox ul li {
+    width: 616px;
+    height: 800px;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+
+.story .wrap ul li:nth-child(1) {
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.story .wrap ul li:nth-child(2) {
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.story .wrap ul li:nth-child(3) {
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: 832px;
+}
+
+.story .wrap .imgBox ul li img {
+    height: 800px;
+}
+
+.story .wrap .story_body {}
+
+.story .wrap .story_body span {}
+
+.story .wrap .story_body h3 {}
+
+.story .wrap .story_body p {}
+
+.story .wrap .story_body ul {}
+
+.story .wrap .story_body ul li {}
+
+.story .wrap .story_body .more {}
+
+.story .wrap .story_body .more a {}
 
 /* 테마존 */
 .theme {
@@ -461,7 +563,7 @@ img {
 }
 
 /* 전체설정 */
-.header, .title_inner {
+.header, .title_inner, .story .wrap {
     width: 1440px;
     margin: auto;
 }
