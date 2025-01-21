@@ -123,6 +123,7 @@ img {
     font-weight: bold;
     font-family: "맑은 고딕";
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    
 }
 
 /* 슬라이드바 ############################################################################*/
@@ -139,6 +140,7 @@ img {
     position: absolute;
     right: 0;
     bottom: 0;
+    backdrop-filter: blur(10px);
 }
 
 .slideBar .line {
@@ -268,9 +270,11 @@ img {
     background-image: url(img/notice_bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 64vw;
-    /* height: 52vw; */
-    position: relative;
+    /* height: 33vw; */
+    height: 66.927vw;
+    min-height: 900px;
+    /* max-height: 1000px; */
+    /* position: relative; */
 }
 
 .boad h2 {
@@ -290,7 +294,7 @@ img {
 
 .title_box ul {
     display: flex;
-    margin-top: 3%;
+    margin-top: 1%;
 }
 
 .title_box ul li {
@@ -330,7 +334,7 @@ img {
     background-color: rgba(0, 0, 0, 0.6);
     border-radius: 20px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(10px);
 }
 
 .boad .con_box .list_box .notice ul li .imgBox {
@@ -435,6 +439,7 @@ img {
 
 .story .bg img {
     height: 11vw;
+    max-height: 212px;
 }
 
 .story .wrap {
@@ -600,7 +605,7 @@ img {
 /* 테마존 */
 .theme {
     width: 100%;
-    padding: 80px 0;
+    padding: 160px 0;
 }
 
 .theme .title_inner {
@@ -639,59 +644,156 @@ img {
     margin-top: 20px;
 }
 
-.theme .pro {}
+.theme .pro {
+    margin-top: 24px;
+}
 
-.theme .pro .f01 {}
+.theme .pro .f01 {
+    
+}
 
 .theme .pro .f01 .rough {
     display: flex;
     justify-content: center;
-    
+    position: relative;
+    /* background-color: #dddddd; */
 }
 
 .theme .pro .f01 .rough .img {}
 
-.theme .pro .f01 ul {
-    position: relative;
+/* f01_02 ############################################################# */
+.theme .pro .f01 .rough .f01_01 {
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    right: 100px;
+    top: 70px;
+    width: 976px;
+    /* background-color: #666666; */
 }
 
-.theme .pro .f01 ul li {
+.theme .pro .f01 .rough .f01_01 li {
     width: 470px;
     height: 267px;
+    background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    margin: 0 8px;
 }
 
-.theme .pro .f01 ul li .imgBox {
+.theme .pro .f01 .rough .f01_01 li a {
+    
+}
+
+.theme .pro .f01 .rough .f01_01 li a .imgBox {
     display: flex;
     width: 450px;
     height: 160px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    padding: 0 10px;
+    margin: 10px 0 10px 10px;
 }
 
-.theme .pro .f01 ul li .imgBox img {
+.theme .pro .f01 .rough .f01_01 li a .imgBox img {
     width: 100%;
 }
 
-.theme .pro .f01 ul li h4 {}
-
-.theme .pro .f01 ul li p {}
-
-.theme .pro .f01 ul li:nth-child(1) {
-    display: flex;
-    position: absolute;
-    right: 8.3333%;
-    top: 8%;
+.theme .pro .f01 .rough .f01_01 li a .text {
+    margin-left: 10px;
 }
 
-.theme .pro .f01 ul li:nth-child(2) {}
+.theme .pro .f01 .rough .f01_01 li a .text h4 {
+    color: #3a3a3a;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: "맑은 고딕";
+    margin-top: 16px;
+}
 
-.theme .pro .f01 ul li:nth-child(3) {}
+.theme .pro .f01 .rough .f01_01 li a .text p {
+    color: #3a3a3a;
+    font-size: 16px;
+    font-weight: normal;
+    font-family: "맑은 고딕";
+    margin-top: 8px;
+}
 
-.theme .pro .f01 ul li:nth-child(4) {}
+/* f01_02 #################################################################### */
+.theme .pro .f01 .rough .f01_02 {
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    right: 100px;
+    bottom: 90px;
+    width: 976px;
+    /* background-color: #666666; */
+}
+
+.theme .pro .f01 .rough .f01_02 li {
+    width: 470px;
+    height: 267px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    margin: 0 8px;
+}
+
+.theme .pro .f01 .rough .f01_02 li a {
+    
+}
+
+.theme .pro .f01 .rough .f01_02 li a .imgBox {
+    display: flex;
+    width: 450px;
+    height: 160px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 10px 0 10px 10px;
+}
+
+.theme .pro .f01 .rough .f01_02 li a .imgBox img {
+    width: 100%;
+}
+
+.theme .pro .f01 .rough .f01_02 li a .text {
+    margin-left: 10px;
+}
+
+.theme .pro .f01 .rough .f01_02 li a .text h4 {
+    color: #3a3a3a;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: "맑은 고딕";
+    margin-top: 16px;
+}
+
+.theme .pro .f01 .rough .f01_02 li a .text p {
+    color: #3a3a3a;
+    font-size: 16px;
+    font-weight: normal;
+    font-family: "맑은 고딕";
+    margin-top: 8px;
+}
+
+/* 프로그램 상세 */
+
+.theme .pro .f01 .rough .f01_01 li:nth-child(1) {
+
+}
+
+.theme .pro .f01 .rough .f01_01 li:nth-child(2) {
+    
+}
+
+.theme .pro .f01 .rough .f01_01 li:nth-child(3) {}
+
+.theme .pro .f01 .rough .f01_01 li:nth-child(4) {}
 
 /* .theme .pro .f01 .room {}
 
@@ -766,7 +868,7 @@ img {
 /* 전체설정 */
 /* 1440px이상일때 */
 @media (min-width: 1440px) {
-    .header, .title_inner, .story .wrap {
+    .header, .title_inner, .story .wrap, .rough {
         width: 1440px;
         margin: 0 auto;
     }
