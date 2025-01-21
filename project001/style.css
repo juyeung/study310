@@ -3,6 +3,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jua&family=Nanum+Gothic&display=swap');
 
 /* 전체설정 */
+body {
+    overflow-x: hidden;
+}
 
 * {
     margin: 0;
@@ -44,9 +47,7 @@ img {
 
 .header .logo a {}
 
-.header .navi {
-    width: auto;
-}
+.header .navi {}
 
 .header .navi .lng {
     margin-right: 40px;
@@ -54,7 +55,6 @@ img {
 
 .lng img {
     padding: 8px;
-
 }
 
 .header .navi .toggle {
@@ -152,11 +152,11 @@ img {
     width: 90%;
 }
 
-.sub {
+.slideBar .slide .sub {
     display: flex;
 }
 
-.sub p:nth-child(1) {
+.slideBar .slide .sub p:nth-child(1) {
     width: 50%;
     height: auto;
     font-size: 18px;
@@ -165,7 +165,7 @@ img {
     color: #fff;
 }
 
-.sub p:nth-child(2) {
+.slideBar .slide .sub p:nth-child(2) {
     width: 50%;
     height: auto;
     font-size: 18px;
@@ -424,8 +424,8 @@ img {
 /* 동물이야기 #################################################################*/
 .story {
     width: 100%;
-    height: 1230px;
-    padding-top: 160px;
+    padding-top: 80px;
+    padding-bottom: 160px;
     overflow: hidden;
 }
 
@@ -434,39 +434,45 @@ img {
     justify-content: center;
 }
 
-.story .bg img {}
+.story .bg img {
+    height: 11vw;
+}
 
 .story .wrap {
     display: flex;
+    position: relative;
+    top: -20px;
 }
 
-.story .wrap .title {
-    width: 41px;
-}
+.story .wrap .title {}
 
 .story .wrap .title h2 {
+    width: 41px;
     color: #3a3a3a;
     font-size: 48px;
     font-weight: normal;
     font-family: "Black Han Sans", serif;
     line-height: 40px;
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    padding-top: 4px;
 }
 
 .story .wrap .imgBox {
     display: flex;
-    position: relative;
-    width: 691px;
+    width:calc(60% - 41px);
+    justify-content: space-between;
     margin-left: 56px;
 }
 
 .story .wrap .imgBox .image {
-    
+    position: relative;
+    width: 100%;
 }
 
 .story .wrap .imgBox .image li {
-    width: 616px;
-    height: 800px;
+    width: 100%;
+    max-width: 616px;
+    height: 100%;
     overflow: hidden;
     justify-content: center;
     align-items: center;
@@ -500,9 +506,7 @@ img {
 .story .wrap .imgBox .dot {
     display: flex;
     flex-direction: column;
-    position: absolute;
-    top: 0;
-    right: 0;
+    margin-left: 16px;
 }
 
 .story .wrap .imgBox .dot li {
@@ -527,6 +531,7 @@ img {
 
 .story .wrap .story_body {
     margin-left: 60px;
+    width: 50%;
 }
 
 .story .wrap .story_body span {
@@ -552,6 +557,7 @@ img {
     width: 527px;
     height: 268px;
     margin-top: 72px;
+    line-height: 130%;
 }
 
 .story .wrap .story_body ul {
@@ -595,9 +601,85 @@ img {
 /* 테마존 */
 .theme {
     width: 100%;
-    height: 1860px;
-    background-color: cornflowerblue;
 }
+
+.theme .title_inner {
+    display: flex;
+}
+
+.theme .title_inner h2 {
+    width: 41px;
+    color: #3a3a3a;
+    font-size: 48px;
+    font-weight: normal;
+    font-family: "Black Han Sans", serif;
+    line-height: 40px;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    padding-top: 4px;
+}
+
+.theme .title_inner .sub {
+    margin-left: 24px;
+
+}
+
+.theme .title_inner .sub h3 {
+    color: #3a3a3a;
+    font-size: 36px;
+    font-weight: bold;
+    font-family: "Nanum Gothic", serif;
+}
+
+.theme .title_inner .sub p {
+    color: #666666;
+    font-size: 14px;
+    font-weight: normal;
+    font-family: "Nanum Gothic", serif;
+    line-height: 130%;
+    margin-top: 20px;
+}
+
+.theme .pro {}
+
+.theme .pro .f01 {}
+
+.theme .pro .f01 .rough {
+    display: flex;
+    justify-content: center;
+}
+
+.theme .pro .f01 .rough .img {}
+
+.theme .pro .f01 ul {}
+
+.theme .pro .f01 ul li {
+    width: 470px;
+    height: 267px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.theme .pro .f01 ul li .imgBox {
+    display: flex;
+    width: 450px;
+    height: 160px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 0 10px;
+}
+
+.theme .pro .f01 ul li .imgBox img {
+    width: 100%;
+}
+
+.theme .pro .f01 ul li h4 {}
+
+.theme .pro .f01 ul li p {}
+
+.theme .pro .f01 .room {}
+
+.theme .pro .f01 .room .name1 {}
 
 /* 예매하기 */
 .ticket {
@@ -635,7 +717,10 @@ img {
 }
 
 /* 전체설정 */
-.header, .title_inner, .story .wrap {
-    width: 1440px;
-    margin: auto;
+/* 1440px이상일때 */
+@media (min-width: 1440px) {
+    .header, .title_inner, .story .wrap {
+        width: 1440px;
+        margin: 0 auto;
+    }
 }
