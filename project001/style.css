@@ -646,11 +646,14 @@ img {
 .theme .pro .f01 .rough {
     display: flex;
     justify-content: center;
+    
 }
 
 .theme .pro .f01 .rough .img {}
 
-.theme .pro .f01 ul {}
+.theme .pro .f01 ul {
+    position: relative;
+}
 
 .theme .pro .f01 ul li {
     width: 470px;
@@ -676,6 +679,19 @@ img {
 .theme .pro .f01 ul li h4 {}
 
 .theme .pro .f01 ul li p {}
+
+.theme .pro .f01 ul li:nth-child(1) {
+    display: flex;
+    position: absolute;
+    right: 8.3333%;
+    top: 8%;
+}
+
+.theme .pro .f01 ul li:nth-child(2) {}
+
+.theme .pro .f01 ul li:nth-child(3) {}
+
+.theme .pro .f01 ul li:nth-child(4) {}
 
 /* .theme .pro .f01 .room {}
 
