@@ -1,6 +1,6 @@
 /* 언어설정 */
 @charset 'utf-8';
-@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jua&family=Nanum+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jua&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nanum+Gothic&display=swap');
 
 /* 전체설정 */
 body {
@@ -101,7 +101,7 @@ img {
     font-size: 20px;
     color: #fff;
     font-weight: normal;
-    font-family: "Nanum Gothic", serif;
+    font-family: "맑은 고딕";
     margin-top: 16px;
 }
 
@@ -121,7 +121,7 @@ img {
     justify-content: center;
     font-size: 20px;
     font-weight: bold;
-    font-family: "Nanum Gothic", serif;
+    font-family: "맑은 고딕";
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
 
@@ -161,7 +161,7 @@ img {
     height: auto;
     font-size: 18px;
     font-weight: normal;
-    font-family: "Nanum Gothic", serif;
+    font-family: "맑은 고딕";
     color: #fff;
 }
 
@@ -170,7 +170,7 @@ img {
     height: auto;
     font-size: 18px;
     font-weight: normal;
-    font-family: "Nanum Gothic", serif;
+    font-family: "맑은 고딕";
     color: #fff;
     margin-left: 78px;
 }
@@ -197,7 +197,7 @@ img {
     height: auto;
     font-size: 12px;
     font-weight: normal;
-    font-family: "Nanum Gothic", serif;
+    font-family: "맑은 고딕";
     color: #fff;
     margin-top: 8px;
 }
@@ -224,7 +224,7 @@ img {
 .info span:nth-child(2) {
     font-size: 28px;
     font-weight: normal;
-    font-family: "Nanum Gothic", serif;
+    font-family: "맑은 고딕";
     color: #fff;
 }
 
@@ -245,7 +245,7 @@ img {
     justify-content: center;
     font-size: 16px;
     font-weight: normal;
-    font-family: "Inter", serif;
+    font-family: Arial, Helvetica, sans-serif;
     position: absolute;
     right: 0;
     bottom: 0;
@@ -310,7 +310,6 @@ img {
     border-left: 1px solid #fff;
     border-right: 1px solid #fff;
     border-top: 1px solid #fff;
-    
 }
 
 .boad .con_box .list_box {}
@@ -367,26 +366,26 @@ img {
     display: block;
     font-size: 20px;
     font-weight: bold;
-    font-family: "Nanum Gothic", serif;
+    font-family: "맑은 고딕";
 }
 
 .boad .con_box .list_box .notice ul li a .wrap h3 {
     font-size: 24px;
     font-weight: bold;
-    font-family: "Nanum Gothic", serif;
+    font-family: "맑은 고딕";
     margin-top: 28px;
 }
 .boad .con_box .list_box .notice ul li a .wrap p {
     font-size: 16px;
     font-weight: normal;
-    font-family: "Nanum Gothic", serif;
+    font-family: "맑은 고딕";
     margin-top: 20px;
 }
 .boad .con_box .list_box .notice ul li a .wrap .date {
     display: block;
     font-size: 14px;
     font-weight: normal;
-    font-family: "Nanum Gothic", serif;
+    font-family: "맑은 고딕";
     position: absolute;
     left: 24px;
     bottom: 32px;
@@ -538,7 +537,7 @@ img {
     color: #3a3a3a;
     font-size: 24px;
     font-weight: bold;
-    font-family: "Nanum Gothic", serif;
+    font-family: "맑은 고딕";
 }
 
 .story .wrap .story_body h3 {
@@ -553,7 +552,7 @@ img {
     color: #666666;
     font-size: 16px;
     font-weight: normal;
-    font-family: "Nanum Gothic", serif;
+    font-family: "맑은 고딕";
     width: 527px;
     height: 268px;
     margin-top: 72px;
@@ -592,7 +591,7 @@ img {
     justify-content: center;
     font-size: 20px;
     font-weight: bold;
-    font-family: "Inter", serif;
+    font-family: ""Inter", serif";
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
 
@@ -601,6 +600,7 @@ img {
 /* 테마존 */
 .theme {
     width: 100%;
+    padding: 80px 0;
 }
 
 .theme .title_inner {
@@ -627,14 +627,14 @@ img {
     color: #3a3a3a;
     font-size: 36px;
     font-weight: bold;
-    font-family: "Nanum Gothic", serif;
+    font-family: "맑은 고딕";
 }
 
 .theme .title_inner .sub p {
     color: #666666;
     font-size: 14px;
     font-weight: normal;
-    font-family: "Nanum Gothic", serif;
+    font-family: "맑은 고딕";
     line-height: 130%;
     margin-top: 20px;
 }
@@ -677,9 +677,40 @@ img {
 
 .theme .pro .f01 ul li p {}
 
-.theme .pro .f01 .room {}
+/* .theme .pro .f01 .room {}
 
-.theme .pro .f01 .room .name1 {}
+.theme .pro .f01 .room .name1 {
+    display: flex;
+    width: ;
+    background-color: #3787ff;
+    align-items: center;
+}
+
+.theme .pro .f01 .room .name1 .bullet {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #3a3a3a;
+}
+
+.theme .pro .f01 .room .name1 p {
+    font-size: 22px;
+    color: #3a3a3a;
+    font-weight: normal;
+    font-family: "맑은 고딕";
+}
+
+.theme .pro .f01 .room .name2 {}
+.theme .pro .f01 .room .name3 {}
+.theme .pro .f01 .room .name4 {}
+.theme .pro .f01 .room .name5 {}
+.theme .pro .f01 .room .name6 {}
+.theme .pro .f01 .room .name7 {}
+.theme .pro .f01 .room .name8 {}
+.theme .pro .f01 .room .name9 {}
+.theme .pro .f01 .room .name10 {}
+.theme .pro .f01 .room .name11 {}
+.theme .pro .f01 .room .name12 {} */
 
 /* 예매하기 */
 .ticket {
