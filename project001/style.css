@@ -122,6 +122,7 @@ img {
     font-size: 20px;
     font-weight: bold;
     font-family: "Nanum Gothic", serif;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
 
 /* 슬라이드바 ############################################################################*/
@@ -267,8 +268,8 @@ img {
     background-image: url(img/notice_bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    /* height: 64vw; */
-    height: 52vw;
+    height: 64vw;
+    /* height: 52vw; */
     position: relative;
 }
 
@@ -278,7 +279,7 @@ img {
     font-size: 48px;
     font-weight: normal;
     font-family: "Jua", serif;
-    padding-top: 140px;
+    padding-top: 5%;
 }
 
 .boad .con_box {}
@@ -289,7 +290,7 @@ img {
 
 .title_box ul {
     display: flex;
-    margin-top: 88px;
+    margin-top: 3%;
 }
 
 .title_box ul li {
@@ -321,11 +322,10 @@ img {
     flex-wrap: nowrap;
     margin-top: 16px;
     width: 3130px;
-    padding-left: 68px;
 }
 
 .boad .con_box .list_box .notice ul li {
-    margin-left: 20px;
+    margin-right: 20px;
     width: 374px;
     height: 520px;
     background-color: rgba(0, 0, 0, 0.6);
@@ -425,24 +425,19 @@ img {
 .story {
     width: 100%;
     height: 1230px;
-    background-color: coral;
-    background-image: url(img/story_bg.png);
-    background-repeat: no-repeat;
-    margin-top: 100px;
+    padding-top: 160px;
+    overflow: hidden;
 }
 
 .story .bg {
-    
+    display: flex;
+    justify-content: center;
 }
 
 .story .bg img {}
 
 .story .wrap {
     display: flex;
-    width: 100%;
-    height: 1200px;
-    background-color: bisque;
-    margin-top: 200px;
 }
 
 .story .wrap .title {
@@ -459,19 +454,17 @@ img {
 }
 
 .story .wrap .imgBox {
-    width: 1000px;
-    height: 900px;
     display: flex;
     position: relative;
-    background-color: blueviolet;
+    width: 691px;
     margin-left: 56px;
 }
 
-.story .wrap .imgBox ul {
-
+.story .wrap .imgBox .image {
+    
 }
 
-.story .wrap .imgBox ul li {
+.story .wrap .imgBox .image li {
     width: 616px;
     height: 800px;
     overflow: hidden;
@@ -479,21 +472,21 @@ img {
     align-items: center;
 }
 
-.story .wrap ul li:nth-child(1) {
+.story .wrap .imgBox .image li:nth-child(1) {
+    display: flex;
+    position: absolute;
+    left: -32px;
+    top: -32px;
+}
+
+.story .wrap .imgBox .image li:nth-child(2) {
     display: flex;
     position: absolute;
     left: 0;
     top: 0;
 }
 
-.story .wrap ul li:nth-child(2) {
-    display: flex;
-    position: absolute;
-    left: 0;
-    top: 0;
-}
-
-.story .wrap ul li:nth-child(3) {
+.story .wrap .imgBox .image li:nth-child(3) {
     display: flex;
     position: absolute;
     left: 0;
@@ -504,21 +497,100 @@ img {
     height: 800px;
 }
 
-.story .wrap .story_body {}
+.story .wrap .imgBox .dot {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
 
-.story .wrap .story_body span {}
+.story .wrap .imgBox .dot li {
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    background-color: #dddddd;
+    margin-top: 32px;
+}
 
-.story .wrap .story_body h3 {}
+.story .wrap .imgBox .dot li:nth-child(1) {
+    
+}
 
-.story .wrap .story_body p {}
+.story .wrap .imgBox .dot li:nth-child(2) {
+    background-color: #3787ff;
+}
 
-.story .wrap .story_body ul {}
+.story .wrap .imgBox .dot li:nth-child(3) {
+    
+}
 
-.story .wrap .story_body ul li {}
+.story .wrap .story_body {
+    margin-left: 60px;
+}
 
-.story .wrap .story_body .more {}
+.story .wrap .story_body span {
+    color: #3a3a3a;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: "Nanum Gothic", serif;
+}
 
-.story .wrap .story_body .more a {}
+.story .wrap .story_body h3 {
+    color: #3a3a3a;
+    font-size: 70px;
+    font-weight: normal;
+    font-family: "Jua", serif;
+    margin-top: 16px;
+}
+
+.story .wrap .story_body p {
+    color: #666666;
+    font-size: 16px;
+    font-weight: normal;
+    font-family: "Nanum Gothic", serif;
+    width: 527px;
+    height: 268px;
+    margin-top: 72px;
+}
+
+.story .wrap .story_body ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.story .wrap .story_body ul li {
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+    background-color: #dddddd;
+    margin-top: 8px;
+}
+
+.story .wrap .story_body .more {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.story .wrap .story_body .more a {
+    display: flex;
+    width: 180px;
+    height: 52px;
+    background-color: #3787ff;
+    border-radius: 5px;
+    color: #fff;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Inter", serif;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+
 
 /* 테마존 */
 .theme {
