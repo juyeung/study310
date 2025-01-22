@@ -101,7 +101,7 @@ img {
     font-size: 20px;
     color: #fff;
     font-weight: normal;
-    font-family: "맑은 고딕";
+    font-family: "맑은 고딕" "serif";
     margin-top: 16px;
 }
 
@@ -121,7 +121,7 @@ img {
     justify-content: center;
     font-size: 20px;
     font-weight: bold;
-    font-family: "맑은 고딕";
+    font-family: "맑은 고딕" "serif";
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
     
 }
@@ -163,7 +163,7 @@ img {
     height: auto;
     font-size: 18px;
     font-weight: normal;
-    font-family: "맑은 고딕";
+    font-family: "맑은 고딕" "serif";
     color: #fff;
 }
 
@@ -172,7 +172,7 @@ img {
     height: auto;
     font-size: 18px;
     font-weight: normal;
-    font-family: "맑은 고딕";
+    font-family: "맑은 고딕" "serif";
     color: #fff;
     margin-left: 78px;
 }
@@ -199,7 +199,7 @@ img {
     height: auto;
     font-size: 12px;
     font-weight: normal;
-    font-family: "맑은 고딕";
+    font-family: "맑은 고딕" "serif";
     color: #fff;
     margin-top: 8px;
 }
@@ -226,7 +226,7 @@ img {
 .info span:nth-child(2) {
     font-size: 28px;
     font-weight: normal;
-    font-family: "맑은 고딕";
+    font-family: "맑은 고딕" "serif";
     color: #fff;
 }
 
@@ -370,26 +370,26 @@ img {
     display: block;
     font-size: 20px;
     font-weight: bold;
-    font-family: "맑은 고딕";
+    font-family: "맑은 고딕" "serif";
 }
 
 .boad .con_box .list_box .notice ul li a .wrap h3 {
     font-size: 24px;
     font-weight: bold;
-    font-family: "맑은 고딕";
+    font-family: "맑은 고딕" "serif";
     margin-top: 28px;
 }
 .boad .con_box .list_box .notice ul li a .wrap p {
     font-size: 16px;
     font-weight: normal;
-    font-family: "맑은 고딕";
+    font-family: "맑은 고딕" "serif";
     margin-top: 20px;
 }
 .boad .con_box .list_box .notice ul li a .wrap .date {
     display: block;
     font-size: 14px;
     font-weight: normal;
-    font-family: "맑은 고딕";
+    font-family: "맑은 고딕" "serif";
     position: absolute;
     left: 24px;
     bottom: 32px;
@@ -542,7 +542,7 @@ img {
     color: #3a3a3a;
     font-size: 24px;
     font-weight: bold;
-    font-family: "맑은 고딕";
+    font-family: "맑은 고딕" "serif";
 }
 
 .story .wrap .story_body h3 {
@@ -557,7 +557,7 @@ img {
     color: #666666;
     font-size: 16px;
     font-weight: normal;
-    font-family: "맑은 고딕";
+    font-family: "맑은 고딕" "serif";
     width: 527px;
     height: 268px;
     margin-top: 72px;
@@ -632,14 +632,14 @@ img {
     color: #3a3a3a;
     font-size: 36px;
     font-weight: bold;
-    font-family: "맑은 고딕";
+    font-family: "맑은 고딕" "serif";
 }
 
 .theme .title_inner .sub p {
     color: #666666;
     font-size: 14px;
     font-weight: normal;
-    font-family: "맑은 고딕";
+    font-family: "맑은 고딕" "serif";
     line-height: 130%;
     margin-top: 20px;
 }
@@ -709,7 +709,7 @@ img {
     color: #3a3a3a;
     font-size: 24px;
     font-weight: bold;
-    font-family: "맑은 고딕";
+    font-family: "맑은 고딕" "serif";
     margin-top: 16px;
 }
 
@@ -717,7 +717,7 @@ img {
     color: #3a3a3a;
     font-size: 16px;
     font-weight: normal;
-    font-family: "맑은 고딕";
+    font-family: "맑은 고딕" "serif";
     margin-top: 8px;
 }
 
@@ -769,7 +769,7 @@ img {
     color: #3a3a3a;
     font-size: 24px;
     font-weight: bold;
-    font-family: "맑은 고딕";
+    font-family: "맑은 고딕" "serif";
     margin-top: 16px;
 }
 
@@ -777,64 +777,378 @@ img {
     color: #3a3a3a;
     font-size: 16px;
     font-weight: normal;
-    font-family: "맑은 고딕";
+    font-family: "맑은 고딕" "serif";
     margin-top: 8px;
 }
 
 /* 프로그램 상세 */
 
-.theme .pro .f01 .rough .f01_01 li:nth-child(1) {
+.theme .pro .f01 .rough .f01_01 li:nth-child(1) {}
 
+.theme .pro .f01 .rough .f01_01 li:nth-child(2) {}
+
+.theme .pro .f01 .rough .f01_02 li:nth-child(1) {}
+
+.theme .pro .f01 .rough .f01_02 li:nth-child(2) {}
+
+
+/* 예매하기 #################################################################### */
+.ticket {
+    width: 100%;
+    padding: 160px 0;
 }
 
-.theme .pro .f01 .rough .f01_01 li:nth-child(2) {
-    
-}
-
-.theme .pro .f01 .rough .f01_01 li:nth-child(3) {}
-
-.theme .pro .f01 .rough .f01_01 li:nth-child(4) {}
-
-/* .theme .pro .f01 .room {}
-
-.theme .pro .f01 .room .name1 {
+.ticket .title_inner {
     display: flex;
-    width: ;
-    background-color: #3787ff;
+}
+
+.ticket .title_inner h2 {
+    width: 41px;
+    color: #3787ff;
+    font-size: 48px;
+    font-weight: normal;
+    font-family: "Black Han Sans", serif;
+    line-height: 40px;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    padding-top: 4px;
+}
+
+.ticket .title_inner .sub {
+    margin-left: 24px;
+}
+
+.ticket .title_inner .sub h3 {
+    color: #3a3a3a;
+    font-size: 36px;
+    font-weight: bold;
+    font-family: "맑은 고딕" "serif";
+}
+
+.ticket .title_inner .sub p {
+    color: #666666;
+    font-size: 14px;
+    font-weight: normal;
+    font-family: "맑은 고딕" "serif";
+    line-height: 130%;
+    margin-top: 20px;
+}
+
+.ticket .listBox {
+    background-color: cornsilk;
+}
+
+.ticket .listBox .list {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.ticket .listBox .list>li {
+    margin: 0 12px;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    width: 300px;
+    height: 460px;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
     align-items: center;
 }
 
-.theme .pro .f01 .room .name1 .bullet {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: #3a3a3a;
+/* normal ################################################################## */
+.ticket .list .normal {}
+
+.ticket .list .normal .mark {
+    background-image: url(img/ticket_001.png);
+    background-repeat: no-repeat;
+    width: 148px;
+    height: 56px;
+    padding-top: 6px;
+    padding-left: 28px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: '맑은 고딕' "serif";
+    color: #fff;
+    position: absolute;
+    left: -18px;
+    top: 20px;
 }
 
-.theme .pro .f01 .room .name1 p {
-    font-size: 22px;
-    color: #3a3a3a;
+.ticket .list .normal .d_day {
+    color: #666;
+    font-size: 12px;
     font-weight: normal;
-    font-family: "맑은 고딕";
+    font-family: '맑은 고딕' "serif";
+    position: absolute;
+    right: 20px;
+    top: 26px;
+    text-align: end;
+    line-height: 130%;
 }
 
-.theme .pro .f01 .room .name2 {}
-.theme .pro .f01 .room .name3 {}
-.theme .pro .f01 .room .name4 {}
-.theme .pro .f01 .room .name5 {}
-.theme .pro .f01 .room .name6 {}
-.theme .pro .f01 .room .name7 {}
-.theme .pro .f01 .room .name8 {}
-.theme .pro .f01 .room .name9 {}
-.theme .pro .f01 .room .name10 {}
-.theme .pro .f01 .room .name11 {}
-.theme .pro .f01 .room .name12 {} */
+.ticket .list .normal .body {
+    margin-top: 80px;
+    width: 260px;
+}
 
-/* 예매하기 */
-.ticket {
-    width: 100%;
-    height: 1000px;
-    background-color: khaki;
+.ticket .list .normal .body .text01 {}
+
+.ticket .list .normal .body .text01 .sale {
+    font-size: 16px;
+    font-weight: normal;
+    font-family: "맑은 고딕", serif;
+    color: #666;
+    text-decoration: line-through;
+}
+
+.ticket .list .normal .body .text01 .price {
+    font-size: 64px;
+    font-weight: bold;
+    font-family: "Inter", serif;
+    color: #3a3a3a;
+}
+
+.ticket .list .normal .body .text01 .price span {
+    font-size: 36px;
+    font-family: "맑은 고딕", serif;
+    letter-spacing: -10px;
+}
+
+.ticket .list .normal .body .text02 {
+    margin-top: 20px;
+}
+
+.ticket .list .normal .body .text02 .text02_01 {
+    display: flex;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.ticket .list .normal .body .text02 .text02_01 i {
+    color: #26D8E3;
+    font-size: 24px;
+}
+
+.ticket .list .normal .body .text02 .text02_01 p {
+    color: #3a3a3a;
+    font-size: 16px;
+    font-weight: normal;
+    font-family: '맑은 고딕' "serif";
+    margin-left: 8px;
+}
+
+/* year ############################################################## */
+.ticket .list .year {}
+
+.ticket .list .year .mark {
+    background-image: url(img/ticket_002.png);
+    background-repeat: no-repeat;
+    width: 148px;
+    height: 56px;
+    padding-top: 6px;
+    padding-left: 28px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: '맑은 고딕' "serif";
+    color: #fff;
+    position: absolute;
+    left: -18px;
+    top: 20px;
+}
+
+.ticket .list .year .d_day {
+    color: #666;
+    font-size: 12px;
+    font-weight: normal;
+    font-family: '맑은 고딕' "serif";
+    position: absolute;
+    right: 20px;
+    top: 26px;
+    text-align: end;
+    line-height: 130%;
+}
+
+.ticket .list .year .body {
+    margin-top: 80px;
+    width: 260px;
+}
+
+.ticket .list .year .body .text01 {}
+
+.ticket .list .year .body .text01 .sale {
+    font-size: 16px;
+    font-weight: normal;
+    font-family: "맑은 고딕", serif;
+    color: #666;
+    text-decoration: line-through;
+}
+
+.ticket .list .year .body .text01 .price {
+    font-size: 64px;
+    font-weight: bold;
+    font-family: "Inter", serif;
+    color: #3a3a3a;
+}
+
+.ticket .list .year .body .text01 .price span {
+    font-size: 36px;
+    font-family: "맑은 고딕", serif;
+    letter-spacing: -10px;
+}
+
+.ticket .list .year .body .text02 {
+    margin-top: 20px;
+}
+
+.ticket .list .year .body .text02 .text02_01 {
+    display: flex;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.ticket .list .year .body .text02 .text02_01 i {
+    color: #649ADE;
+    font-size: 24px;
+}
+
+.ticket .list .year .body .text02 .text02_01 p {
+    color: #3a3a3a;
+    font-size: 16px;
+    font-weight: normal;
+    font-family: '맑은 고딕' "serif";
+    margin-left: 8px;
+}
+
+/* team ###################################################################### */
+.ticket .list .team {}
+
+.ticket .list .team .mark {
+    background-image: url(img/ticket_002.png);
+    background-repeat: no-repeat;
+    width: 148px;
+    height: 56px;
+    padding-top: 6px;
+    padding-left: 28px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: '맑은 고딕' "serif";
+    color: #fff;
+    position: absolute;
+    left: -18px;
+    top: 20px;
+}
+
+.ticket .list .team .d_day {
+    color: #666;
+    font-size: 12px;
+    font-weight: normal;
+    font-family: '맑은 고딕' "serif";
+    position: absolute;
+    right: 20px;
+    top: 26px;
+    text-align: end;
+    line-height: 130%;
+}
+
+.ticket .list .team .body {
+    margin-top: 80px;
+    width: 260px;
+}
+
+.ticket .list .team .body .text01 {}
+
+.ticket .list .team .body .text01 .sale {
+    font-size: 16px;
+    font-weight: normal;
+    font-family: "맑은 고딕", serif;
+    color: #666;
+    text-decoration: line-through;
+}
+
+.ticket .list .team .body .text01 .price {
+    font-size: 64px;
+    font-weight: bold;
+    font-family: "Inter", serif;
+    color: #3a3a3a;
+}
+
+.ticket .list .team .body .text01 .price span {
+    font-size: 36px;
+    font-family: "맑은 고딕", serif;
+    letter-spacing: -10px;
+}
+
+.ticket .list .team .body .text02 {
+    margin-top: 20px;
+}
+
+.ticket .list .team .body .text02 .text02_01 {
+    display: flex;
+    align-items: center;
+    margin-top: 12px;
+}
+
+.ticket .list .team .body .text02 .text02_01 i {
+    color: #649ADE;
+    font-size: 24px;
+}
+
+.ticket .list .team .body .text02 .text02_01 p {
+    color: #3a3a3a;
+    font-size: 16px;
+    font-weight: normal;
+    font-family: '맑은 고딕' "serif";
+    margin-left: 8px;
+}
+
+.ticket .list .team .body .text02 .text02_02 {}
+
+.ticket .list .team .body .text02 .text02_02 h4 {
+    color: #3a3a3a;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: '맑은 고딕' "serif";
+    margin-top: 20px;
+}
+
+.ticket .list .team .body .text02 .text02_02 ul {
+    list-style: disc;
+    margin-top: 8px;
+}
+
+.ticket .list .team .body .text02 .text02_02 ul li {
+    color: #3a3a3a;
+    font-size: 16px;
+    font-weight: normal;
+    font-family: '맑은 고딕' "serif";
+    margin-left: 20px;
+}
+
+.ticket .list .team .body .text02 .text02_02 p {
+    color: #666;
+    font-size: 12px;
+    font-weight: normal;
+    font-family: '맑은 고딕' "serif";
+    position: absolute;
+    left: 28px;
+    bottom: 24px;
+    line-height: 130%;
+}
+
+.ticket .textBox {
+    text-align: center;
+}
+
+.ticket .textBox>p {
+    display: inline-block;
+    font-size: 28px;
+    font-weight: normal;
+    font-family: "Jua", serif;
+    margin-top: 72px;
+    background: linear-gradient(to right, #26D6E2, #BF47E8);
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 /* 오시는길 */
@@ -868,7 +1182,7 @@ img {
 /* 전체설정 */
 /* 1440px이상일때 */
 @media (min-width: 1440px) {
-    .header, .title_inner, .story .wrap, .rough {
+    .header, .title_inner, .story .wrap, .rough, .ticket{
         width: 1440px;
         margin: 0 auto;
     }
