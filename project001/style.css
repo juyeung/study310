@@ -1024,7 +1024,7 @@ img {
 .ticket .list .team {}
 
 .ticket .list .team .mark {
-    background-image: url(img/ticket_002.png);
+    background-image: url(img/ticket_003.png);
     background-repeat: no-repeat;
     width: 148px;
     height: 56px;
@@ -1090,7 +1090,7 @@ img {
 }
 
 .ticket .list .team .body .text02 .text02_01 i {
-    color: #649ADE;
+    color: #A15FE4;
     font-size: 24px;
 }
 
@@ -1131,7 +1131,7 @@ img {
     font-weight: normal;
     font-family: '맑은 고딕' "serif";
     position: absolute;
-    left: 28px;
+    left: 20px;
     bottom: 24px;
     line-height: 130%;
 }
