@@ -667,7 +667,7 @@ img {
     flex-wrap: wrap;
     position: absolute;
     right: 100px;
-    top: 70px;
+    top: 88px;
     width: 976px;
     /* background-color: #666666; */
 }
@@ -794,8 +794,15 @@ img {
 
 /* 예매하기 #################################################################### */
 .ticket {
-    width: 100%;
-    padding: 160px 0;
+    /* width: 100%; */
+    /* padding: 160px 0; */
+    height: 1000px;
+        background-image: url(img/bg_wave02.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: fixed;
+        padding-top: 50px;
 }
 
 .ticket .title_inner {
@@ -833,9 +840,7 @@ img {
     margin-top: 20px;
 }
 
-.ticket .listBox {
-    background-color: cornsilk;
-}
+.ticket .listBox {}
 
 .ticket .listBox .list {
     display: flex;
@@ -1182,7 +1187,7 @@ img {
 /* 전체설정 */
 /* 1440px이상일때 */
 @media (min-width: 1440px) {
-    .header, .title_inner, .story .wrap, .rough, .ticket{
+    .header, .title_inner, .story .wrap, .rough {
         width: 1440px;
         margin: 0 auto;
     }
