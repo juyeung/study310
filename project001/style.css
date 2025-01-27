@@ -617,7 +617,7 @@ img {
     font-size: 48px;
     font-weight: normal;
     font-family: "Black Han Sans", serif;
-    /* line-height: 40px; */
+    line-height: 40px;
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     padding-top: 4px;
 }
@@ -647,15 +647,12 @@ img {
     margin-top: 24px;
 }
 
-.theme .pro .f01 {
-    
-}
+.theme .pro .f01 {}
 
 .theme .pro .f01 .rough {
     display: flex;
     justify-content: center;
     position: relative;
-    /* background-color: #dddddd; */
 }
 
 .theme .pro .f01 .rough .img {}
@@ -1464,7 +1461,7 @@ img {
 
 .gallery .title_inner {
     display: flex;
-    background-color: #dddddd;
+    /* background-color: #dddddd; */
     position: relative;
 }
 
@@ -1507,44 +1504,55 @@ img {
     justify-content: center;
 }
 
-.gallery .table>ul {
+.gallery .table .table_inner {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     margin-top: 80px;
     margin-left: 64px;
     margin-right: 64px;
-    margin-bottom: 160px;
+    margin-bottom: 80px;
+    /* background-color: #BF47E8; */
+    height: 1240px;
+    overflow: hidden;
 }
 
-.gallery .table>ul>li {
-    margin-bottom: 28px;
+.gallery .table ul {
+    width: 420px;
+    margin: 0 8px;
 }
 
-.gallery .table>ul>li>a {
+.gallery .table ul li {
+    margin-bottom: 16px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.gallery .table ul li a {
     display: flex;
     flex-direction: column;
     color: #3a3a3a;
-    background-color: #fff;
+    background-color: #f6f5f2;
     align-items: center;
-    width: 420px;
+    width: 100%;
+    height: 590px;
 }
 
-.gallery .table>ul>li>a .text01 {
-    width: 280px;
+.gallery .table ul li a .text01 {
+    width: 100%;
 }
 
-.gallery .table>ul>li>a .text01 .title {
+.gallery .table ul li a .text01 .title {
     font-size: 36px;
     font-weight: bold;
     font-family: "맑은 고딕", serif;
     text-align: right;
     margin-top: 16px;
     margin-bottom: 8px;
+    margin-right: 20px;
 }
 
-.gallery .table>ul>li>a .text01 .sub {
+.gallery .table ul li a .text01 .sub {
     font-size: 16px;
     font-weight: normal;
     font-family: "맑은 고딕", serif;
@@ -1552,7 +1560,7 @@ img {
     margin-bottom: 16px;
 }
 
-.gallery .table>ul>li>a .imgBox {
+.gallery .table ul li a .imgBox {
     display: flex;
     width: 280px;
     height: 380px;
@@ -1561,11 +1569,11 @@ img {
     align-items: center;
 }
 
-.gallery .table>ul>li>a .imgBox img {}
+.gallery .table ul li a .imgBox img {}
 
-.gallery .table>ul>li>a .text02 {}
+.gallery .table ul li a .text02 {}
 
-.gallery .table>ul>li>a .text02 .title {
+.gallery .table ul li a .text02 .title {
     font-size: 36px;
     font-weight: bold;
     font-family: "맑은 고딕", serif;
@@ -1573,7 +1581,7 @@ img {
     margin-top: 8px;
 }
 
-.gallery .table>ul>li>a .text02 .sub {
+.gallery .table ul li a .text02 .sub {
     font-size: 16px;
     font-weight: normal;
     font-family: "맑은 고딕", serif;
@@ -1696,8 +1704,148 @@ img {
 /* 자주하는질문 */
 .faq {
     width: 100%;
-    height: 900px;
     background-color: #000;
+    color: #fff;
+}
+
+.faq .title_inner {
+    display: flex;
+    padding: 80px 0;
+    /* background-color: #A15FE4; */
+}
+
+.faq .title_inner h2 {
+    width: 41px;
+    /* color: #fff; */
+    font-size: 48px;
+    font-weight: normal;
+    font-family: "Black Han Sans", serif;
+    line-height: 40px;
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    padding-top: 4px;
+}
+
+.faq .title_inner .faq_list {
+    margin-left: 24px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.faq .title_inner .faq_list .more {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.faq .title_inner .faq_list .more a {
+    color: #fff;
+    /* width: 48px;
+    height: 14px; */
+    padding: 4px 8px;
+    border: 1px solid #fff;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: "맑은 고딕", serif;
+    text-align: center;
+}
+
+.faq .title_inner .faq_list ul {
+    margin-top: 12px;
+}
+
+.faq .title_inner .faq_list ul li {}
+
+.faq .title_inner .faq_list ul li .q {
+    display: flex;
+    width: 100%;
+    padding: 16px 0;
+    border-bottom: 1px solid #e3e3e3;
+    align-items: center;
+    position: relative;
+}
+
+.faq_list ul li .q h4 {
+    font-size: 20;
+    font-weight: bold;
+    font-family: 'inter', serif;
+    margin: 0 12px;
+}
+
+.faq_list ul li .q p {
+    font-size: 16;
+    font-weight: bold;
+    font-family: '맑은 고딕', serif;
+}
+
+.faq_list ul li .q i {
+    font-size: 16px;
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    margin-top: -8px;
+}
+
+.faq .title_inner .faq_list ul li .a {
+    display: flex;
+    width: 100%;
+    padding-top: 8px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e3e3e3;
+    position: relative;
+}
+
+.faq .title_inner .faq_list ul li:nth-child(1) .a {
+    display: none;
+}
+
+.faq .title_inner .faq_list ul li:nth-child(2) .a {
+    
+}
+
+.faq .title_inner .faq_list ul li:nth-child(3) .a {
+    display: none;
+}
+
+.faq_list ul li .a h4 {
+    font-size: 20;
+    font-weight: bold;
+    font-family: 'inter', serif;
+    margin: 0 12px;
+}
+
+.faq_list ul li .a p {
+    font-size: 16;
+    font-weight: bold;
+    font-family: '맑은 고딕', serif;
+}
+
+.faq_list .call {
+    display: flex;
+    align-items: center;
+    padding-top: 40px;
+}
+
+.faq_list .call i {
+    font-size: 20px;
+    margin-right: 8px;
+}
+
+.faq_list .call p {
+    /* color: #3a3a3a; */
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "맑은 고딕", serif;
+}
+
+.faq .title_inner .imgBox {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.faq .title_inner .imgBox img {
+    width: 100%;
 }
 
 /* 전체설정 */
