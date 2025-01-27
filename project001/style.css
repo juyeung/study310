@@ -1738,13 +1738,14 @@ img {
 }
 
 .faq .title_inner .faq_list .more a {
-    color: #fff;
+    color: #ddd;
     /* width: 48px;
     height: 14px; */
     padding: 4px 8px;
-    border: 1px solid #fff;
+    /* border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 5px; */
     font-size: 14px;
-    font-weight: bold;
+    font-weight: normal;
     font-family: "맑은 고딕", serif;
     text-align: center;
 }
@@ -1759,7 +1760,7 @@ img {
     display: flex;
     width: 100%;
     padding: 16px 0;
-    border-bottom: 1px solid #e3e3e3;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
     align-items: center;
     position: relative;
 }
@@ -1790,7 +1791,7 @@ img {
     width: 100%;
     padding-top: 8px;
     padding-bottom: 16px;
-    border-bottom: 1px solid #e3e3e3;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
     position: relative;
 }
 
@@ -1815,7 +1816,8 @@ img {
 
 .faq_list ul li .a p {
     font-size: 16;
-    font-weight: bold;
+    color: #dddddd;
+    font-weight: normal;
     font-family: '맑은 고딕', serif;
 }
 
