@@ -5,12 +5,16 @@
     src: url(font/Cooper-Black.otf),format('otf'),
     url(font/Radiance-Bold.otf),format('otf');
 }
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* Reset CSS */
 * {
     margin: 0;
     padding: 0;
+    font-family: "Roboto";
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
 }
 a {
     text-decoration: none;
@@ -412,6 +416,7 @@ animation-duration: 4s;
     padding: 120px 0;
     width: 100%;
     height: 1230px;
+    overflow: hidden;
 }
 .ourproducts h2 {
     color: #C10C1A;
@@ -474,16 +479,18 @@ animation-duration: 4s;
 
 .list li .pro h3 {
     text-align: center;
-    font-family: 'nanum gothic';
-    font-weight: bold;
+    font-family: "Roboto";
+    line-height: 110%;
+    font-weight: 600;
     font-size: 20px;
-    margin-bottom: 4px;
+    margin-bottom: 8px;
     color: #111;
 }
 .list li .pro p {
     text-align: center;
     font-family: 'nanum gothic';
     font-weight: normal;
+    /* line-height: 140%; */
     font-size: 14px;
     color: #3e3e3e;
 }
@@ -503,6 +510,7 @@ animation-duration: 4s;
 }
 .list li .add p {
     color: #fff;
+    font-family: "Roboto";
     font-weight: normal;
     font-size: 14px;
 }
@@ -511,52 +519,60 @@ animation-duration: 4s;
     font-size: 12px;
 }
 
+/* side ################################################# */
 .side {
     width: 25%;
-    background-color: antiquewhite;
 }
-.side h3 {
+/* cart_sub ########################################### */
+.side .cart_sub {
+    margin-bottom: 80px;
+}
+.cart_sub h3 {
     color: #C10C1A;
     font-size: 20px;
-    font-family: 'nanum gothic';
-    font-weight: normal;
     margin-bottom: 40px;
 }
-.side ul {}
-.side li {
+.side ul {
+    margin-bottom: 16px;
+}
+.cart_sub li {
+    display: flex;
+    width: 240px;
+    height: auto;
+    justify-content: space-between;
+}
+.cart_sub li .cartpro {
     display: flex;
 }
-.side li .imgBox {
+.cart_sub li .imgBox {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    border: 1xp solid #bbb;
     overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background: url(img/pringles_AMERICAN.png) center center / cover no-repeat;
+    border: 1px solid #bbb;
+    box-sizing: border-box;
 }
-.side li .imgBox img {
-    width: 100%;
+.cart_sub li .txt {
+    margin-left: 8px;
 }
-.side li .txt {}
-.side li .txt h4 {
+.cart_sub li .txt h4 {
     color: #C10C1A;
-    font-family: 'nanum gothic';
-    font-weight: normal;
+    font-family: "Roboto";
     font-size: 14px;
+    margin-bottom: 4px;
 }
-.side li .txt p {
+.cart_sub li .txt p {
     color: #3e3e3e;
     font-family: 'nanum gothic';
     font-weight: normal;
 }
-.side li .txt p span {
+.cart_sub li .txt p span {
     color: #3e3e3e;
     font-family: 'nanum gothic';
     font-weight: normal;
 }
-.side li .close {
+.cart_sub li .close {
     width: 18px;
     height: 18px;
     background-color: #C10C1A;
@@ -564,4 +580,162 @@ animation-duration: 4s;
     justify-content: center;
     align-items: center;
 }
-.side li .close img {}
+.cart_sub li .close img {}
+
+.cart_sub .total {
+    display: flex;
+    width: 240px;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.cart_sub .total p {
+    color: #C10C1A;
+    font-family: "Roboto";
+    font-size: 16px;
+    font-weight: 600;
+}
+.cart_sub .total .price {
+    display: flex;
+}
+.cart_sub .total .price p {}
+.cart_sub .total .price p span {
+    font-weight: 600;
+}
+
+.cart_sub .btn {
+    display: flex;
+    width: 240px;
+    justify-content: space-between;
+}
+.cart_sub .btn .coupon a {
+    width: 114px;
+    height: 40px;
+    background: url(img/coupon_White.png) 0 0 / cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #C10C1A;
+}
+.cart_sub .btn .checkout a {
+    width: 114px;
+    height: 40px;
+    background-color: #C10C1A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+/* filter #################################### */
+.side .filter {
+    color: #C10C1A;
+    font-family: "roboto";
+    margin-bottom: 80px;
+}
+.side .filter h3{
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+.side .filter .bar {
+    width: 240px;
+    height: 12px;
+    border-top-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    background-color: #EB9B00;
+    position: relative;
+}
+.side .filter .taste {
+    margin-bottom: 16px;
+}
+.side .filter .taste .bar_red {
+    width: 140px;
+    height: 12px;
+    border-top-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    background-color: #C10C1A;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.side .filter .txt {
+    display: flex;
+    width: 240px;
+    justify-content: space-between;
+}
+.side .filter .txt p {
+    font-size: 16px;
+}
+.side .filter .gram .bar_red {
+    width: 190px;
+    height: 12px;
+    border-top-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    background-color: #C10C1A;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* What's news ########################################## */
+.wn {}
+.wn h3 {
+    color: #C10C1A;
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+.wn ul {}
+.wn li {
+    margin-bottom: 16px;
+}
+.wn li .wnpro {
+    display: flex;
+}
+.wn li .wnpro .imgBox {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid #bbb;
+    box-sizing: border-box;
+}
+.wn li:nth-child(1) .imgBox {
+    background: url(img/pringles_AMERICAN.png) center center / cover no-repeat;
+}
+.wn li:nth-child(2) .imgBox {
+    background: url(img/pringles_KOREAN.png) center center / cover no-repeat;
+}
+.wn li:nth-child(3) .imgBox {
+    background: url(img/pringles_GARLIC.png) center center / cover no-repeat;
+}
+.wnpro .txt {
+    margin-left: 8px;
+}
+.wnpro .txt h4 {
+    color: #C10C1A;
+    font-family: "Roboto";
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+.wnpro .star {
+    display: flex;
+    width: auto;
+    height: auto;
+    margin-bottom: 4px;
+}
+.wnpro .star i {
+    color: #C10C1A;
+    font-size: 14px;
+    margin-right: 2px;
+}
+.wnpro .txt p {
+    color: #3e3e3e;
+    font-family: 'nanum gothic';
+    font-weight: normal;
+}
+.wn li .line {
+    width: 240px;
+    height: 1px;
+    background-color: #C10C1A;
+    opacity: 20%;
+    margin-top: 16px;
+}
