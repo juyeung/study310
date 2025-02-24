@@ -156,6 +156,8 @@ img {
 
 .slideImg {}
 
+.slideImg .crisp {}
+
 .slideImg .crisp:nth-child(1) {
     left: -15%;
 }
@@ -194,17 +196,12 @@ animation-direction: reverse;
     background-position: 0 0;
     background-size: auto 6.25vw;
     background-repeat: repeat-y;
+    animation-duration: 4s;
 }
 
 
 
 /* 반응형 */
-/* @media (min-width: 48em) {
-.crisp {
-background-size: auto 6.25vw;
-animation-duration: 4s;
-}
-} */
 @media (max-width: 425px) {
     .crisp {
         background-size: auto ;
@@ -215,15 +212,6 @@ animation-duration: 4s;
     0% {transform:rotate(15deg) translate(0, -12.5vw);}
     100% {transform:rotate(15deg) translate(0, 0vw);}
 }
-
-/* @keyframes ani1 {
-    0% { transform: rotate(15deg) translate(0, -12.5vw); }
-    50% { transform: rotate(15deg) translate(0, 0vw); }
-    100% { transform: rotate(15deg) translate(0, 12.5vw); }
-} */
-
-
-
 
 
 /* ============================================ */
@@ -426,8 +414,9 @@ animation-duration: 4s;
     margin-bottom: 80px;
 }
 .productCon {
-    width: 100%;
+    width: 80%;
     display: flex;
+    margin: 0 auto;
 }
 .productCon .list {
     width: 75%;
@@ -765,3 +754,58 @@ animation-duration: 4s;
 .youtube {
     text-align: center;
 }
+.youtube video {vertical-align: bottom;}
+
+/* aboutme ############################################# */
+.aboutMe {
+    display: flex;
+    width: 100%;
+    height: 700px;
+    background-color: #F17834;
+}
+.aboutMe .text {
+    display: flex;
+    width: 50%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.aboutMe .objectImg {
+    display: flex;
+    width: 50%;
+    height: auto;
+    align-items: flex-end;
+    justify-content: flex-start;
+    /* position: relative; */
+}
+.aboutMe .objectImg img {}
+
+/* ingredient ############################################# */
+.ing {
+    display: flex;
+    width: 100%;
+    height: 700px;
+    background-color: #009D81;
+}
+
+.ing .objectImg {
+    display: flex;
+    width: 50%;
+    height: auto;
+    align-items: flex-end;
+    justify-content: flex-start;
+    /* position: relative; */
+}
+.ing .objectImg img {}
+
+.ing .sheet .text h2 {
+    color: #C10C1A;
+    text-align: center;
+    font-size: 40px;
+    font-family: 'cooper black';
+    margin-bottom: 80px;
+}
+.sheet .text p {}
+.sheet .sheetBar {}
+.sheet .sheetBar h4 {}
