@@ -455,9 +455,31 @@ animation-duration: 4s;
     position: relative;
     margin-bottom: 12px;
 }
-.list .pro .imgBox img {
-    height: 100%;
+.list li:nth-child(1) .imgBox {
+    background: url(img/pringles_BBQ.png) center center / contain no-repeat;
 }
+.list li:nth-child(2) .imgBox {
+    background: url(img/pringles_CARAMEL.png) center center / contain no-repeat;
+}
+.list li:nth-child(3) .imgBox {
+    background: url(img/pringles_CHEESE.png) center center / contain no-repeat;
+}
+.list li:nth-child(4) .imgBox {
+    background: url(img/pringles_GARLIC.png) center center / contain no-repeat;
+}
+.list li:nth-child(5) .imgBox {
+    background: url(img/pringles_HOT.png) center center / contain no-repeat;
+}
+.list li:nth-child(6) .imgBox {
+    background: url(img/pringles_ROSE.png) center center / contain no-repeat;
+}
+.list li:nth-child(7) .imgBox {
+    background: url(img/pringles_AMERICAN.png) center center / contain no-repeat;
+}
+.list li:nth-child(8) .imgBox {
+    background: url(img/pringles_KOREAN.png) center center / contain no-repeat;
+}
+
 .list .pro .imgBox p {
     color: #fff;
     width: 64px;
@@ -472,6 +494,7 @@ animation-duration: 4s;
     left: 0;
     top: 0;
 }
+/* best label */
 .list li:nth-child(2) .pro .imgBox p {display: none;}
 .list li:nth-child(3) .pro .imgBox p {display: none;}
 .list li:nth-child(4) .pro .imgBox p {display: none;}
