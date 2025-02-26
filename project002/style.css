@@ -284,7 +284,7 @@ animation-direction: reverse;
     display: flex;
     width: 100%;
     height: 850px;
-    background-color: #1C0001;
+    background-color: #111;
 }
 .info01 .text {
     display: flex;
@@ -426,6 +426,7 @@ animation-direction: reverse;
 .productCon .list {
     width: 75%;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
 }
 .list li {
@@ -951,8 +952,9 @@ animation-direction: reverse;
 /* story ############################################## */
 .story {
     width: 100%;
-    height: 830px;
+    height: auto;
     background-color: #45AAE0;
+    color: #fff;
 }
 .story h2 {
     color: #fff;
@@ -966,22 +968,21 @@ animation-direction: reverse;
     display: flex;
     width: 80%;
     margin: 0 auto;
-    /* height: 100%; */
+    height: 600px;
     overflow: hidden;
 }
 .story_box>div {
     position: relative;
     width: 33.3333%;
-    height: 600px;
 }
 .story_box>div:nth-child(1) {
-    background-color: #f00;
+    /* background-color: #f00; */
 }
 .story_box>div:nth-child(2) {
-    background-color: yellow;
+    /* background-color: yellow; */
 }
 .story_box>div:nth-child(3) {
-    background-color: blue;
+    /* background-color: blue; */
 }
 .left_box {}
 .left_box ul {}
@@ -1000,18 +1001,25 @@ animation-direction: reverse;
     text-align: right;
 }
 .left_box i {
-    font-size: 28px;
-    width: 40px;
-    height: 40px;
+    font-size: 44px;
+    width: 60px;
+    height: 60px;
     border: 2px solid #fff;
-    line-height: 1.5;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* line-height: 1.2; */
+    /* text-align: center; */
     border-radius: 50%;
     margin-left: 20px;
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
 .img_box {
-    text-align: center;
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
 }
 .img_box img {
     width: 100%;
@@ -1041,13 +1049,21 @@ animation-direction: reverse;
     text-align: left;
 }
 .right_box i {
-    font-size: 28px;
-    width: 40px;
-    height: 40px;
+    font-size: 44px;
+    width: 60px;
+    height: 60px;
     border: 2px solid #fff;
-    line-height: 1.5;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* line-height: 1.2; */
+    /* text-align: center; */
     border-radius: 50%;
     margin-right: 20px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.right_box li:nth-child(2) i {
+    font-size: 36px;
 }
   
