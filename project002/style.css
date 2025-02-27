@@ -1070,50 +1070,61 @@ animation-direction: reverse;
 /* gallery #################################### */
 .gallery {
     width: 100%;
-    height: 960px;
+    height: 48vw;
     background-color: #FFC700;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.gallery ul {
+.gallery>div {
     width: 80%;
+}
+.gallery ul {
+    width: 100%;
+    height: auto;
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
 }
 .gallery li {
-    width: 280px;
-    height: 280px;
-    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
-    margin: 10px;
+    width: 20%;
+    height: auto;
+    /* box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25); */
+    /* margin: 10px; */
 }
-.gallery li:nth-child(1) {
-    background-image: url(img/mrP_01.png);
+.gallery li img {
+    width: 100%;
 }
-.gallery li:nth-child(2) {
-    background-image: url(img/mrP_02.png);
+
+/* footer ##################################### */
+.copyright {
+    width: 100%;
+    height: 600px;
+    background-color: #C10C1A;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
 }
-.gallery li:nth-child(3) {
-    background-image: url(img/mrP_03.png);
+.copyright img {
+    width: 200px;
+    margin-top: 80px;
 }
-.gallery li:nth-child(4) {
-    background-image: url(img/mrP_04.png);
+.copyright h3 {
+    font-size: 24px;
+    font-family: "roboto";
+    margin: 40px 0;
 }
-.gallery li:nth-child(5) {
-    background-image: url(img/mrP_05.png);
+.copyright .sns {
+    display: flex;
 }
-.gallery li:nth-child(6) {
-    background-image: url(img/mrP_06.png);
+.copyright .sns i {
+    color: #fff;
+    font-size: 24px;
+    margin: 56px 20px;
 }
-.gallery li:nth-child(7) {
-    background-image: url(img/mrP_07.png);
-}
-.gallery li:nth-child(8) {
-    background-image: url(img/mrP_08.png);
-}
-.gallery li:nth-child(9) {
-    background-image: url(img/mrP_09.png);
-}
-.gallery li:nth-child(10) {
-    background-image: url(img/mrP_10.png);
+.copyright p {
+    font-size: 14px;
+    text-align: center;
 }
