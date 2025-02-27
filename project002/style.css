@@ -406,16 +406,16 @@ animation-direction: reverse;
 /* our products ######################################### */
 .ourproducts {
     background-color: #FFC700;
-    padding: 120px 0;
+    /* padding: 120px 0; */
     width: 100%;
-    height: 1230px;
-    overflow: hidden;
+    height: auto;
 }
 .ourproducts h2 {
     color: #C10C1A;
     text-align: center;
     font-size: 40px;
     font-family: 'cooper black';
+    padding-top: 120px;
     margin-bottom: 80px;
 }
 .productCon {
@@ -425,8 +425,10 @@ animation-direction: reverse;
 }
 .productCon .list {
     width: 75%;
+    height: 1050px;
+    padding: 40px 0;
+    overflow: hidden;
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
 }
 .list li {
@@ -436,17 +438,18 @@ animation-direction: reverse;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    margin: 0 80px 60px 0;
+    margin: 0 20px 60px 20px;
+
 }
 .list li .pro {
     text-align: center;
 }
-.list li.on {
+.list li .pro.on {
     outline: 4px solid #C10C1A;
-    outline-offset: 20px;
+    outline-offset: 10px;
 }
 .list .pro .imgBox {
-    width: 180px;
+    width: 200px;
     height: 240px;
     position: relative;
     margin-bottom: 12px;
@@ -914,39 +917,36 @@ animation-direction: reverse;
 }
 
 /* text line ##################################################### */
-@keyframes slide {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-50%);
-    }
-  }
-  
-  .textline {
+.contain {
+    display: flex;
     background-color: #111;
     width: 100%;
-    height: 58px;
+    height: 4em;
     overflow: hidden;
     position: relative;
-    display: flex;
     align-items: center;
     white-space: nowrap;
-  }
-  
-  .textline .text-wrapper {
-    display: flex;
-    min-width: 200%;
-    animation: slide 10s linear infinite;
-  }
-  
-  .textline p {
-    color: #fff;
-    font-size: 24px;
-    font-weight: bold;
-    margin: 0;
-    padding: 0 20px;
-  }
+}
+.contain p {
+display: inline-block;
+color: #fff;
+font-size: 3em;
+font-weight: bold;
+margin: 0;
+padding: 0;
+animation: marquee 40s linear infinite;
+}
+
+                
+
+@keyframes marquee {
+   0% {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
   
 
 /* story ############################################## */
@@ -955,6 +955,7 @@ animation-direction: reverse;
     height: auto;
     background-color: #45AAE0;
     color: #fff;
+    font-family: "nanum gothic";
 }
 .story h2 {
     color: #fff;
@@ -989,15 +990,18 @@ animation-direction: reverse;
 .left_box li {
     display: flex;
     justify-content: flex-end;
-    margin: 10px 0;
+    margin: 80px 0;
 }
 .left_box .txt {}
 .left_box .txt strong {
     display: block;
     text-align: right;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 4px;
 }
 .left_box .txt p {
-    width: 300px;
+    width: auto;
     text-align: right;
 }
 .left_box i {
@@ -1019,11 +1023,14 @@ animation-direction: reverse;
 .img_box {
     display: flex;
     align-items: flex-end;
+    justify-content: center;
     height: 100%;
 }
 .img_box img {
-    width: 100%;
-    max-width: 100%;
+    /* width: 100%;
+    max-width: 100%; */
+    height: 100%;
+    max-height: 100%;
     position: relative;
     top: 100%;
     transition: all 1.5s;
@@ -1037,15 +1044,18 @@ animation-direction: reverse;
 .right_box li {
     display: flex;
     justify-content: flex-start;
-    margin: 10px 0;
+    margin: 80px 0;
 }
 .right_box .txt {}
 .right_box .txt strong {
     display: block;
     text-align: left;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 4px;
 }
 .right_box .txt p {
-    width: 300px;
+    width: auto;
     text-align: left;
 }
 .right_box i {
@@ -1065,6 +1075,76 @@ animation-direction: reverse;
 }
 .right_box li:nth-child(2) i {
     font-size: 36px;
+}
+
+/* history ##################################### */
+.history {
+    width: 100%;
+    height: 52vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: "nanum gothic";
+    font-size: 14px;
+}
+.history .slide {
+    width: 100%;
+    display: flex;
+}
+.history .title {
+    margin-right: 40px;
+}
+.history .title h2 {
+    font-size: 120px;
+    font-family: "cooper black";
+    font-weight: bold;
+    color: #C10C1A;
+    margin: 12px 0;
+}
+.history .title p {
+    width: 304px;
+}
+.history .line {
+    width: 100%;
+    height: auto;
+}
+.history .line .top {
+    margin-left: 464px;
+    margin-bottom: 20px;
+}
+.history .line ul {
+    display: flex;
+}
+.history .line li {
+    display: flex;
+    margin-right: 170px;
+}
+.history .line img {
+    width: 160px;
+    height: 160px;
+    margin-right: 16px;
+}
+.history .line .top p{
+    width: 264px;
+    height: auto;
+    display: flex;
+    align-items: flex-end;
+}
+.history .line>img {
+    width: 2613px;
+    height: 234px;
+}
+.history .line .bottom {
+    margin-left: 160px;
+    margin-top: 20px;
+}
+.history .line .bottom p{
+    width: 264px;
+    height: auto;
+}
+.history .line .bottom li:last-child {
+    margin: 0 0;
 }
 
 /* gallery #################################### */
@@ -1127,4 +1207,81 @@ animation-direction: reverse;
 .copyright p {
     font-size: 14px;
     text-align: center;
+}
+
+/* ######################################################################## */
+/* 제품페이지 */
+.product {
+    width: 100%;
+    background-color: #FFC700;
+    padding: 120px 0;
+    font-family: "nanum gothic";
+}
+.product .list {
+    height: auto;
+}
+.enjoy h2 {
+    color: #C10C1A;
+    text-align: center;
+    font-size: 40px;
+    font-family: 'cooper black';
+    margin: 80px 0;
+}
+.yt {
+    width: 80%;
+    margin: 0 auto;
+}
+.yt h3 {}
+.yt ul {
+    display: flex;
+}
+.yt li {
+    margin: 0 20px;
+}
+.yt li iframe {
+    width: auto;
+    height: 48vh;
+    border-radius: 20px;
+}
+.yt li h4 {
+    font-size: 20px;
+    color: #111;
+    margin-bottom: 8px;
+}
+.yt li .txt {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    padding: 16px 10px;
+    box-sizing: border-box;
+}
+.yt li .txt .profileBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.yt li .txt .profile {
+    display: flex;
+    align-items: center;
+}
+.yt li .txt .profile .imgBox {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    margin-right: 4px;
+}
+.yt li .txt .profile p {
+    font-size: 16px;
+    color: #3e3e3e;
+}
+.yt li .txt .hits {
+    display: flex;
+    align-items: center;
+}
+.yt li .txt .hits img {
+    margin-right: 4px;
+}
+.yt li .txt .hits p{
+    font-size: 14px;
+    color: #666;
 }
