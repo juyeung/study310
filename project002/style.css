@@ -421,6 +421,7 @@ animation-direction: reverse;
 .productCon {
     width: 80%;
     display: flex;
+    justify-content: space-between;
     margin: 0 auto;
 }
 .productCon .list {
@@ -536,11 +537,15 @@ animation-direction: reverse;
     font-family: "Roboto";
     font-weight: 400;
     font-size: 14px;
+    transition: all 0.3s;
+}
+.list li .add:hover {
+    background-image: url(img/ribbonButton_W.png);
 }
 .list li .add:hover p {
     cursor: pointer;
-    color: #FFC700;
-    font-weight: 600;
+    color: #C10C1A;
+    font-weight: 400;
 }
 .list li .add p {
     /* color: #fff;
@@ -655,16 +660,18 @@ animation-direction: reverse;
 .cart_sub .btn .coupon a {
     width: 114px;
     height: 40px;
-    background: url(img/coupon_White.png) 0 0 / cover no-repeat;
+    background: url(img/coupon_Red.png) 0 0 / cover no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #C10C1A;
+    color: #fff;
+    transition: all 0.3s;
 }
 .cart_sub .btn .coupon a:hover {
-    background: url(img/coupon_Red.png) 0 0 / cover no-repeat;
-    color: #fff;
+    background: url(img/coupon_White.png) 0 0 / cover no-repeat;
+    color: #C10C1A;
 }
+
 .cart_sub .btn .checkout a {
     width: 114px;
     height: 40px;
@@ -673,9 +680,13 @@ animation-direction: reverse;
     justify-content: center;
     align-items: center;
     color: #fff;
+    transition: all 0.3s;
 }
 .cart_sub .btn .checkout a:hover {
-    color: #FFC700;
+    color: #C10C1A;
+    background-color: #fff;
+    border: 1px solid #C10C1A;
+    box-sizing: border-box;
     font-weight: 600;
 }
 
@@ -867,11 +878,11 @@ animation-direction: reverse;
     color: #FFC700;
     font-weight: 600;
 }
-.sheet .sheetBar {}
-.sheet .sheetBar p {
+.ing .sheetBar {}
+.ing .sheetBar p {
     margin-bottom: 16px;
 }
-.sheet .sheetBar ul li {
+.ing .sheetBar ul li {
     width: 486px;
     height: 28px;
     border-top-left-radius: 28px;
@@ -880,11 +891,13 @@ animation-direction: reverse;
     position: relative;
     margin-bottom: 8px;
 }
-.sheet .sheetBar ul li .bar_orange {
+.ing .sheetBar ul li .bar_orange {
     height: 28px;
     border-top-left-radius: 28px;
     border-bottom-right-radius: 28px;
     background-color: #FFC700;
+    color: #3e3e3e;
+    font-size: 14px;
     position: absolute;
     left: 0;
     top: 0;
@@ -894,25 +907,37 @@ animation-direction: reverse;
     align-items: center;
     justify-content: space-between;
 }
-.sheetBar li:nth-child(1) .bar_orange {
-    width: 240px;
+.ing .sheetBar ul li .bar_orange strong {
+    font-weight: 600;
 }
-.sheetBar li:nth-child(2) .bar_orange {
-    width: 240px;
+.bar_orange span {
+    margin-right: 4px;
 }
-.sheetBar li:nth-child(3) .bar_orange {
-    width: 140px;
+.ing .sheetBar li:nth-child(1) .bar_orange {
+    width: calc(286px * 0.22 + 200px);
 }
-.sheetBar li:nth-child(4) .bar_orange {
-    width: 280px;
+.ing .sheetBar li:nth-child(2) .bar_orange {
+    width: calc(286px * 0.19 + 200px)
 }
-.sheetBar li:nth-child(5) .bar_orange {
-    width: 200px;
+.ing .sheetBar li:nth-child(3) .bar_orange {
+    width: calc(286px * 0.03 + 200px)
 }
-.sheetBar li:nth-child(6) .bar_orange {
-    width: 220px;
+.ing .sheetBar li:nth-child(4) .bar_orange {
+    width: calc(286px * 0.49 + 200px)
 }
-.sheet span {
+.ing .sheetBar li:nth-child(5) .bar_orange {
+    width: calc(286px * 0 + 200px)
+}
+.ing .sheetBar li:nth-child(6) .bar_orange {
+    width: calc(286px * 0.79 + 200px)
+}
+.ing .sheetBar li:nth-child(7) .bar_orange {
+    width: calc(286px * 0 + 200px)
+}
+.ing .sheetBar li:nth-child(8) .bar_orange {
+    width: calc(286px * 0.11 + 200px)
+}
+.ing .sheet span {
     color: #111;
 }
 
@@ -1220,6 +1245,7 @@ animation: marquee 40s linear infinite;
 .product .list {
     height: auto;
 }
+.enjoy {}
 .enjoy h2 {
     color: #C10C1A;
     text-align: center;
@@ -1229,18 +1255,52 @@ animation: marquee 40s linear infinite;
 }
 .yt {
     width: 80%;
+    height: auto;
     margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
 }
-.yt h3 {}
+.yt h3 {
+    margin-bottom: 20px;
+}
+.yt .leftbtn {
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 40px;
+}
+.yt .leftbtn i {
+    font-size: 28px;
+    color: #C10C1A;
+}
+.yt .rightbtn {
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 40px;
+}
+.yt .rightbtn {
+    font-size: 28px;
+    color: #C10C1A;
+}
 .yt ul {
     display: flex;
+    /* justify-content: center; */
+    overflow: hidden;
 }
 .yt li {
-    margin: 0 20px;
+    margin: 20px;
 }
 .yt li iframe {
-    width: auto;
-    height: 48vh;
+    width: 246px;
+    max-height: 437px;
     border-radius: 20px;
 }
 .yt li h4 {
@@ -1249,7 +1309,7 @@ animation: marquee 40s linear infinite;
     margin-bottom: 8px;
 }
 .yt li .txt {
-    width: 300px;
+    width: 246px;
     display: flex;
     flex-direction: column;
     padding: 16px 10px;
@@ -1284,4 +1344,212 @@ animation: marquee 40s linear infinite;
 .yt li .txt .hits p{
     font-size: 14px;
     color: #666;
+}
+/* 제품 상세 페이지 ############################# */
+.dt {
+    width: 75%;
+}
+.dt .pro {
+    display: flex;
+}
+.dt .pro .imgBox {
+    width: 468px;
+    height: 468px;
+    border: 2px solid #C10C1A;
+    border-radius: 20px;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    position: relative;
+}
+.dt .pro .imgBox img {
+    height: 100%;
+}
+.zoom {
+    width: 44px;
+    height: 44px;
+    background-color: #C10C1A;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+.zoom i {
+    font-size: 24px;
+    color: #fff;
+}
+.dt .pro .text {
+    width: 380px;
+    margin-left: 40px;
+    font-family: "nanum gothic";
+    color: #111;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.dt .pro .text h3 {
+    font-size: 40px;
+    font-family: "roboto";
+    font-weight: 600;
+    color: #111;
+}
+.s_r {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 16px 0;
+    cursor: pointer;
+}
+.s_r .star {
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: auto;
+}
+.s_r .star i {
+    color: #C10C1A;
+    font-size: 14px;
+    margin-right: 2px;
+}
+.s_r span {
+    color: #3e3e3e;
+    font-size: 14px;
+    margin: 0 4px;
+}
+.s_r p {
+    color: #3e3e3e;
+    font-size: 14px;
+}
+
+.dt .pro .text>p {
+    font-size: 28px;
+    margin: 32px 0;
+}
+.dt .pro .text .txt {}
+.dt .pro .text .txt h4 {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -2.5%;
+    margin-bottom: 8px;
+    color: #3e3e3e;
+}
+.dt .pro .text .txt p {
+    font-size: 16px;
+    line-height: 140%;
+    color: #3e3e3e;
+}
+.dt .pro .text .btn {
+    display: flex;
+}
+.dt .pro .text .btn .count {
+    width: 140px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #fff;
+    color: #111;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 16px;
+    cursor: pointer;
+}
+.dt .pro .text .btn .add {
+    width: 140px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #C10C1A;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.dt .pro .text .btn .add:hover {
+    color: #C10C1A;
+    background-color: #fff;
+    border: 1px solid #C10C1A;
+    box-sizing: border-box;
+}
+
+.dt .sheetBar {
+    width: 486px;
+    background-color: #009D81;
+    margin: 40px 0;
+}
+.dt .sheetBar .txt {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+.dt .sheetBar .txt h3 {
+    font-size: 20px;
+    font-weight: 600;
+}
+.dt .sheetBar .txt p {
+    font-size: 14px;
+}
+.dt .sheetBar ul li {
+    width: 486px;
+    height: 28px;
+    border-top-left-radius: 28px;
+    border-bottom-right-radius: 28px;
+    background-color: #fff;
+    position: relative;
+    margin-bottom: 8px;
+}
+.dt .sheetBar ul li .bar_orange {
+    height: 28px;
+    border-top-left-radius: 28px;
+    border-bottom-right-radius: 28px;
+    color: #fff;
+    font-size: 14px;
+    background-color: #C10C1A;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 4px 24px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.dt .sheetBar ul li .bar_orange strong {
+    font-weight: 600;
+}
+.bar_orange span {
+    margin-right: 4px;
+}
+.dt .sheetBar li:nth-child(1) .bar_orange {
+    width: calc(286px * 0.22 + 200px);
+}
+.dt .sheetBar li:nth-child(2) .bar_orange {
+    width: calc(286px * 0.19 + 200px)
+}
+.dt .sheetBar li:nth-child(3) .bar_orange {
+    width: calc(286px * 0.03 + 200px)
+}
+.dt .sheetBar li:nth-child(4) .bar_orange {
+    width: calc(286px * 0.49 + 200px)
+}
+.dt .sheetBar li:nth-child(5) .bar_orange {
+    width: calc(286px * 0 + 200px)
+}
+.dt .sheetBar li:nth-child(6) .bar_orange {
+    width: calc(286px * 0.79 + 200px)
+}
+.dt .sheetBar li:nth-child(7) .bar_orange {
+    width: calc(286px * 0 + 200px)
+}
+.dt .sheetBar li:nth-child(8) .bar_orange {
+    width: calc(286px * 0.11 + 200px)
 }
