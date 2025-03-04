@@ -67,7 +67,7 @@ body {
     /* padding: 10px; */
 }
 .header .logo a:hover {
-    transition: all 1.5s;
+    transition: all 0.8s;
     transform: translateY(30px);
 }
 .gnb {}
@@ -409,17 +409,16 @@ animation-direction: reverse;
 /* our products ######################################### */
 .ourproducts {
     background-color: #FFC700;
-    /* padding: 120px 0; */
     width: 100%;
     height: auto;
+    padding: 80px 0;
 }
 .ourproducts h2 {
     color: #C10C1A;
     text-align: center;
     font-size: 40px;
     font-family: 'cooper black';
-    padding-top: 120px;
-    margin-bottom: 80px;
+    margin-bottom: 40px;
 }
 .productCon {
     width: 80%;
@@ -568,6 +567,7 @@ animation-direction: reverse;
 /* side ################################################# */
 .side {
     width: 25%;
+    padding: 40px 0;
 }
 /* cart_sub ########################################### */
 .side .cart_sub {
@@ -815,10 +815,10 @@ animation-direction: reverse;
 .aboutMe {
     display: flex;
     width: 100%;
-    height: 700px;
-    background-color: #F17834;
+    height: 600px;
+    background-color: #d73332;
 }
-.aboutMe .text {
+/* .aboutMe .text {
     display: flex;
     width: 50%;
     height: auto;
@@ -832,9 +832,46 @@ animation-direction: reverse;
     height: auto;
     align-items: flex-end;
     justify-content: center;
-    /* position: relative; */
 }
-.aboutMe .objectImg img {}
+.aboutMe .objectImg img {
+    transform: rotateY(180deg);
+} */
+.aboutMe .text {
+    width: 70%;
+    background-color: #59C2C7;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+.aboutMe .text em {
+    font-size: 16px;
+    text-align: center;
+}
+.aboutMe .text h2 {
+    font-size: 52px;
+    font-family: "cooper black";
+    margin-bottom: 32px;
+    text-align: center;
+}
+.aboutMe .text p {
+    font-size: 14px;
+    font-family: "nanum gothic";
+    letter-spacing: -2.5%;
+    line-height: 32px;
+    text-align: center;
+}
+.aboutMe .objectImg {
+    width: 30%;
+    background-color: #FFC700;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+.aboutMe .objectImg img {
+    height: 70%;
+}
 
 /* ingredient ############################################# */
 .ing {
@@ -917,28 +954,28 @@ animation-direction: reverse;
     margin-right: 4px;
 }
 .ing .sheetBar li:nth-child(1) .bar_orange {
-    width: calc(286px * 0.22 + 200px);
+    width: calc(286px * 0.235 + 200px);
 }
 .ing .sheetBar li:nth-child(2) .bar_orange {
-    width: calc(286px * 0.19 + 200px)
+    width: calc(286px * 0.209 + 200px)
 }
 .ing .sheetBar li:nth-child(3) .bar_orange {
-    width: calc(286px * 0.03 + 200px)
+    width: calc(286px * 0 + 200px)
 }
 .ing .sheetBar li:nth-child(4) .bar_orange {
-    width: calc(286px * 0.49 + 200px)
+    width: calc(286px * 0.429 + 200px)
 }
 .ing .sheetBar li:nth-child(5) .bar_orange {
     width: calc(286px * 0 + 200px)
 }
 .ing .sheetBar li:nth-child(6) .bar_orange {
-    width: calc(286px * 0.79 + 200px)
+    width: calc(286px * 0.82 + 200px)
 }
 .ing .sheetBar li:nth-child(7) .bar_orange {
     width: calc(286px * 0 + 200px)
 }
 .ing .sheetBar li:nth-child(8) .bar_orange {
-    width: calc(286px * 0.11 + 200px)
+    width: calc(286px * 0.093 + 200px)
 }
 .ing .sheet span {
     color: #111;
@@ -1122,6 +1159,7 @@ animation: marquee 40s linear infinite;
 }
 .history .title {
     margin-right: 40px;
+    margin-top: 20px;
 }
 .history .title h2 {
     font-size: 120px;
@@ -1203,6 +1241,42 @@ animation: marquee 40s linear infinite;
 .gallery li img {
     width: 100%;
 }
+/* .beer {
+    width: 100%;
+    height: auto;
+    background: radial-gradient(circle at center, #ff7500 20%, #c53d00);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.leftBox {
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+.beer .leftBox img {}
+.beer .leftBox img:nth-child(1) {
+    position: absolute;
+    right: -30px;
+    top: 0;
+    width: 50%;
+}
+.beer .leftBox img:nth-child(2) {
+    position: absolute;
+    left: 30px;
+    top: 0;
+    width: 50%;
+    transform: rotate(20deg);
+}
+.rightBox {
+    width: 50%;
+}
+.rightBox img {
+    width: 100%;
+    height: auto;
+} */
 
 /* footer ##################################### */
 .copyright {
@@ -1242,7 +1316,7 @@ animation: marquee 40s linear infinite;
 .product {
     width: 100%;
     background-color: #FFC700;
-    padding: 120px 0;
+    padding: 80px 0;
     font-family: "nanum gothic";
 }
 .product .list {
@@ -1274,7 +1348,6 @@ animation: marquee 40s linear infinite;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 40px;
 }
 .yt .leftbtn i {
     font-size: 28px;
@@ -1287,19 +1360,21 @@ animation: marquee 40s linear infinite;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 40px;
 }
-.yt .rightbtn {
+.yt .rightbtn i {
     font-size: 28px;
     color: #C10C1A;
 }
 .yt ul {
+    width: calc(100% - 88px);
     display: flex;
-    /* justify-content: center; */
     overflow: hidden;
 }
 .yt li {
-    margin: 20px;
+    margin-right: 16px;
+}
+.yt li:last-child {
+    margin-right: 0;
 }
 .yt li iframe {
     width: 246px;
@@ -1349,14 +1424,22 @@ animation: marquee 40s linear infinite;
     color: #666;
 }
 /* 제품 상세 페이지 ############################# */
+.pro_d {
+    width: 100%;
+    background-color: #FFC700;
+    padding: 80px 0;
+    font-family: "nanum gothic";
+}
 .dt {
     width: 75%;
 }
 .dt .pic {
     display: flex;
+    width: 90%;
+    height: auto;
 }
 .dt .pic .imgBox {
-    width: 468px;
+    width: 50%;
     height: 468px;
     border: 2px solid #C10C1A;
     border-radius: 20px;
@@ -1388,7 +1471,8 @@ animation: marquee 40s linear infinite;
     color: #fff;
 }
 .dt .pic .text {
-    width: 380px;
+    width: 50%;
+    height: auto;
     margin-left: 40px;
     font-family: "nanum gothic";
     color: #111;
@@ -1432,15 +1516,16 @@ animation: marquee 40s linear infinite;
 
 .dt .pic .text>p {
     font-size: 28px;
-    margin: 32px 0;
+    margin: 16px 0;
 }
 .dt .pic .text .txt {}
 .dt .pic .text .txt h4 {
+    font-family: "nanum gothic";
     font-size: 20px;
     font-weight: 600;
     letter-spacing: -2.5%;
     margin-bottom: 8px;
-    color: #3e3e3e;
+    color: #111;
 }
 .dt .pic .text .txt p {
     font-size: 16px;
@@ -1475,6 +1560,7 @@ animation: marquee 40s linear infinite;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    transition: all 0.5s;
 }
 .dt .pic .text .btn .add:hover {
     color: #C10C1A;
@@ -1565,12 +1651,16 @@ animation: marquee 40s linear infinite;
 }
 
 /* 추천상품 ############################### */
+.dt .more {
+    display: flex;
+    align-items: center;
+}
 .dt .list {
     width: 100%;
     height: auto;
     flex-wrap: nowrap;
 }
-
+/* 리뷰 ############################################### */
 .review {
     width: 80%;
     margin: 0 auto;
@@ -1602,4 +1692,183 @@ animation: marquee 40s linear infinite;
 .point p strong {
     font-weight: 600;
     margin-right: 4px;
+}
+
+.review .line_b {
+    width: 100%;
+    height: 2px;
+    background-color: #C10C1A;
+    margin-bottom: 40px;
+}
+.review h5 {
+    color: #C10C1A;
+    font-size: 16px;
+    margin-left: 44px;
+}
+
+.review .photo {
+    width: 100%;
+    margin-top: 8px;
+    display: flex;
+    align-items: center;
+}
+.leftbtn {
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin: 20px; */
+}
+.leftbtn i {
+    font-size: 28px;
+    color: #C10C1A;
+}
+.rightbtn {
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin: 20px; */
+}
+.rightbtn i {
+    font-size: 28px;
+    color: #C10C1A;
+}
+.review .photo {}
+.review .photo ul {
+    width: calc(100% - 88px);
+    display: flex;
+    overflow: hidden;
+}
+.review .photo li {
+    width: 227px;
+    height: 227px;
+    margin-right: 16px;
+}
+.review .photo li:last-child {
+    margin-right: 0;
+}
+.review .photo li img {}
+.review .line {
+    width: 100%;
+    height: 1px;
+    background-color: #C10C1A;
+    margin: 40px 0;
+}
+.reBox {
+    width: 100%;
+}
+.reBox ul {}
+.reBox li {
+    width: 100%;
+    margin-bottom: 24px;
+}
+.reBox li .re {
+    display: flex;
+    width: 100%;
+}
+.re .profile {
+    display: flex;
+    align-items: center;
+    width: calc(1199px - 955px);
+}
+.re .profile .imgBox {
+    width: 28px;
+    height: 28px;
+    margin: 0 8px;
+}
+.re .profile .imgBox img {
+    width: 100%;
+}
+
+.re .profile p {
+    color: #111;
+}
+.retext {
+    /* max-width: 955px; */
+}
+.retext .starBox {
+    display: flex;
+    align-items: center;
+}
+
+.retext .star {
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: auto;
+    margin-right: 8px;
+}
+.retext .star i {
+    color: #C10C1A;
+    font-size: 12px;
+    margin-right: 2px;
+}
+.retext .starBox p {
+    font-size: 12px;
+    color: #3e3e3e;
+}
+.retext .txt {
+    margin: 16px 0;
+}
+.retext .txt strong {
+    font-size: 16px;
+    font-family: "Nanum Gothic", sans-serif;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+.retext .txt p {
+    font-size: 14px;
+    color: #3e3e3e;
+    font-family: "Nanum Gothic", sans-serif;
+    line-height: 140%;
+    letter-spacing: -2.5%;
+}
+.rephoto {
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+.rephoto ul {
+    display: flex;
+}
+.rephoto li {
+    margin: 0 4px;
+}
+.reple {
+    color: #3e3e3e;
+    margin: 20px 0;
+}
+
+.recount {
+    display: flex;
+    align-items: center;
+    height: 24px;
+    font-size: 12px;
+    font-family: "Nanum Gothic", sans-serif;
+    color: #3e3e3e;
+}
+.recount span {}
+.recount p {
+    font-style: normal;
+    margin: 0 4px;
+}
+.recount img {
+    width: 14px;
+    height: 14px;
+    padding: 4px;
+    cursor: pointer;
+}
+.reBox li .line_a {
+    width: 100%;
+    height: 1px;
+    background-color: #c53d00;
+    opacity: 20%;
+}
+.reBox li:last-child .line_a {
+    display: none;
 }

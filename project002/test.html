@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>무한 반복 슬라이드 배경</title>
+</head>
+<body>
+    <div class="hero">
+        <div class="pagehero hero--whatsnew"> <!--minImg-->
+            <section class="section--in-viewport"> <!--ul-->
+                <div class="content_wrapper"> <!--li-->
+                    <div class="rich-text"> <!--div column-->
+                        <div class="wn-crisp"></div>
+                        <div class="wn-crisp"></div>
+                        <div class="wn-crisp"></div>
+                        <div class="wn-crisp"></div>
+                        <div class="wn-crisp"></div>
+                        <div class="wn-crisp"></div>
+                        <div class="wn-crisp"></div>
+                        <div class="wn-crisp"></div>
+                        <h1>What's New</h1>
+                    </div>
+                </div>
+            </section>
+        </div>   
+    </div>
+
+    <style>
+        .hero--whatsnew {
+            height: 25vw;
+            min-height: 16em;
+        }
+        .pagehero {
+            height: 40vw;
+            background: #EA002A;
+            color: #fff;
+            max-height: 30em;
+        }
+        .pagehero {
+            background: #fafafa;
+            height: 26vw;
+            min-height: 20em;
+            overflow: hidden;
+            text-align: center;
+            position: relative;
+        }
+        .pagehero::before {
+            content: '';
+            display: block;
+            position: absolute;
+            pointer-events: none;
+            left: 50%;
+            transform: translate(-50%, 0);
+            right: 0%;
+            bottom: -.75em;
+            z-index: 1;
+            border-right: 50vw solid #fff;
+            border-left: 50vw solid #fff;
+            border-bottom: 1em solid #fff;
+            border-top: 7vw solid transparent;
+            filter: drop-shadow(0px -0.25em 0px rgba(0, 0, 0, 0.2));
+        }
+        .hero--whatsnew section {
+            background: radial-gradient(circle at center, #ff7500 20%, #c53d00);
+            overflow: hidden;
+        }
+
+        /* .pagehero section, section.pagehero {
+            margin: 0;
+            background: transparent;
+        } */
+        .pagehero>section {
+            margin-top: 0;
+            height: 100%;
+        }
+        /* section {
+            margin: 0;
+        }
+        section {
+            margin: 2em 0;
+        } */
+        .pagehero .content_wrapper {
+            height: 100%;
+            white-space: nowrap;
+        }
+        /* .content_wrapper {
+            display: block;
+            max-width: 75em;
+            width: 94%;
+            width: calc(100% - 2em);
+            margin: 0 auto;
+        } */
+        /* .pagehero .content_wrapper::before {
+            content: '';
+            height: 100%;
+            display: inline-block;
+            vertical-align: middle;
+        } */
+        /* .hero--whatsnew .rich-text {
+            position: static;
+        } */
+        /* .pagehero .rich-text {
+            display: inline-block;
+            vertical-align: middle;
+            white-space: normal;
+        } */
+        @media (min-width: 48em) {
+            .wn-crisp:nth-child(1) {
+                left: -15%;
+            }
+            .wn-crisp:nth-child(2) {
+                left: 1%;
+            }
+            .wn-crisp:nth-child(3) {
+                left: 17%;
+            }
+            .wn-crisp:nth-child(4) {
+                left: 33%;
+            }
+            .wn-crisp:nth-child(5) {
+                left: 49%;
+            }
+            .wn-crisp:nth-child(6) {
+                left: 65%;
+            }
+            .wn-crisp:nth-child(7) {
+                left: 81%;
+            }
+            .wn-crisp:nth-child(8) {
+                left: 97%;
+            }
+        }
+        .wn-crisp:nth-child(1) {
+            /* left: -27%; */
+        }
+        /* @media (min-width: 48em) {
+            .wn-crisp {
+                background-size: auto 6.25vw;
+                animation-duration: 4s;
+            }
+        } */
+
+.wn-crisp:nth-child(2) {
+    /* left: 3%; */
+}
+.wn-crisp:nth-child(even) {
+    animation-direction: reverse;
+}
+        .wn-crisp {
+            position: absolute;
+            top: -10vw;
+            bottom: -30vw;
+            width: 35%;
+            animation: wn-crispanim 2s linear infinite;
+            background: url(img/chips_S.png) 0 0 / auto 12.5vw repeat-y;
+        }
+
+
+        
+/* 반응형 */
+@media (min-width: 48em) {
+    .wn-crisp {
+        background-size: auto 6.25vw;
+        animation-duration: 4s;
+    }
+}
+@keyframes wn-crispanim {
+    0% {transform:rotate(15deg) translate(0, -12.5vw);}
+    100% {transform:rotate(15deg) translate(0, 0vw);}
+}
+    </style>
+</body>
+</html>
