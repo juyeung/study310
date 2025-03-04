@@ -638,6 +638,7 @@ animation-direction: reverse;
 .cart_sub .total {
     display: flex;
     width: 240px;
+    align-items: center;
     justify-content: space-between;
     margin-bottom: 20px;
 }
@@ -650,8 +651,15 @@ animation-direction: reverse;
 .cart_sub .total .price {
     display: flex;
 }
-.cart_sub .total .price p {}
+.cart_sub .total .price p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .cart_sub .total .price p span {
+    font-size: 20px;
+    display: inline-block;
+    margin-right: 4px;
     font-weight: 600;
 }
 
@@ -922,6 +930,7 @@ animation-direction: reverse;
 .ing .sheetBar p {
     margin-bottom: 16px;
 }
+.ing .sheetBar ul {}
 .ing .sheetBar ul li {
     width: 486px;
     height: 28px;
@@ -1032,9 +1041,9 @@ animation: marquee 40s linear infinite;
 }
 .story_box {
     display: flex;
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
-    height: 600px;
+    height: auto;
     overflow: hidden;
 }
 .story_box>div {
@@ -1087,13 +1096,11 @@ animation: marquee 40s linear infinite;
 
 .img_box {
     display: flex;
-    align-items: flex-end;
+    align-items:flex-end;
     justify-content: center;
-    height: 100%;
 }
 .img_box img {
-    /* width: 100%;
-    max-width: 100%; */
+    text-align: center;
     height: 100%;
     max-height: 100%;
     position: relative;
@@ -1295,7 +1302,7 @@ animation: marquee 40s linear infinite;
 }
 .copyright h3 {
     font-size: 24px;
-    font-family: "roboto";
+    font-family: "cooper black";
     margin: 40px 0;
 }
 .copyright .sns {
@@ -1432,6 +1439,7 @@ animation: marquee 40s linear infinite;
 }
 .dt {
     width: 75%;
+    padding: 40px 0;
 }
 .dt .pic {
     display: flex;
@@ -1541,13 +1549,26 @@ animation: marquee 40s linear infinite;
     border-radius: 20px;
     background-color: #fff;
     color: #111;
-    font-size: 16px;
+    font-size: 12px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     margin-right: 16px;
+}
+.dt .pic .text .btn .count span {
+    display: inline-block;
     cursor: pointer;
 }
+.dt .pic .text .btn .count span:nth-child(1) {
+    padding: 0 20px;
+}
+.dt .pic .text .btn .count span:nth-child(2) {
+    font-size: 16px;
+}
+.dt .pic .text .btn .count span:nth-child(3) {
+    padding: 0 20px;
+}
+
 .dt .pic .text .btn .add {
     width: 140px;
     height: 40px;
@@ -1559,8 +1580,8 @@ animation: marquee 40s linear infinite;
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
     transition: all 0.5s;
+    cursor: pointer;
 }
 .dt .pic .text .btn .add:hover {
     color: #C10C1A;
@@ -1572,6 +1593,7 @@ animation: marquee 40s linear infinite;
 .dt .sheetBar {
     width: 486px;
     margin: 40px 0;
+    overflow: hidden;
 }
 .dt .sheetBar .txt {
     display: flex;
@@ -1872,3 +1894,123 @@ animation: marquee 40s linear infinite;
 .reBox li:last-child .line_a {
     display: none;
 }
+
+/* 장바구니 #################################################### */
+.cartPage {
+    padding: 140px 0;
+    width: 80%;
+    margin: 0 auto;
+}
+.cartPage h2 {
+    color: #C10C1A;
+    font-size: 40px;
+    font-family: 'cooper black';
+    margin: 40px 0;
+}
+.cartPage .listTitle {
+    width: 100%;
+    height: 60px;
+    border-radius: 30px;
+    background-color: #C10C1A;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cartPage .listTitle span {
+    font-size: 16px;
+    color: #fff;
+    font-family: "nanum gothic";
+    font-weight: 600;
+    text-align: center;
+    display: inline-block;
+    background-color: #009D81;
+}
+.cartPage .listTitle span:nth-child(1) {
+    width: 38%;
+}
+.cartPage .listTitle span:nth-child(2) {
+    width: 10%;
+}
+.cartPage .listTitle span:nth-child(3) {
+    width: 24%;
+}
+.cartPage .listTitle span:nth-child(4) {
+    width: 24%;
+}
+
+.cartPage ul {}
+.cartPage li {}
+.cartPage li .listBox {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.cartPage li .listBox .proBox {
+    width: 38%;
+    display: flex;
+    align-items: center;
+    background-color: #45AAE0;
+}
+.cartPage li .listBox i {
+    font-size: 20px;
+    color: #C10C1A;
+    margin: 0 40px;
+}
+
+.cartPage li .listBox .proImg {
+    display: flex;
+    align-items: center;
+    margin: 0 40px;
+}
+.cartPage li .listBox .proImg .imgBox {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #FFC700;
+    text-align: center;
+    margin-right: 40px;
+}
+.cartPage li .listBox .proImg .imgBox img {
+    height: 100%;
+}
+.cartPage li .listBox .proImg p {}
+
+.cartPage li .listBox>p {
+    width: 10%;
+    text-align: center;
+    background-color: #009D81;
+}
+
+.cartPage li .listBox .count {
+    width: 24%;
+    font-size: 16px;
+}
+.cartPage li .listBox .count .countBox {
+    display: flex;
+    align-items: center;
+    width: 80px;
+    height: 40px;
+    border: 1px solid #C10C1A;
+    border-radius: 20px;
+}
+.cartPage li .listBox .count .countBox span {
+    display: inline-block;
+    margin: 0 4px;
+    background-color: #009D81;
+}
+.cartPage li .listBox .count .countBox span i {
+    font-size: 12px;
+    color: #C10C1A;
+}
+.cartPage li .listBox .count .countBox span:nth-child(1) {}
+.cartPage li .listBox .count .countBox span:nth-child(2) {}
+.cartPage li .listBox .count .countBox span:nth-child(3) {}
+
+.cartPage .listBox .total {
+    width: 24%;
+}
+.cartPage .listBox .total p {}
+
+.cartPage .line_a {}
