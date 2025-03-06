@@ -286,7 +286,7 @@ animation-direction: reverse;
 .info01 {
     display: flex;
     width: 100%;
-    height: 850px;
+    height: 800px;
     background-color: #111;
 }
 .info01 .text {
@@ -327,7 +327,7 @@ animation-direction: reverse;
 .info02 {
     display: flex;
     width: 100%;
-    height: 850px;
+    height: 800px;
     background-color: #256D3B;
     background-image: url(img/cheese_bg.png);
     background-size: contain;
@@ -368,7 +368,7 @@ animation-direction: reverse;
 .info03 {
     display: flex;
     width: 100%;
-    height: 850px;
+    height: 800px;
     background-color: #0D385B;
     background-image: url(img/caramel_bg.png);
     background-size: contain;
@@ -1343,7 +1343,7 @@ animation: marquee 40s linear infinite;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    align-items: center;    
+    align-items: center;
 }
 .yt h3 {
     margin-bottom: 20px;
@@ -1372,10 +1372,16 @@ animation: marquee 40s linear infinite;
     font-size: 28px;
     color: #C10C1A;
 }
-.yt ul {
+.yt .con {
     width: calc(100% - 88px);
-    display: flex;
     overflow: hidden;
+    height: 550px;
+    position: relative;}
+.yt ul {
+    display: flex;
+    flex-wrap: nowrap;
+    position: absolute;
+    left: 0;
 }
 .yt li {
     margin-right: 16px;
@@ -1389,7 +1395,7 @@ animation: marquee 40s linear infinite;
     border-radius: 20px;
 }
 .yt li h4 {
-    font-size: 20px;
+    font-size: 16px;
     color: #111;
     margin-bottom: 8px;
 }
@@ -1677,10 +1683,20 @@ animation: marquee 40s linear infinite;
     display: flex;
     align-items: center;
 }
+.dt .more .moreCon {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+}
 .dt .list {
     width: 100%;
     height: auto;
     flex-wrap: nowrap;
+    position: absolute;
+    overflow:unset;
+    left: 0;
+    top: 0;
 }
 /* 리뷰 ############################################### */
 .review {
@@ -1895,6 +1911,144 @@ animation: marquee 40s linear infinite;
     display: none;
 }
 
+/* 로그인 ########################################## */
+.contents.loginBig{z-index: 999999;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background: radial-gradient(circle at center, #FFC700 20%, #FFA800);
+}
+.login {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+.login .loginBox {
+    display: flex;
+    width: 706px;
+    height: auto;
+    margin: 200px auto;
+    align-items: center;
+    justify-content: space-between;
+}
+.login .loginBox>img {
+    height: 100%;
+}
+.login .loginInp {
+    display: flex;
+    flex-direction: column;
+    width: 348px;
+}
+.login .loginInp p {
+    text-align: center;
+    font-size: 22px;
+    color: #C10C1A;
+    margin-bottom: 20px;
+}
+.login .loginInp p em {
+    font-family: "cooper black";
+    font-style: normal;
+    font-size: 28px;
+}
+
+.loginInp .id {width: 100%;
+    height: 44px;
+    background-color: #fff;
+    border-radius: 22px;
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+}
+.loginInp .id input {
+    margin-left: 20px;
+    font-size: 12px;
+    color: #333;
+    border: none;
+    caret-color: red;
+    width: 300px;
+    height: 40px;
+}
+.loginInp .id input::placeholder {color: #aaa;}
+.loginInp .id input:focus {outline: none;}
+
+.loginInp .pass{
+    width: 100%;
+    height: 44px;
+    background-color: #fff;
+    border-radius: 22px;
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+}
+.loginInp .pass input {
+    margin-left: 20px;
+    font-size: 12px;
+    color: #333;
+    border: none;
+    caret-color: red;
+    width: 300px;
+    height: 40px;
+}
+.loginInp .pass input::placeholder {color: #aaa;}
+.loginInp .pass input:focus {outline: none;}
+
+.loginInp span {
+    padding: 10px;
+    margin: 4px 0;
+    font-size: 12px;
+    color: #666;
+}
+
+.loginInp .loginBtn {
+    width: 100%;
+    height: 44px;
+    background-color: #111;
+    border-radius: 22px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.loginInp .loginBtn:hover {
+    background-color: #C10C1A;
+    /* border: 1px solid #111;
+    box-sizing: border-box; */
+}
+/* .loginInp .loginBtn:hover input {
+    color: #111;
+} */
+
+.loginInp .loginBtn input {
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    font-size: 14px;
+}
+#naver_id_login {
+    display: none;
+}
+
+/* 커스텀 네이버 로그인 버튼 스타일 */
+.custom_naver_login {
+    width: 100%;
+    height: 44px;
+    background-color: #00BF18;
+    border-radius: 22px;
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.loginInp .naver .custom_naver_login img {
+    margin: 0 8px;
+}
+
 /* 장바구니 #################################################### */
 .cartPage {
     padding: 140px 0;
@@ -1952,7 +2106,7 @@ animation: marquee 40s linear infinite;
     align-items: center;
     background-color: #45AAE0;
 }
-.cartPage li .listBox i {
+.cartPage li .listBox .proBox i {
     font-size: 20px;
     color: #C10C1A;
     margin: 0 40px;
@@ -1986,30 +2140,52 @@ animation: marquee 40s linear infinite;
 .cartPage li .listBox .count {
     width: 24%;
     font-size: 16px;
+    display: flex;
+    justify-content: center;
+    background-color: #45AAE0;
 }
 .cartPage li .listBox .count .countBox {
-    display: flex;
-    align-items: center;
-    width: 80px;
+    width: 120px;
     height: 40px;
     border: 1px solid #C10C1A;
     border-radius: 20px;
+    color: #111;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
 }
-.cartPage li .listBox .count .countBox span {
-    display: inline-block;
-    margin: 0 4px;
-    background-color: #009D81;
+.cartPage li .listBox .count .countBox p {
+    background-color: #23d180;
+    text-align: center;
+    width: 33.3333%;
 }
-.cartPage li .listBox .count .countBox span i {
+.cartPage li .listBox .count .countBox p i {
     font-size: 12px;
     color: #C10C1A;
+    cursor: pointer;
+    background-color: #009D81;
+    padding: 10px;
 }
-.cartPage li .listBox .count .countBox span:nth-child(1) {}
-.cartPage li .listBox .count .countBox span:nth-child(2) {}
-.cartPage li .listBox .count .countBox span:nth-child(3) {}
+
+/* ##################################### */
+
+
+.dt .pic .text .btn .count span:nth-child(1) {
+    padding: 0 20px;
+}
+.dt .pic .text .btn .count span:nth-child(2) {
+    font-size: 16px;
+}
+.dt .pic .text .btn .count span:nth-child(3) {
+    padding: 0 20px;
+}
+/* ################################### */
 
 .cartPage .listBox .total {
     width: 24%;
+    background-color: #009D81;
+    text-align: center;
 }
 .cartPage .listBox .total p {}
 
