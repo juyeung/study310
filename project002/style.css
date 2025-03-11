@@ -460,30 +460,6 @@ animation-direction: reverse;
 .list .prolink .imgBox img {
     height: 100%;
 }
-/* .list li:nth-child(1) .imgBox {
-    background: url(img/pringles_BBQ.png) center center / contain no-repeat;
-}
-.list li:nth-child(2) .imgBox {
-    background: url(img/pringles_CARAMEL.png) center center / contain no-repeat;
-}
-.list li:nth-child(3) .imgBox {
-    background: url(img/pringles_CHEESE.png) center center / contain no-repeat;
-}
-.list li:nth-child(4) .imgBox {
-    background: url(img/pringles_GARLIC.png) center center / contain no-repeat;
-}
-.list li:nth-child(5) .imgBox {
-    background: url(img/pringles_HOT.png) center center / contain no-repeat;
-}
-.list li:nth-child(6) .imgBox {
-    background: url(img/pringles_ROSE.png) center center / contain no-repeat;
-}
-.list li:nth-child(7) .imgBox {
-    background: url(img/pringles_AMERICAN.png) center center / contain no-repeat;
-}
-.list li:nth-child(8) .imgBox {
-    background: url(img/pringles_KOREAN.png) center center / contain no-repeat;
-} */
 
 .list .prolink .imgBox p {
     color: #fff;
@@ -540,12 +516,12 @@ animation-direction: reverse;
     font-weight: 400;
     font-size: 14px;
     transition: all 0.3s;
+    cursor: pointer;
 }
 .list li .add:hover {
     background-image: url(img/ribbonButton_W.png);
 }
 .list li .add:hover p {
-    cursor: pointer;
     color: #C10C1A;
     font-weight: 400;
 }
@@ -586,6 +562,7 @@ animation-direction: reverse;
     width: 240px;
     height: auto;
     justify-content: space-between;
+    margin: 20px 0;
 }
 .cart_sub li .cartpro {
     display: flex;
@@ -598,7 +575,6 @@ animation-direction: reverse;
     height: 60px;
     border-radius: 50%;
     overflow: hidden;
-    /* background: url(img/pringles_AMERICAN.png) center center / cover no-repeat; */
     border: 1px solid #bbb;
     box-sizing: border-box;
 }
@@ -606,6 +582,7 @@ animation-direction: reverse;
     width: 100%;
 }
 .cart_sub li .txt {
+    width: 148px;
     margin-left: 8px;
 }
 .cart_sub li .txt h4 {
@@ -1912,12 +1889,12 @@ animation: marquee 40s linear infinite;
 }
 
 /* 로그인 ########################################## */
-.contents.loginBig{z-index: 999999;
+/* .contents.loginBig{z-index: 999999;
     height: 100vh;
     width: 100%;
     position: relative;
     background: radial-gradient(circle at center, #FFC700 20%, #FFA800);
-}
+} */
 .login {
     width: 100%;
     height: 100%;
@@ -2051,9 +2028,10 @@ animation: marquee 40s linear infinite;
 
 /* 장바구니 #################################################### */
 .cartPage {
-    padding: 140px 0;
+    padding: 80px 0;
     width: 80%;
     margin: 0 auto;
+    background-color: #fff;
 }
 .cartPage h2 {
     color: #C10C1A;
@@ -2063,8 +2041,8 @@ animation: marquee 40s linear infinite;
 }
 .cartPage .listTitle {
     width: 100%;
-    height: 60px;
-    border-radius: 30px;
+    height: 48px;
+    border-radius: 24px;
     background-color: #C10C1A;
     display: flex;
     justify-content: space-between;
@@ -2077,7 +2055,6 @@ animation: marquee 40s linear infinite;
     font-weight: 600;
     text-align: center;
     display: inline-block;
-    background-color: #009D81;
 }
 .cartPage .listTitle span:nth-child(1) {
     width: 38%;
@@ -2092,8 +2069,11 @@ animation: marquee 40s linear infinite;
     width: 24%;
 }
 
-.cartPage ul {}
-.cartPage li {}
+.cartPage ul {
+}
+.cartPage li {
+    margin: 20px 0;
+}
 .cartPage li .listBox {
     width: 100%;
     display: flex;
@@ -2104,7 +2084,6 @@ animation: marquee 40s linear infinite;
     width: 38%;
     display: flex;
     align-items: center;
-    background-color: #45AAE0;
 }
 .cartPage li .listBox .proBox i {
     font-size: 20px;
@@ -2134,7 +2113,6 @@ animation: marquee 40s linear infinite;
 .cartPage li .listBox>p {
     width: 10%;
     text-align: center;
-    background-color: #009D81;
 }
 
 .cartPage li .listBox .count {
@@ -2142,7 +2120,6 @@ animation: marquee 40s linear infinite;
     font-size: 16px;
     display: flex;
     justify-content: center;
-    background-color: #45AAE0;
 }
 .cartPage li .listBox .count .countBox {
     width: 120px;
@@ -2156,7 +2133,6 @@ animation: marquee 40s linear infinite;
     flex-wrap: wrap;
 }
 .cartPage li .listBox .count .countBox p {
-    background-color: #23d180;
     text-align: center;
     width: 33.3333%;
 }
@@ -2164,29 +2140,113 @@ animation: marquee 40s linear infinite;
     font-size: 12px;
     color: #C10C1A;
     cursor: pointer;
-    background-color: #009D81;
     padding: 10px;
 }
 
-/* ##################################### */
-
-
-.dt .pic .text .btn .count span:nth-child(1) {
-    padding: 0 20px;
-}
-.dt .pic .text .btn .count span:nth-child(2) {
-    font-size: 16px;
-}
-.dt .pic .text .btn .count span:nth-child(3) {
-    padding: 0 20px;
-}
-/* ################################### */
-
 .cartPage .listBox .total {
     width: 24%;
-    background-color: #009D81;
     text-align: center;
 }
 .cartPage .listBox .total p {}
 
-.cartPage .line_a {}
+.cartPage li .line_a {
+    width: 100%;
+    height: 1px;
+    background-color: #c53d00;
+    opacity: 20%;
+    margin-top: 20px;
+}
+.cartPage li:last-child .line_a {
+    display: none;
+}
+
+.cartPage .check {
+    font-size: 16px;
+    font-family: "nanum gothic";
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+.cartPage h3 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #C10C1A;
+    margin-top: 80px;
+}
+.cartPage .line {
+    width: 100%;
+    height: 2px;
+    background-color: #c53d00;
+    margin: 4px 0;
+}
+.cartPage .order {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+.cartPage .del {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+.cartPage .cp {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+.cartPage .cp .cpcheck {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cartPage .cp .cpcheck p {
+    width: 114px;
+    height: 40px;
+    background: url(img/coupon_Red.png) 0 0 / cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    transition: all 0.3s;
+    font-size: 14px;
+    margin: 0 20px;
+}
+.cartPage .cp .cpcheck p:hover {
+    background: url(img/coupon_White.png) 0 0 / cover no-repeat;
+    color: #C10C1A;
+}
+.cartPage .cp .cpcheck span {
+    color: #C10C1A;
+}
+
+.cartPage .line_a {
+    width: 100%;
+    height: 1px;
+    background-color: #c53d00;
+    opacity: 20%;
+    margin-top: 20px;
+}
+.cartPage .chout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    font-size: 20px;
+}
+.cartPage>p {
+    width: 600px;
+    height: 48px;
+    text-align: center;
+    margin: 40px auto;
+    border-radius: 24px;
+    background-color: #C10C1A;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    cursor: pointer;
+    font-weight: 600;
+}
