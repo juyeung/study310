@@ -2,7 +2,7 @@
 $(document).ready(function(){
     // 실행문
 
-    // product 제품페이지 안에 enjoy리스트
+    // product 제품페이지 안에 enjoy리스트 슬라이드
     let num = 0;
     $('.yt').children('.leftbtn').click(function(){
     let maxNum = $('.yt').find('.con > ul > li').length - 4;
@@ -20,7 +20,7 @@ $(document).ready(function(){
     })
 
 
-    // pro_d 제품상세페이지 안에 추천리스트
+    // pro_d 제품상세페이지 안에 추천리스트 슬라이드
     $('.more').children('.leftbtn').click(function(){
         let maxNum = $('.more').find('.moreCon > ul > li').length - 4;
         if(num<maxNum) num++;
@@ -38,7 +38,7 @@ $(document).ready(function(){
 
 
 
-    // 장바구니 추가
+    // 장바구니 리스트 추가삭제
     let cart = 0;
 
     $('.list .add').click(function(){
