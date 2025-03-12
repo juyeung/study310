@@ -42,33 +42,6 @@ $(document).ready(function(){
     let cart = 0;
 
     $('.list .add').click(function(){
-
-        let count = $('.cart_sub ul li').length;
-            $('.util').find('.num').text(count+1);
-            $('.total>div').eq(0).find('span').text(count+1)
-
-    })
-
-    // 장바구니를 클릭시 장바구니가 나타난다.
-
-    // let aa=0
-    
-    // $('.cart').children('h2').click(function(){
-
-    //     aa++;
-    //     if(aa==2)aa=0;
-    //     if(aa==1){
-    //     $('.cart').addClass('on')
-    // } else{
-    //     $('.cart').removeClass('on')
-    // }  
-    // })
-
-    // info의 리스를 클릭했을때,
-    // img를 불러오고
-    // p의 text를 불러와라
-
-    $('.list .add').click(function(){
         let text = $(this).closest('li').find('h3').text();
         console.log(text);
 
@@ -81,13 +54,17 @@ $(document).ready(function(){
 
         $('<li><a href=""><div class="cartpro"><div class="imgBox"><img src="'+img+'" alt=""></div><div class="txt"><h4>'+text+'</h4><p>3,330원 x <span>1</span></p></div></div></a><div class="close"><img src="img/close_01.png" alt=""></div></li>').appendTo('.cart_sub ul')
 
+        let count = $('.cart_sub ul li').length;
+        $('.util').find('.num').text(count);
+        $('.total>div').eq(0).find('span').text(count)
+
         // cartList의 span을 클릭했을때, li가 사라져라.
         $('.cart_sub .close').click(function(){
             $(this).closest('li').remove();
 
             let count = $('.cartList ul li').length;
             $('.util').find('.num').text(count);
-            $('.total>div').eq(0).find('span').text(count)
+            $('.total>div').eq(0).find('span').text(count);
         })
     })
 

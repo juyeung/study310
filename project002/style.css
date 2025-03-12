@@ -447,10 +447,10 @@ animation-direction: reverse;
 .list li .prolink {
     text-align: center;
 }
-.list li .prolink.on {
+/* .list li .prolink.on {
     outline: 4px solid #C10C1A;
     outline-offset: 10px;
-}
+} */
 .list .prolink .imgBox {
     width: 200px;
     height: 240px;
