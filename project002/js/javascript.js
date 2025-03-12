@@ -52,13 +52,16 @@ $(document).ready(function(){
         console.log(img);
         // $('.cartList').find('img').attr({'src':img});
 
-        $('<li><a href=""><div class="cartpro"><div class="imgBox"><img src="'+img+'" alt=""></div><div class="txt"><h4>'+text+'</h4><p>3,330원 x <span>1</span></p></div></div></a><div class="close"><img src="img/close_01.png" alt=""></div></li>').appendTo('.cart_sub ul')
+        let cartsubItem = '<li><a href=""><div class="cartpro"><div class="imgBox"><img src="'+img+'" alt=""></div><div class="txt"><h4>'+text+'</h4><p>3,330원 x <span>1</span></p></div></div></a><div class="close"><img src="img/close_01.png" alt=""></div></li>';
+        let cartpageItem = '<li><div class="listBox"><div class="proBox"><div class="close"><i class="fa-regular fa-circle-xmark"></i></div><div class="proImg"><div class="imgBox"><img src="'+img+'" alt=""></div><p>'+text+'</p></div></div><p>3,330원</p><div class="count"><div class="countBox"><p><i class="fa-solid fa-minus"></i></p><p>00</p><p><i class="fa-solid fa-plus"></i></p></div></div><div class="total"><p><span>3,330</span>원</p></div><div class="line_a"></div></li>';
+        $('.cart_sub ul').append(cartsubItem);
+        $('.cartPage ul').append(cartpageItem);
 
         let count = $('.cart_sub ul li').length;
         $('.util').find('.num').text(count);
         $('.total>div').eq(0).find('span').text(count)
 
-        // cartList의 span을 클릭했을때, li가 사라져라.
+        // li가 사라져라.
         $('.cart_sub .close').click(function(){
             $(this).closest('li').remove();
 
@@ -66,6 +69,64 @@ $(document).ready(function(){
             $('.util').find('.num').text(count);
             $('.total>div').eq(0).find('span').text(count);
         })
+        $('.cartPage .close').click(function(){
+            $(this).closest('li').remove();
+        })
+        
     })
+
+    // 페이지 연결
+    // gnb 두번째 li를 클릭했을때, product에 on이 붙어라
+    $('.gnb li').eq(1).click(function(e){
+        e.preventDefault()
+        $('.contents').removeClass('loginBig')
+        $('.contents>div').removeClass('on')
+        $('.contents>div').eq(1).addClass('on')
+    })
+
+    // logo를 클릭했을때, main에 on이 붙어라
+    $('.logo').click(function(e){
+        e.preventDefault()
+        $('.contents').removeClass('loginBig')
+        $('.contents>div').removeClass('on')
+        $('.contents>div').eq(0).addClass('on')
+    })
+
+    $('.login h2').click(function(){
+        $('.contents').removeClass('loginBig')
+        $('.contents>div').removeClass('on')
+        $('.contents>div').eq(0).addClass('on')
+    })
+
+    // util 첫번째 li를 클릭했을때, cart 에 on이 붙어라
+    $('.util li').eq(0).click(function(e){
+        e.preventDefault()
+        $('.contents>div').removeClass('on')
+        $('.cartPage').addClass('on')
+    })
+
+    // ultil 두번째 li를 클릭했을때, login 에 on이 붙어라
+    $('.util li').eq(1).click(function(e){
+        e.preventDefault()
+        $('.contents').addClass('loginBig')
+        $('.contents>div').removeClass('on')
+        $('.contents>div').eq(3).addClass('on')
+    })
+
+    // main 에 pro의 li들을 클릭했을때, product 에 on이 붙어라
+    $('.pro_list li').click(function(){
+        $('.contents').removeClass('loginBig')
+        $('.contents>div').removeClass('on')
+        $('.contents>div').eq(1).addClass('on')
+    })
+
+    // product의 li들을 클릭했을때, pro_d 에 on이 붙어라
+    $('.prolink').click(function(e){
+        e.preventDefault()
+        $('.contents').removeClass('loginBig')
+        $('.contents>div').removeClass('on')
+        $('.contents>div').eq(2).addClass('on')
+    })
+    
 
 }) // 제이쿼리 끝.

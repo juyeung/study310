@@ -1312,7 +1312,7 @@ animation: marquee 40s linear infinite;
     text-align: center;
     font-size: 40px;
     font-family: 'cooper black';
-    margin: 80px 0;
+    margin-bottom: 80px;
 }
 .yt {
     width: 80%;
@@ -1380,7 +1380,7 @@ animation: marquee 40s linear infinite;
     width: 246px;
     display: flex;
     flex-direction: column;
-    padding: 16px 10px;
+    padding: 16px 4px;
     box-sizing: border-box;
 }
 .yt li .txt .profileBox {
@@ -1889,12 +1889,12 @@ animation: marquee 40s linear infinite;
 }
 
 /* 로그인 ########################################## */
-/* .contents.loginBig{z-index: 999999;
+.contents.loginBig{z-index: 999999;
     height: 100vh;
     width: 100%;
     position: relative;
     background: radial-gradient(circle at center, #FFC700 20%, #FFA800);
-} */
+}
 .login {
     width: 100%;
     height: 100%;
@@ -1907,6 +1907,9 @@ animation: marquee 40s linear infinite;
     margin: 200px auto;
     align-items: center;
     justify-content: space-between;
+}
+.login h2 {
+    cursor: pointer;
 }
 .login .loginBox>img {
     height: 100%;
@@ -2028,7 +2031,7 @@ animation: marquee 40s linear infinite;
 
 /* 장바구니 #################################################### */
 .cartPage {
-    padding: 80px 0;
+    padding: 120px 0;
     width: 80%;
     margin: 0 auto;
     background-color: #fff;
@@ -2079,13 +2082,15 @@ animation: marquee 40s linear infinite;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 .cartPage li .listBox .proBox {
     width: 38%;
     display: flex;
     align-items: center;
 }
-.cartPage li .listBox .proBox i {
+.carPage li .listBox .proBox .close {}
+.cartPage li .listBox .proBox .close i {
     font-size: 20px;
     color: #C10C1A;
     margin: 0 40px;
@@ -2108,7 +2113,9 @@ animation: marquee 40s linear infinite;
 .cartPage li .listBox .proImg .imgBox img {
     height: 100%;
 }
-.cartPage li .listBox .proImg p {}
+.cartPage li .listBox .proImg p {
+    color: #C10C1A;
+}
 
 .cartPage li .listBox>p {
     width: 10%;
@@ -2149,7 +2156,7 @@ animation: marquee 40s linear infinite;
 }
 .cartPage .listBox .total p {}
 
-.cartPage li .line_a {
+.carPage ul li .line_a {
     width: 100%;
     height: 1px;
     background-color: #c53d00;
