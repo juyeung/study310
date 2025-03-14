@@ -433,6 +433,7 @@ animation-direction: reverse;
     overflow: hidden;
     display: flex;
     flex-wrap: wrap;
+    background-color: #45AAE0;
 }
 .list li {
     width: 240px;
@@ -542,14 +543,15 @@ animation-direction: reverse;
 
 /* side ################################################# */
 .side {
-    width: 25%;
+    width: 240px;
     padding: 40px 0;
+    margin-left: 40px;
 }
 /* cart_sub ########################################### */
 .side .cart_sub {
     margin-bottom: 80px;
 }
-.cart_sub h3 {
+.side .cart_sub h3 {
     color: #C10C1A;
     font-size: 20px;
     margin-bottom: 40px;
@@ -557,17 +559,17 @@ animation-direction: reverse;
 .side ul {
     margin-bottom: 16px;
 }
-.cart_sub li {
+.side .cart_sub li {
     display: flex;
     width: 240px;
     height: auto;
     justify-content: space-between;
     margin: 20px 0;
 }
-.cart_sub li .cartpro {
+.side .cart_sub li .cartpro {
     display: flex;
 }
-.cart_sub li .imgBox {
+.side .cart_sub li .imgBox {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -578,30 +580,30 @@ animation-direction: reverse;
     border: 1px solid #bbb;
     box-sizing: border-box;
 }
-.cart_sub li .imgBox img {
+.side .cart_sub li .imgBox img {
     width: 100%;
 }
-.cart_sub li .txt {
+.side .cart_sub li .txt {
     width: 148px;
     margin-left: 8px;
 }
-.cart_sub li .txt h4 {
+.side .cart_sub li .txt h4 {
     color: #C10C1A;
     font-family: "Roboto";
     font-size: 14px;
     margin-bottom: 4px;
 }
-.cart_sub li .txt p {
+.side .cart_sub li .txt p {
     color: #3e3e3e;
     font-family: 'nanum gothic';
     font-weight: normal;
 }
-.cart_sub li .txt p span {
+.side .cart_sub li .txt p span {
     color: #3e3e3e;
     font-family: 'nanum gothic';
     font-weight: normal;
 }
-.cart_sub li .close {
+.side .cart_sub li .close {
     width: 18px;
     height: 18px;
     background-color: #C10C1A;
@@ -610,42 +612,42 @@ animation-direction: reverse;
     align-items: center;
     cursor: pointer;
 }
-.cart_sub li .close img {}
+.side .cart_sub li .close img {}
 
-.cart_sub .total {
+.side .cart_sub .total {
     display: flex;
     width: 240px;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 20px;
 }
-.cart_sub .total p {
+.side .cart_sub .total p {
     color: #C10C1A;
     font-family: "Roboto";
     font-size: 16px;
     font-weight: 600;
 }
-.cart_sub .total .price {
+.side .cart_sub .total .price {
     display: flex;
 }
-.cart_sub .total .price p {
+.side .cart_sub .total .price p {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.cart_sub .total .price p span {
+.side .cart_sub .total .price p span {
     font-size: 20px;
     display: inline-block;
     margin-right: 4px;
     font-weight: 600;
 }
 
-.cart_sub .btn {
+.side .cart_sub .btn {
     display: flex;
     width: 240px;
     justify-content: space-between;
 }
-.cart_sub .btn .coupon a {
+.side .cart_sub .btn .coupon a {
     width: 114px;
     height: 40px;
     background: url(img/coupon_Red.png) 0 0 / cover no-repeat;
@@ -655,12 +657,12 @@ animation-direction: reverse;
     color: #fff;
     transition: all 0.3s;
 }
-.cart_sub .btn .coupon a:hover {
+.side .cart_sub .btn .coupon a:hover {
     background: url(img/coupon_White.png) 0 0 / cover no-repeat;
     color: #C10C1A;
 }
 
-.cart_sub .btn .checkout a {
+.side .cart_sub .btn .checkout a {
     width: 114px;
     height: 40px;
     background-color: #C10C1A;
@@ -670,7 +672,7 @@ animation-direction: reverse;
     color: #fff;
     transition: all 0.3s;
 }
-.cart_sub .btn .checkout a:hover {
+.side .cart_sub .btn .checkout a:hover {
     color: #C10C1A;
     background-color: #fff;
     border: 1px solid #C10C1A;
@@ -1420,6 +1422,7 @@ animation: marquee 40s linear infinite;
     padding: 80px 0;
     font-family: "nanum gothic";
 }
+
 .dt {
     width: 75%;
     padding: 40px 0;
@@ -2185,7 +2188,7 @@ animation: marquee 40s linear infinite;
     background-color: #c53d00;
     margin: 4px 0;
 }
-.cartPage .order {
+.cartPage .price {
     display: flex;
     justify-content: space-between;
     align-items: center;
