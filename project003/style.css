@@ -1,0 +1,256 @@
+/* 언어설정 */
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@font-face {
+    font-family: 'Cafe24Shiningstar';
+    src: url('font/Cafe24Shiningstar.woff2') format('woff2'),
+        url('font/Cafe24Shiningstar.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    /* font-display: swap; */
+}
+@font-face {
+    font-family: 'Athletic';
+    src: url('font/Athletic.woff2') format('woff2'),
+        url('font/Athletic.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Quentin';
+    src: url('font/Quentin.woff2') format('woff2'),
+        url('font/Quentin.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'S-Core Dream 3';
+    src: url('font/S-CoreDream-3Light.woff2') format('woff2'),
+        url('font/S-CoreDream-3Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'S-Core Dream 6';
+    src: url('font/S-CoreDream-6Bold.woff2') format('woff2'),
+        url('font/S-CoreDream-6Bold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* resetCSS */
+* {
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+ul,ol {
+    list-style: none;
+}
+img {
+    border: none;
+    vertical-align: bottom;
+}
+/* logo */
+.logo {
+    width: 60px;
+    height: 53px;
+    position: fixed;
+    top: 20px;
+    left: 50px;
+    z-index: 999;
+    background-image: url(img/logo_black.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+}
+/* wrap설정 */
+#wrap {
+    position: relative;
+    perspective: 800px;
+}
+
+/* navi설정 */
+nav {
+    position: fixed;
+    width: 150px;
+    left: 50px;
+    top: 50%;
+    z-index: 999;
+    margin-top: -125px;
+}
+
+nav ul {}
+nav li {
+    width: 150px;
+    height: 50px;
+    font-family: "Anton", sans-serif;
+    transition: all 0.8s;
+    cursor: pointer;
+    position: relative;
+}
+nav li:hover .dot{
+    opacity: 0;
+}
+nav li:hover p {
+    opacity: 1;
+}
+nav li.on p{
+    opacity: 1;
+}
+nav li.on .dot {
+    opacity: 0;
+}
+nav .dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #b9b9b6;
+    opacity: 1;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -8px;
+}
+nav p {
+    font-size: 20px;
+    opacity: 0;
+    position: absolute;
+    color: #66655d;
+    top: 50%;
+    left: 0;
+    margin-top: -15px;
+}
+
+/* section설정 */
+#wrap>div {
+    width: 100%;
+    height: 100vh;
+    background-color:#fbfbfa;
+}
+
+/* 영화소개 */
+.box1 {
+    color: #66655d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box1 .txt {}
+.box1 .txt .txt01 {
+    margin-bottom: 20px;
+}
+.box1 .txt .txt01 {}
+.box1 .txt .txt01 em {
+    font-size: 40px;
+    font-family: 'Cafe24Shiningstar';
+    font-style: normal;
+    color: #111;
+}
+.box1 .txt .txt01 p {
+    font-size: 16px;
+    line-height: 140%;
+}
+.box1 .txt .txt01 b {
+    font-size: 20px;
+    font-family: 'S-Core Dream 6';
+    color: #111;
+    line-height: 1.5;
+}
+.box1 .txt .txt02 p {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+.box1 .txt .btn {}
+.box1 .txt .btn p {
+    font-size: 12px;
+    color: #fff;
+    margin: 16px 0;
+    border-radius: 2px;
+    width: 115px;
+    height: 40px;
+    background-color: #66655d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.box1 img {
+    height: 826px;
+}
+
+/* 인물소개 */
+.box2 {
+    overflow: hidden;
+    position: relative;
+}
+.box2 img {
+    position: absolute;
+    animation: bgani 1.5s ease-in-out forwards;
+}
+.box2 .bg {
+    left: -50px;
+    width: 1970px;
+    height: 1080px;
+}
+@keyframes bgani {
+    0% {transform: translateX(0);}
+    100% {transform: translateX(-50px);}
+}
+.box2 .topBox {
+    transform-origin: left top;
+    transform: rotate(15deg);
+}
+.box2 .topBox>div {
+    width: 2000px;
+    height: 500px;
+    position: absolute;
+    top: -500px;
+    left: 0;
+    background-color: #fbfbfa;
+    animation: line1 1s ease-out forwards;
+}
+
+@keyframes line1 {
+    0% {transform: translateX(100%);}
+    100% {transform: translateX(0);}
+}
+@keyframes line2 {
+    0% {transform: translateX(-100%);}
+    100% {transform: translateX(0);}
+}
+.box2 .bottomBox {
+    transform-origin: left top;
+    transform: rotate(15deg);
+}
+.box2 .bottomBox>div {
+    width: 2000px;
+    height: 500px;
+    position: absolute;
+    background-color: #fbfbfa;
+    top: 600px;
+    left: 0;
+    background-color: antiquewhite;
+    animation: line2 1s ease-out forwards;
+}
+
+/* 갤러리 */
+.box3 {
+    background-color:plum;
+}
+.box4 {
+    background-color:greenyellow;
+}
+.box5 {
+    background-color:orange;
+}
