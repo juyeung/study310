@@ -602,13 +602,13 @@ nav p {
 .box4 .videoBox .vid {
     width: 100%;
     height: 56vh;
-    background-color: aqua;
     position: absolute;
     top: 18vh;
     left: 50%;
     transform: translateX(-50%);
     border: 5px solid #111;
     box-sizing: border-box;
+    background-color: #111;
 }
 .box4 .videoBox .title {
     position: absolute;
@@ -621,28 +621,74 @@ nav p {
     align-items: center;
 }
 .box4 .videoBox .title p {
+    padding: 0 8vw;
     font-size: 28px;
     color: #fff;
     font-family: 'S-Core Dream 6';
 }
 
+/* 비디오 썸네일 */
 .box4 .thum {
-    float: right;
-    width: 24%;
+    max-width: 467px;
     height: 90%;
-    background-image: url(img/video_thum.png);
+    position: absolute;
+    top: 5%;
+    right: 1%;
 }
-.box4 .thum01 {
-    /* position: fixed; */
-    overflow: hidden;
-    clip-path: polygon(12.5% 2%, 92% 16%, 100% 100%, 0% 100%);
+.thum>img {
+    top: 0;
+    left: 0;
 }
-.thum img {
+.thum .thum01 img{
     transition: all 0.5s;
     width: 100%;
 }
+.box4 .thum01 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    clip-path: polygon(13% 3%, 89% 16.5%, 88.5% 51.5%, 11.5% 59.5%);
+}
 .thum01:hover img {transform: scale(1.2);}
+.thum .thum02 img{
+    transition: all 0.5s;
+    width: 100%;
+}
+.box4 .thum02 {
+    position: absolute;
+    top: 173px;
+    left: 0;
+    overflow: hidden;
+    clip-path: polygon(8.5% 32%, 90% 10%, 91% 75%, 9% 67%);
+}
+.thum02:hover img {transform: scale(1.2);}
+.thum .thum03 img{
+    transition: all 0.5s;
+    width: 100%;
+}
+.box4 .thum03 {
+    position: absolute;
+    top: 414px;
+    left: 0;
+    overflow: hidden;
+    clip-path: polygon(7.5% 4%, 95.5% 16%, 96.5% 54%, 10% 75%);
+}
+.thum03:hover img {transform: scale(1.2);}
+.thum .thum04 img{
+    transition: all 0.5s;
+    width: 100%;
+}
+.box4 .thum04 {
+    position: absolute;
+    top: 579px;
+    left: 0;
+    overflow: hidden;
+    clip-path: polygon(5% 27%, 92.5% 4%, 94% 73%, 5% 64%);
+}
+.thum04:hover img {transform: scale(1.2);}
 
+/* 비디오 오브젝트 */
 .box4 .obj {
     width: 100%;
     height: 100vh;
@@ -652,9 +698,9 @@ nav p {
     position: absolute;
 }
 .box4 .obj .obj1 img:nth-child(1) {
-    bottom: 10%;
-    left: 8%;
-    width: 14vw;
+    bottom: 5%;
+    left: 4%;
+    width: 16vw;
 }
 .box4 .obj .obj1 img:nth-child(2) {
     left: 24%;
@@ -690,13 +736,140 @@ nav p {
     transform: rotate(-15deg);
 }
 
-.box4 .obj .obj3 img:nth-child(1) {}
-.box4 .obj .obj3 img:nth-child(2) {}
-.box4 .obj .obj3 img:nth-child(3) {}
-.box4 .obj .obj3 img:nth-child(4) {}
-.box4 .obj .obj3 img:nth-child(5) {}
+.box4 .obj .obj3 img {
+    width: 5vw;
+}
+.box4 .obj .obj3 img:nth-child(1) {
+    top: 2%;
+    right: 23%;
+}
+.box4 .obj .obj3 img:nth-child(2) {
+    top: 10%;
+    left: 23%;
+    transform: rotate(-15deg);
+}
+.box4 .obj .obj3 img:nth-child(3) {
+    bottom: 24%;
+    left: 5%;
+    transform: rotate(-15deg);
+}
+.box4 .obj .obj3 img:nth-child(4) {
+    bottom: 20%;
+    left: 17%;
+    transform: rotate(15deg);
+}
+.box4 .obj .obj3 img:nth-child(5) {
+    right: 20%;
+    top: 42%;
+    transform: rotate(15deg);
+}
 
 /* ost */
 .box5 {
-    background-color:orange;
+    position: relative;
+    overflow: hidden;
+}
+.box5 .txt {
+    width: 723px;
+    text-align: center;
+    margin: 0 auto;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    margin-left: -361px;
+}
+.box5 .txt p:nth-child(1) {
+    font-size: 90px;
+    font-family: 'Quentin';
+    line-height: 140%;
+    letter-spacing: -2.5;
+    margin-bottom: 8px;
+    width: 723px;
+}
+.box5 .txt p:nth-child(2) {
+    font-size: 20px;
+    font-family: 'S-Core Dream 6';
+    margin-bottom: 20px;
+}
+.box5 .txt p:nth-child(3) {
+    font-size: 14px;
+    font-family: 'S-Core Dream 3';
+}
+.box5 .listBox {
+    color: #fff;
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+.box5 .listBox>div {
+    width: 158px;
+    height: 320px;
+    margin: 0 8px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.3);
+}
+.box5 .listBox>div img {
+    transition: all 1.5s;
+}
+.box5 .listBox>div:hover img {
+    transform: scale(1.2);
+}
+.box5 .listBox .title {
+    width: 300px;
+    height: 40px;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    margin-top: 10px;
+    margin-left: -10px;
+    transform: rotate(90deg);
+    transform-origin: 0 0;
+}
+.box5 .listBox .title p {
+    font-size: 16px;
+    font-family: 'S-Core Dream 6';
+    float: left bottom;
+}
+.box5 .listBox .title span {
+    font-size: 14px;
+    font-family: 'S-Core Dream 3';
+}
+.box5 .listBox>div>p{
+    font-size: 20px;
+    font-family: 'Athletic';
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+.box5 .lizerBox {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box5 .lizerBox .play {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: #e32b30;
+}
+.box5 .lizerBox .vlizer {
+    width: 800px;
+    height: 150px;
+    margin: 0 40px;
+}
+.box5 .lizerBox .sound {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: cadetblue;
 }

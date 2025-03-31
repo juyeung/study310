@@ -21,8 +21,8 @@ $(document).ready(function(){
 
         $('html,body').stop().animate({'scrollTop':divot},800)
 
-        // 두 번째 li 클릭시 nav의 색을 #fff로 변경
-        if ($(this).index() === 1) {
+        // 두 번째 li 클릭시 nav의 색을 변경
+        if ($(this).index() >= 1 && $(this).index() <= 3) {
             $("nav p").css("color", "#fff");
             $("nav .dot").css("background-color", "#fff");  // 두 번째 li 클릭 시
         } else {
@@ -100,6 +100,45 @@ $(document).ready(function(){
         }
         $("body").css("overflow", "auto");
     });
+
+    // 유튜브 영상 불러오기
+    const videos = {
+        "thum01": { id: "C0EZ09az1k4", title: "슬램덩크 오프닝한국판 너에게로 가는길" },
+        "thum02": { id: "o24BBVXEs4Y", title: "보고 또 봐도 가슴이 울리는 명작! 슬램덩크 한방에 몰아보기 (애니리뷰) (결말포함)" },
+        "thum03": { id: "nhjdgKVEa_g", title: "[더 퍼스트 슬램덩크 THE FIRST SLAM DUNK] 일본 The First 절찬상영중 예고편: 2023.01" },
+        "thum04": { id: "O0Bpy4Kfw-U", title: "[더 퍼스트 슬램덩크] 확대 상영 기념 스페셜 영상" }
+    };
+
+    $(".vid").html('<iframe width="100%" height="100%" src="https://www.youtube.com/embed/' + videos.thum04.id + '" frameborder="0" allowfullscreen></iframe>');
+    $(".videoBox .title p").text(videos.thum04.title);
+
+    $.each(videos, function (key, video) {
+        $("." + key).click(function () {
+            $(".vid").html('<iframe width="100%" height="100%" src="https://www.youtube.com/embed/' + video.id + '" frameborder="0" allowfullscreen></iframe>');
+            $(".videoBox .title p").text(video.title);
+        });
+    });
+
+    // 마우스가 움직일때마다, img들의 위치값이 바뀌어라.
+    $('.box4').mousemove(function(e){
+        // 마우스의 위치값을 찾아라.
+        let x = e.pageX;
+        let y = e.pageY;
+
+        $('.oj01').css({'bottom':50-(y/100), 'left':80-(x/120)})
+        $('.oj02').css({'bottom':-10+(y/100), 'left':420+(x/120)})
+        $('.oj03').css({'bottom':-20+(y/100), 'right':400+(x/120)})
+        $('.oj04').css({'top':150+(y/100), 'left':250+(x/120)})
+        $('.oj05').css({'bottom':280+(y/100), 'left':300-(x/120)})
+        $('.oj06').css({'top':100+(y/100), 'left':50+(x/120)})
+        $('.oj07').css({'top':100+(y/100), 'right':50+(x/120)})
+        $('.oj08').css({'top':100-(y/100), 'right':400+(x/120)})
+        $('.oj09').css({'top':0+(y/100), 'left':440+(x/120)})
+        $('.oj10').css({'bottom':150+(y/100), 'left':50+(x/120)})
+        $('.oj11').css({'bottom':100+(y/100), 'left':300+(x/120)})
+        $('.oj12').css({'top':350+(y/100), 'right':360+(x/120)})
+
+    })
     
 
 })
