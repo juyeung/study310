@@ -19,7 +19,20 @@
     <script src="js/js.js"></script>
 </head>
 <body>
-    <div class="logo"></div>
+    <div class="intro on">
+        <div class="pimg">
+            <img src="img/sk01.png" alt="">
+            <img src="img/sk02.png" alt="">
+            <img src="img/sk05.png" alt="">
+            <img src="img/sk04.png" alt="">
+            <img src="img/sk03.png" alt="">
+        </div>
+        <div class="logo">
+            <img src="img/logo_black.png" alt="">
+            <p>-Click-</p>
+        </div>
+    </div>
+    <div class="logoTop"></div>
     <nav>
         <ul>
             <li class="on">
@@ -44,7 +57,7 @@
         </ul>
     </nav>
 
-    <div id="wrap">
+    <div id="wrap" class="on">
         <!-- 영화소개 -->
         <div class="box1">
             <div class="txt">
@@ -505,13 +518,19 @@
                 </div>
             </div>
             <div class="lizerBox">
-                <div class="play">
-                    <i class="fa-solid fa-play"></i>
+                <div class="btn">
+                    <div class="play">
+                        <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="stop">
+                        <i class="fa-solid fa-stop"></i>
+                    </div>
+                    <div class="sound">
+                        <i class="fa-solid fa-volume-xmark"></i>
+                    </div>
                 </div>
                 <canvas class="vlizer"></canvas>
-                <div class="sound">
-                    <i class="fa-solid fa-volume-xmark"></i>
-                </div>
+                
             </div>
             <div class="time-display">
                 <span class="current-time">0:00</span><span class="duration-time">0:00</span>

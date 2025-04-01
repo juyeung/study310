@@ -4,6 +4,120 @@ $(document).ready(function(){
     console.log(ht);
     // $('#wrap>div').eq(2).height(ht+300)
 
+    // ==================================================================
+    $('#wrap>div').height(ht);
+
+    // 화면의 크기가 변경될때마다 화면의 크기를 찾아서 
+    // section의 높이를 설정해라
+
+    $(window).resize(function(){
+
+        
+    let ht = $(window).height();
+    $('#wrap>div').height(ht);
+
+
+    })
+
+    // 윈도우에서 스크롤했을때 스크롤top 값을 찾아라.
+
+    $(window).scroll(function(){
+
+        let sc = $(this).scrollTop()
+        let ht = $(window).height();
+        let h2ot = $('#wrap>div').offset().top;
+       
+        console.log(h2ot)
+        console.log(sc);
+
+        for(let a = 0; a <5; a++){
+
+            if(sc>=(ht*a)-100 && sc<(ht*(a+1))-100){
+                $('nav li').removeClass('on')
+                $('nav li').eq(a).addClass('on');
+                $('.box2 .navi p').removeClass('on')
+                $('.box2 .navi p').eq(0).addClass('on')
+                $('.box2>div').removeClass('on')
+                $('.box2>div').eq(0).addClass('on')
+                $('.box3 .navi p').removeClass('on')
+                $('.box3 .navi p').eq(0).addClass('on')
+                $('.box3 .player').removeClass('on')
+                $('.box3 .player').eq(0).addClass('on')
+            }
+
+        }
+        
+        if(sc >= ht && sc < ht*4) {
+            $("nav p").css("color", "#fff");
+            $("nav .dot").css("background-color", "#fff");
+            
+        }
+        else{
+            $("nav p").css("color", "#66655d");
+            $("nav .dot").css("background-color", "#b9b9b6");
+        }
+    });
+
+    // gnb li 를 클릭했을때, scrollTop의 위치를 바꿔라 
+
+    $('nav li').click(function(){
+
+        // html body 안의 scrollTop을 애니매이션을 이용해 움직이게해라 
+
+        /*
+        애니메이션만드는방법 
+
+        $('선택자').stop().animate({'속성명':'속성값'},작동시간-1000/1초,easing-생략가능)
+
+
+        */
+
+        let i = $(this).index();
+        let ht = $(window).height();
+
+        $('nav li').removeClass('on')
+        $(this).addClass('on');
+
+        $('html,body').stop().animate({'scrollTop':ht*i},1400)
+
+
+
+
+    })
+
+
+    // section에서 마우스 휠을 했을때, 다음화면으로 또는 이전화면으로 이동해라
+
+
+    $('#wrap>div').mousewheel(function(event,delta){
+        event.preventDefault();
+
+        // 마우스를 올렸을때
+
+        if(delta > 0) {
+
+            let prev = $(this).prev().offset().top;
+          
+
+            $('html,body').stop().animate({'scrollTop':prev},800)
+           
+
+
+        }
+
+
+        // 마우스를 내렸을때 
+
+        else if (delta < 0){
+            let next = $(this).next().offset().top;
+            $('html,body').stop().animate({'scrollTop':next},800)
+
+        }
+
+
+    });
+    // ===================================================================
+
     // nav li 에 마우스가 들어갔을때, 나 자신에게 addClass를 해라
     $('nav li').click(function(){
         $('nav li').removeClass('on')
@@ -246,7 +360,14 @@ $(".play").click(function () {
     isPlaying = !isPlaying;
 });
 
-
+$(".stop").click(function () {
+    audio.pause();
+    audio.currentTime = 0; // 재생 위치를 처음으로 되돌리기
+    $(".play i").removeClass("fa-stop").addClass("fa-play"); // 아이콘 변경
+    $(".listBox > div").removeClass("selected");
+    $(".listBox > div img").css("filter", "grayscale(0%)");
+    isPlaying = false;
+});
 
 
 // 음소거 버튼
@@ -287,6 +408,26 @@ $(".progress-bar").on('input', function() {
     let newTime = (audio.duration * $(this).val()) / 100;
     audio.currentTime = newTime;
 });
+
+
+
+// logo 클릭시 
+
+$('.logo').click(function(){
+
+    $('nav').fadeIn()
+    $('.intro').fadeOut()
+    $('.logoTop').fadeIn()
+    $('#wrap').fadeIn()
+})
+
+$(".logoTop").click(function () {
+    $('#wrap').fadeOut()
+    $('.intro').fadeIn()
+    $('nav').fadeOut()
+    $('.logoTop').fadeOut()
+});
+
 
     
     

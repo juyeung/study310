@@ -62,7 +62,7 @@ img {
     vertical-align: bottom;
 }
 /* logo */
-.logo {
+.logoTop {
     width: 60px;
     height: 53px;
     position: fixed;
@@ -73,9 +73,10 @@ img {
     background-repeat: no-repeat;
     background-size: contain;
     cursor: pointer;
+    display: none;
 }
 /* wrap설정 */
-#wrap {
+#wrap.on {
     position: relative;
     /* perspective: 800px; */
 }
@@ -131,6 +132,7 @@ nav p {
     left: 0;
     margin-top: -15px;
 }
+nav {display: none;}
 
 /* section설정 */
 #wrap>div {
@@ -649,6 +651,7 @@ nav p {
     left: 0;
     overflow: hidden;
     clip-path: polygon(13% 3%, 89% 16.5%, 88.5% 51.5%, 11.5% 59.5%);
+    cursor: pointer;
 }
 .thum01:hover img {transform: scale(1.2);}
 .thum .thum02 img{
@@ -661,6 +664,7 @@ nav p {
     left: 0;
     overflow: hidden;
     clip-path: polygon(8.5% 32%, 90% 10%, 91% 75%, 9% 67%);
+    cursor: pointer;
 }
 .thum02:hover img {transform: scale(1.2);}
 .thum .thum03 img{
@@ -673,6 +677,7 @@ nav p {
     left: 0;
     overflow: hidden;
     clip-path: polygon(7.5% 4%, 95.5% 16%, 96.5% 54%, 10% 75%);
+    cursor: pointer;
 }
 .thum03:hover img {transform: scale(1.2);}
 .thum .thum04 img{
@@ -685,6 +690,7 @@ nav p {
     left: 0;
     overflow: hidden;
     clip-path: polygon(5% 27%, 92.5% 4%, 94% 73%, 5% 64%);
+    cursor: pointer;
 }
 .thum04:hover img {transform: scale(1.2);}
 
@@ -866,15 +872,22 @@ nav p {
     transform: translateX(-50%);
     width: auto;
     height: auto;
+}
+.box5 .lizerBox .btn {
     display: flex;
     justify-content: center;
     align-items: center;
+    /* background-color: #2196F3; */
+}
+.box5 .lizerBox .btn>div {
+    margin: 0 8px;
 }
 .box5 .lizerBox .play {
     width: 44px;
     height: 44px;
+    /* background-color: aquamarine;
     border-radius: 50%;
-    background-color: #b9b9b6;
+    background-color: #b9b9b6; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -882,8 +895,23 @@ nav p {
 }
 .box5 .lizerBox .play i {
     font-size: 16px;
-    color: #fff;
+    color: #66655d;
     margin-left: 3px;
+}
+.box5 .lizerBox .stop {
+    width: 44px;
+    height: 44px;
+    /* background-color: blueviolet;
+    border-radius: 50%;
+    background-color: #b9b9b6; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.box5 .lizerBox .stop i {
+    font-size: 16px;
+    color: #66655d;
 }
 .box5 .lizerBox .vlizer {
     width: 800px;
@@ -894,8 +922,9 @@ nav p {
 .box5 .lizerBox .sound {
     width: 44px;
     height: 44px;
+    /* background-color: cadetblue;
     border-radius: 50%;
-    background-color: #b9b9b6;
+    background-color: #b9b9b6; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -903,7 +932,7 @@ nav p {
 }
 .box5 .lizerBox .sound i {
     font-size: 16px;
-    color: #fff;
+    color: #66655d;
     margin-left: 3px;
 }
 
@@ -925,7 +954,7 @@ nav p {
     appearance: none;
     width: 100%;
     height: 100%;
-    background-color: #b9b9b6;
+    background-color: #ebc26b;
     outline: none;
     cursor: pointer;
     border-radius: 5px;
@@ -979,4 +1008,95 @@ nav p {
     background: #2196F3;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     cursor: pointer;
+}
+
+/* 인트로 */
+.intro.on {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.intro .pimg img {
+    position: absolute;
+}
+.intro .pimg {
+    width: 606px;
+    height: 860px;
+    position: relative;
+    margin-top: 80px;
+}
+.intro .pimg img:nth-child(1) {
+    right: 65px;
+    top: 0;
+    width: 314px;
+    height: 338px;
+    animation: introAni1 0.8s ease-in-out 3.5s forwards;
+}
+.intro .pimg img:nth-child(2) {
+    left: 74px;
+    top: 0;
+    width: 217px;
+    height: 336px;
+    animation: introAni1 0.8s ease-in-out 3s forwards;
+}
+.intro .pimg img:nth-child(3) {
+    right: 0;
+    top: 274px;
+    width: 348px;
+    height: 369px;
+    animation: introAni1 0.8s ease-in-out 2.5s forwards;
+}
+.intro .pimg img:nth-child(4) {
+    left: 0;
+    top: 287px;
+    width: 332px;
+    height: 390px;
+    animation: introAni1 0.8s ease-in-out 2s forwards;
+}
+.intro .pimg img:nth-child(5) {
+    left: 156px;
+    top: 345px;
+    width: 269px;
+    height: 376px;
+    animation: introAni1 0.8s ease-in-out 1.5s forwards;
+}
+.intro .logo {
+    position: absolute;
+    opacity: 0;
+    top: 50%;
+    margin-top: -108px;
+    left: 50%;
+    margin-left: -122px;
+    animation: introAni2 0.3s ease-in-out 4.8s forwards;
+    cursor: pointer;
+}
+.intro .logo img {
+    width: 245px;
+    height: 216px;
+}
+.intro .logo p {
+    font-size: 16px;
+    font-family: 'S-Core Dream 3';
+    text-align: center;
+    margin-top: 12px;
+    opacity: 0;
+    animation: introAni3 1.5s ease-in-out 5.5s infinite;
+}
+
+@keyframes introAni1 {
+    0% {transform: scale(1); opacity: 1;}
+    100% {transform: scale(5); opacity: 0;
+    }
+}
+@keyframes introAni2 {
+    0% {transform: scale(5); opacity: 0;}
+    100% {transform: scale(1); opacity: 1;}
+}
+@keyframes introAni3 {
+    0% {opacity: 0;}
+    50% {opacity: 1;}
+    100% {opacity: 0;}
 }
