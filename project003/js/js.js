@@ -141,4 +141,154 @@ $(document).ready(function(){
     })
     
 
+    let audio = new Audio();
+let isPlaying = false;
+let isMuted = false;
+let audioContext = new (window.AudioContext || window.webkitAudioContext)();
+let visualizerAnalyzer, visualizerSource;
+
+document.body.addEventListener("click", () => {
+    if (audioContext.state === "suspended") {
+        audioContext.resume();
+    }
+});
+
+function initVisualizer() {
+    let canvas = document.querySelector(".vlizer");
+    if (!canvas) {
+        console.error("Canvas 요소를 찾을 수 없습니다!");
+        return;
+    }
+    let ctx = canvas.getContext("2d");
+    canvas.width = 800;
+    canvas.height = 150;
+
+    if (!visualizerAnalyzer) {
+        visualizerAnalyzer = audioContext.createAnalyser();
+        visualizerAnalyzer.fftSize = 512; 
+    }
+
+    if (!visualizerSource) {
+        visualizerSource = audioContext.createMediaElementSource(audio);
+        visualizerSource.connect(visualizerAnalyzer);
+        visualizerAnalyzer.connect(audioContext.destination);
+    }
+
+    function draw() {
+        requestAnimationFrame(draw);
+        let dataArray = new Uint8Array(visualizerAnalyzer.frequencyBinCount);
+        visualizerAnalyzer.getByteTimeDomainData(dataArray); // 시간 도메인 데이터 사용
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+        let sliceWidth = canvas.width / dataArray.length;
+        let x = 0;
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "#66655d";  
+        ctx.lineJoin = "round";
+        ctx.lineCap = "round";
+    
+        ctx.beginPath();
+    
+        for (let i = 0; i < dataArray.length; i++) {
+            let v = dataArray[i] / 255.0;  // 0~1 정규화
+            let y = v * canvas.height;  // 높이를 캔버스 범위 내에서 조정
+    
+            if (i === 0) {
+                ctx.moveTo(x, y);
+            } else {
+                ctx.lineTo(x, y);
+            }
+    
+            x += sliceWidth;
+        }
+    
+        ctx.stroke();
+    }
+    
+    draw();
+}
+
+// 목록 클릭 시 음악 재생
+$(".listBox > div").click(function () {
+    let filePath = $(this).attr("data-src"); // data-src 속성에서 경로 가져오기
+    if (!filePath) return;
+
+    audio.src = filePath;
+    audio.play();
+    isPlaying = true;
+    $(".play i").removeClass("fa-play").addClass("fa-pause");
+    $(".sound i").removeClass("fa-volume-high").addClass("fa-volume-xmark");
+
+    // Initialize the visualizer after audio starts playing
+    initVisualizer();
+
+    // 모든 리스트의 이미지 스타일 초기화
+    $(".listBox > div").removeClass("selected");
+
+    // 클릭한 리스트에 selected 클래스 추가 (확대 유지)
+    $(this).addClass("selected");
+
+    // 모든 리스트의 이미지를 흑백 처리 후, 선택한 리스트만 컬러 유지
+    $(".listBox > div img").css("filter", "grayscale(100%)"); // 모든 이미지 흑백
+    $(this).find("img").css("filter", "grayscale(0%)"); // 클릭한 리스트만 컬러
+});
+
+// 플레이 상태 확인 변수
+
+$(".play").click(function () {
+    if (isPlaying) {
+        audio.pause();
+        $(".play i").removeClass("fa-pause").addClass("fa-play"); // 아이콘 변경
+    } else {
+        audio.play();
+        $(".play i").removeClass("fa-play").addClass("fa-pause"); // 아이콘 변경
+    }
+    isPlaying = !isPlaying;
+});
+
+
+
+
+// 음소거 버튼
+$(".sound").click(function () {
+    isMuted = !isMuted;
+    audio.muted = isMuted;
+
+    if (isMuted) {
+        $(".sound i").removeClass("fa-volume-xmark").addClass("fa-volume-high"); // 음소거 아이콘 변경
+    } else {
+        $(".sound i").removeClass("fa-volume-high").addClass("fa-volume-xmark");
+         // 볼륨 아이콘 변경
+    }
+});
+
+function updateTimeDisplay() {
+    let currentTime = audio.currentTime;
+    let duration = audio.duration;
+
+    let currentMinutes = Math.floor(currentTime / 60);
+    let currentSeconds = Math.floor(currentTime % 60);
+    let durationMinutes = Math.floor(duration / 60);
+    let durationSeconds = Math.floor(duration % 60);
+
+    // 현재 시간 표시
+    document.querySelector('.current-time').textContent = `${currentMinutes}:${currentSeconds < 10 ? '0' + currentSeconds : currentSeconds}`;
+    // 전체 시간 표시
+    document.querySelector('.duration-time').textContent = `${durationMinutes}:${durationSeconds < 10 ? '0' + durationSeconds : durationSeconds}`;
+
+    // 진행바 업데이트
+    let progress = (currentTime / duration) * 100;
+    document.querySelector('.progress-bar').value = progress;
+}
+
+audio.addEventListener('timeupdate', updateTimeDisplay);
+
+$(".progress-bar").on('input', function() {
+    let newTime = (audio.duration * $(this).val()) / 100;
+    audio.currentTime = newTime;
+});
+
+    
+    
+
 })
