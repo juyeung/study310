@@ -88,6 +88,11 @@ header nav p:hover {
     border-bottom: 2px solid #FF7A1A;
     box-sizing: border-box;
 }
+header nav p.on {
+    color: #FF7A1A;
+    border-bottom: 2px solid #FF7A1A;
+    box-sizing: border-box;
+}
 /* header nav p.on {
     color: #FF7A1A;
 } */
@@ -346,6 +351,7 @@ header .email p {
 .portfolio {
     background-color: #FFFAEE;
     width: 100%;
+    height: calc(100vh - 40px);
     box-shadow: 4px 10px 20px rgba(0, 0, 0, 0.25);
     padding: 56px 80px;
     box-sizing: border-box;
@@ -367,7 +373,7 @@ header .email p {
     /* justify-content: center; */
     align-items: center;
     cursor: pointer;
-    margin: 0 20px;
+    margin: 0 40px;
 }
 .portfolio .prothum article .mockup01 {
     display: flex;
@@ -441,3 +447,4 @@ footer p {
     font-size: 14px;
     color: #fff;
 }
+
