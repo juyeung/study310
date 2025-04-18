@@ -22,24 +22,46 @@ body {
     background-color: #FF7A1A;
     letter-spacing: -2.5%;
     color: #332E2A;
+    margin: 0 auto;
 }
+.wrap>div {
+    display: none;
+}
+.wrap>div.on {
+    display: block;
+}
+
 .wrap {
-    width: 1440px;
-    margin: 20px auto;
-    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 40px;
 }
 /* header */
 header {
-    width: calc(100% - 40px);
+    width: 100%;
+    height: 80px;
+    color: #332E2A;
+    position: fixed;
+    z-index: 999;
+}
+header .header01 {
+    width: 100%;
+    height: 20px;
+    background-color: #FF7A1A;
+}
+header .header02 {
+    width: 100%;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 10px 20px;
-    color: #332E2A;
-    position: absolute;
-    z-index: 999;
+    padding: 0 80px;
+    box-sizing: border-box;
+    background-color: #FFFAEE;
+    box-shadow: 0px -6px 6px rgba(53, 17, 3, 0.15);
 }
 header h1 {
+    width: 200px;
     font-size: 24px;
     cursor: pointer;
     transition: all 0.3s;
@@ -49,21 +71,33 @@ header h1:hover {
 }
 header nav {
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 header nav p {
     font-size: 16px;
-    margin: 0 8px;
+    margin: 0 12px;
     cursor: pointer;
     color: #6e6e6e;
     transition: all 0.3s;
+    border-bottom: 2px solid transparent;
+    box-sizing: border-box;
 }
 header nav p:hover {
     color: #FF7A1A;
+    border-bottom: 2px solid #FF7A1A;
+    box-sizing: border-box;
 }
 /* header nav p.on {
     color: #FF7A1A;
 } */
+header nav .vline {
+    width: 1px;
+    height: 12px;
+    background-color: #c9c9c9;
+}
 header .email {
+    width: 200px;
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -96,14 +130,12 @@ header .email p {
     position: absolute;
 }
 .mainImg img:nth-child(1) {
-    top: 50%;
-    left: 10%;
-    transform: translateY(-50%);
+    top: 30%;
+    left: 20%;
 }
 .mainImg img:nth-child(2) {
-    top: 50%;
-    right: 10%;
-    transform: translateY(-50%);
+    top: 30%;
+    right: 20%;
 }
 .mainImg img:nth-child(3) {
     bottom: 10%;
@@ -118,11 +150,12 @@ header .email p {
 .LatestWork .line {
     width: 646px;
     height: 1px;
-    background-color: #332E2A;
+    background-color: #c9c9c9;
 }
 .LatestWork p {
     font-size: 14px;
     margin: 0 10px;
+    color: #6e6e6e;
 }
 .latestBox {
     display: flex;
@@ -130,7 +163,7 @@ header .email p {
 }
 .latestBox>div {
     width: 250px;
-    height: 200px;
+    height: 220px;
     border-radius: 10px;
     background-color: #fff;
     padding: 8px;
@@ -138,13 +171,14 @@ header .email p {
     margin: 0 12px;
     cursor: pointer;
     transition: all 0.5s;
+    position: relative;
 }
 .latestBox>div:hover {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
 }
 .latestBox>div .imgBox {
     width: 232px;
-    height: 133px;
+    height: 120px;
     background-color: #ECECEC;
     overflow: hidden;
     border-top-left-radius: 10px;
@@ -155,4 +189,255 @@ header .email p {
     font-size: 14px;
     font-weight: 600;
     margin-top: 12px;
+}
+.latestBox>div span {
+    font-size: 12px;
+    margin-top: 4px;
+    color: #428EFF;
+}
+.latestBox>div i {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    color: #ececec;
+    transition: all 0.5s;
+}
+.latestBox>div i:hover {
+    color: rgb(212, 0, 0);
+}
+
+/* about */
+.about {
+    background-color: #FFFAEE;
+    width: 100%;
+    height: 1400px;
+    box-shadow: 4px 10px 20px rgba(0, 0, 0, 0.25);
+    padding: 56px 80px;
+    box-sizing: border-box;
+}
+.about .title {
+    display: flex;
+    align-items: flex-end;
+    margin-top: 40px;
+}
+.about .title h2 {
+    font-size: 80px;
+}
+.about .title span {
+    font-size: 16px;
+    margin-left: 8px;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+.about>span {
+    font-size: 20px;
+}
+.about>p {
+    font-size: 16px;
+    margin-top: 32px;
+    margin-bottom: 80px;
+}
+.about>p em {
+    font-style: normal;
+    font-weight: 600;
+}
+.about>.line {
+    width: 100%;
+    height: 1px;
+    background-color: #c9c9c9;
+    margin-bottom: 80px;
+}
+.about h3 {
+    font-size: 40px;
+}
+.about .graph {
+    width: 1020px;
+    margin: 0 auto;
+    display: flex;
+    margin-top: 80px;
+}
+.about .graph .level {
+}
+.about .graph .level p {
+    font-size: 14px;
+    margin-bottom: 60px;
+}
+.about .graph .level_line {
+    margin-left: 16px;
+    height: 100%;
+    position: relative;
+}
+.about .graph .level_line .line {
+    width: 952px;
+    height: 1px;
+    background-color: #c9c9c9;
+    margin-bottom: 80px;
+}
+.about .graph .level_line .stick {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: flex-end;
+}
+.about .graph .level_line .stick>div {
+    width: 120px;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    color: #ffffff;
+    text-shadow: 
+    0px -1px 0 #666;
+    font-weight: 600;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: inset 0px 1px 0 #fff;
+    box-sizing: border-box;
+    margin: 0 16px;
+}
+.about .graph .level_line .stick>div .per {
+    display: flex;
+    align-items: center;
+}
+.about .graph .level_line .stick>div .per p {
+    font-size: 52px;
+}
+.about .graph .level_line .stick>div .per span {
+    font-size: 20px;
+}
+.about .graph .level_line .stick>div p {
+    font-size: 16px;
+}
+.about .graph .level_line .stick .stick01 {
+    height: 281px;
+    background: linear-gradient(to bottom, #FFB6B6, #FF9292);
+    border: 1px solid #FF9292;
+}
+.about .graph .level_line .stick .stick02 {
+    height: 299px;
+    background: linear-gradient(to bottom, #97D3FF, #60BCFF);
+    border: 1px solid #60BCFF;
+}
+.about .graph .level_line .stick .stick03 {
+    height: 264px;
+    background: linear-gradient(to bottom, #FFA088, #FF896A);
+    border: 1px solid #FF896A;
+}
+.about .graph .level_line .stick .stick04 {
+    height: 264px;
+    background: linear-gradient(to bottom, #9BB9FF, #799FF6);
+    border: 1px solid #799FF6;
+}
+.about .graph .level_line .stick .stick05 {
+    height: 248px;
+    background: linear-gradient(to bottom, #D1E1EB, #BFD0DB);
+    border: 1px solid #BFD0DB;
+}
+.about .graph .level_line .stick .stick06 {
+    height: 299px;
+    background: linear-gradient(to bottom, #FCE19A, #F6D784);
+    border: 1px solid #F6D784;
+}
+
+/* protfolio */
+.portfolio {
+    background-color: #FFFAEE;
+    width: 100%;
+    box-shadow: 4px 10px 20px rgba(0, 0, 0, 0.25);
+    padding: 56px 80px;
+    box-sizing: border-box;
+}
+.portfolio h2 {
+    font-size: 80px;
+    margin-top: 40px;
+}
+.portfolio .prothum {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+.portfolio .prothum article {
+    width: 33.3333%;
+    height: 572px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    cursor: pointer;
+    margin: 0 20px;
+}
+.portfolio .prothum article .mockup01 {
+    display: flex;
+    justify-content: center;
+}
+.portfolio .prothum article .mockup01>img {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.portfolio .prothum article .mockup01 .imgBox {
+    width: 143px;
+    height: 254px;
+    overflow: hidden;
+    background-color: #428EFF;
+    position: absolute;
+    margin-left: -2px;
+    margin-top: 3px;
+}
+.portfolio .prothum article .mockup01 .imgBox img {
+    width: 143px;
+    top: 0;
+    left: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: all ease-in-out 1.5s;
+}
+.portfolio .prothum article:nth-child(1):hover .imgBox img {
+    transform: translateY(-548px);
+}
+.portfolio .prothum article:nth-child(2):hover .imgBox img {
+    transform: translateY(-509px);
+}
+.portfolio .prothum article:nth-child(3):hover .imgBox img {
+    transform: translateY(-145px);
+}
+.portfolio .prothum article h3 {
+    font-size: 32px;
+    text-align: center;
+}
+.portfolio .prothum article span {
+    font-size: 14px;
+    margin-top: 4px;
+}
+.portfolio .prothum article p {
+    font-size: 16px;
+    margin-top: 32px;
+    line-height: 140%;
+}
+.portfolio .prothum article em {
+    font-style: normal;
+    font-size: 16px;
+    margin-top: 20px;
+}
+.portfolio .prothum article .tech {
+    display: flex;
+    margin-top: 24px;
+}
+.portfolio .prothum article .tech img {
+    margin: 0 2px;
+}
+
+
+/* footer */
+footer {
+    margin-bottom: 40px;
+}
+footer p {
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
 }
