@@ -55,4 +55,76 @@ $(document).ready(function(){
       $(".header").css("top", "0");
     }
   });
+
+  // weather 클릭 시 슬라이드
+  $('.side_btn').click(function(){
+    $('.slideBar').toggleClass('active');
+  });
+
+  // 공지사항 이벤트 탭바 클릭시 리스트 출력
+  $('.con_box .title_box ul li').click(function(){
+    // $('.con_box .list_box>div').removeClass('on')
+    // $('.con_box .list_box>div').eq(1).addClass('on')
+    $('.con_box .title_box ul li').removeClass('on')
+    $(this).addClass('on')
+
+    // listA 하위 div(.notice, .event 등) on 토글
+    let $listItems = $('.listA > div');
+    $listItems.removeClass('on');
+    $listItems.eq(index).addClass('on');
+
+    // ✅ 슬라이드 위치 초기화
+    $listItems.find('ul').css('left', '0');
+    num = 0;
+
+    var index = $(this).index();
+    
+    var $items = $('.con_box .list_box .listA > div');
+    
+    $items.removeClass('on');
+    
+    // 새로 활성화할 div는 먼저 오른쪽에 배치
+    $items.eq(index).css({
+        left: '100%',
+        opacity: 0
+    }).addClass('on'); // on을 먼저 붙이고
+    
+    // 살짝 시간차를 두고 슬라이드
+    setTimeout(function() {
+        $items.eq(index).css({
+            left: '0',
+            opacity: 1
+        });
+    }, 10);
+  })
+
+  let num = 0; // 현재 슬라이드 인덱스
+
+$('.rightbtn').click(function () {
+    let $activeUl = $('.listA > div.on ul');
+    let itemCount = $activeUl.find('li').length;
+    let visibleCount = 4; // 화면에 보이는 항목 수
+    let maxNum = itemCount - visibleCount;
+
+    if (num < maxNum) {
+        num++;
+        $activeUl.stop().animate({
+            left: -394 * num + 'px' // 374px + 20px 마진 = 394
+        }, 100);
+    }
 });
+
+$('.leftbtn').click(function () {
+    let $activeUl = $('.listA > div.on ul');
+    if (num > 0) {
+        num--;
+        $activeUl.stop().animate({
+            left: -394 * num + 'px'
+        }, 100);
+    }
+});
+
+
+
+
+}); // 스크립트 끝

@@ -30,7 +30,7 @@ img {
 .header {
     display: flex;
     width: 100%;
-    height: 100px;
+    height: 80px;
     justify-content: space-between;
     align-items: center;
     position: fixed;
@@ -57,10 +57,15 @@ img {
 
 .header .logo a img {}
 
-.header .navi {}
+.header .navi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .header .navi .lng {
-    margin-right: 40px;
+    margin-left: 40px;
+    cursor: pointer;
 }
 
 .lng img {
@@ -69,9 +74,75 @@ img {
 
 .header .navi .toggle {}
 
-.toggle img {
-    padding: 8px;
-}
+.lang-switch {
+    position: relative;
+    display: inline-block;
+    width: 68px;
+    height: 34px;
+  }
+  
+  .lang-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider-text {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: transparent;
+
+    border: 1px solid #fff;
+    transition: .4s;
+    border-radius: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8px;
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .slider-text::before {
+    content: "";
+    position: absolute;
+    height: 26px;
+    width: 26px;
+    left: 5px;
+    bottom: 3px;
+    background-color: white;
+    background-image: url(img/kor.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    transition: .4s;
+    border-radius: 50%;
+    z-index: 99;
+  }
+  
+  /* Checked 상태일 때 */
+  input:checked + .slider-text {
+    background-color: transparent;
+  }
+  
+  input:checked + .slider-text::before {
+    transform: translateX(30px);
+    background-image: url(img/usa.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+  }
+  
+  .lang-label {
+    z-index: 2;
+    pointer-events: none;
+  }
+  
 
 .header .navi .gnb {}
 
@@ -190,7 +261,12 @@ img {
     right: 0;
     bottom: 0;
     backdrop-filter: blur(10px);
+    right: -654px; /* 슬라이드 숨김 (너비보다 크게) */
+    transition: all ease-in-out 0.8s;
 }
+.slideBar.active {
+    right: 0; /* 나타남 */
+  }
 
 .slideBar .line {
     width: 1px;
@@ -357,9 +433,10 @@ img {
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
+    cursor: pointer;
 }
 
-.title_box>ul>li:nth-child(1):hover {
+.title_box>ul>li.on {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-left: 1px solid rgba(255, 255, 255, 0.4);
@@ -371,40 +448,72 @@ img {
     transition: all 0.5s;
 }
 
-.title_box>ul>li:nth-child(2):hover {
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-left: 1px solid rgba(255, 255, 255, 0.4);
-    border-right: 1px solid rgba(255, 255, 255, 0.4);
-    border-top: 1px solid rgba(255, 255, 255, 0.4);
-    box-sizing: border-box;
-    font-weight: bold;
+.list_box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.list_box .leftbtn i {
     color: #fff;
-    transition: all 0.5s;
+    font-size: 40px;
+    margin: 0 16px;
+    cursor: pointer;
+}
+.list_box .rightbtn i {
+    color: #fff;
+    font-size: 40px;
+    margin: 0 16px;
+    cursor: pointer;
+} 
+
+.boad .con_box .list_box .listA {
+    position: relative;
+    width: 1440px;
+    height: 536px; /* 원하는 높이 설정 */
+    overflow: hidden;
 }
 
-.boad .con_box .list_box {}
+.boad .con_box .list_box .listA>div {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%; /* 오른쪽 밖에서 시작 */
+    opacity: 0;
+    transition: all 0.4s ease;
+    width: 100%;
+}
 
-.boad .con_box .list_box .notice {}
+.boad .con_box .list_box .listA>div.on{
+    display: block;
+    left: 0;
+    opacity: 1;
+    z-index: 1;
+}
 
-.boad .con_box .list_box .notice>ul {
+.boad .con_box .list_box .listA>div ul {
     display: flex;
     flex-wrap: nowrap;
     margin-top: 16px;
     width: 3130px;
+    position: relative;
+    left: 0;
+    transition: left 0.4s ease;
+    white-space: nowrap;
 }
 
-.boad .con_box .list_box .notice>ul>li {
+.boad .con_box .list_box .listA>div li {
     margin-right: 20px;
     width: 374px;
     height: 520px;
     background-color: rgba(0, 0, 0, 0.6);
     border-radius: 20px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+    /* box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25); */
     backdrop-filter: blur(10px);
+    display: inline-block;
+    vertical-align: top;
 }
 
-.boad .con_box .list_box .notice>ul>li .imgBox {
+.boad .con_box .list_box .listA>div li .imgBox {
     display: flex;
     width: 374px;
     height: 220px;
@@ -415,11 +524,11 @@ img {
     align-items: center;
 }
 
-.boad .con_box .list_box .notice>ul>li>a .imgBox>img {
+.boad .con_box .list_box .listA>div li>a .imgBox>img {
     width: 374px;
 }
 
-.boad .con_box .list_box .notice>ul>li>a {
+.boad .con_box .list_box .listA>div li>a {
     display: flex;
     flex-direction: column;
     height: 520px;
@@ -428,31 +537,31 @@ img {
     /* background-color: brown; */
 }
 
-.boad .con_box .list_box .notice ul li a .wrap {
+.boad .con_box .list_box .listA>div .wrap {
     margin: 32px 24px;
     /* background-color: #3787ff; */
 }
 
-.boad .con_box .list_box .notice ul li a .wrap .sub {
+.boad .con_box .list_box .listA>div .wrap .sub {
     display: block;
     font-size: 20px;
     font-weight: bold;
     font-family: "맑은 고딕" , serif;
 }
 
-.boad .con_box .list_box .notice ul li a .wrap h3 {
+.boad .con_box .list_box .listA>div .wrap h3 {
     font-size: 24px;
     font-weight: bold;
     font-family: "맑은 고딕", serif;
     margin-top: 28px;
 }
-.boad .con_box .list_box .notice ul li a .wrap p {
+.boad .con_box .list_box .listA>div .wrap p {
     font-size: 16px;
     font-weight: normal;
     font-family: "맑은 고딕", serif;
     margin-top: 20px;
 }
-.boad .con_box .list_box .notice ul li a .wrap .date {
+.boad .con_box .list_box .listA>div .wrap .date {
     display: flex;
     font-size: 14px;
     font-weight: normal;
@@ -462,17 +571,17 @@ img {
     bottom: 32px;
 }
 
-.boad .con_box .list_box .notice ul li:nth-child(1) {
+/* .boad .con_box .list_box>div ul li:nth-child(1) {
     display: flex;
     height: 520px;
     width:1120px;
 }
 
-.boad .con_box .list_box .notice ul li:nth-child(1) a {
+.boad .con_box .list_box>div ul li:nth-child(1) a {
     width: 374px;
 }
 
-.boad .con_box .list_box .notice ul li:nth-child(1) .video {
+.boad .con_box .list_box>div ul li:nth-child(1) .video {
     display: flex;
     width: 747px;
     height: 520px;
@@ -483,11 +592,11 @@ img {
     align-items: center;
 }
 
-.boad .con_box .list_box .notice ul li:nth-child(1) .video img {
+.boad .con_box .list_box>div ul li:nth-child(1) .video img {
     height: 520px;
-}
+} */
 
-.boad .list_box .event {}
+.boad .list_box .listA .event.on {}
 
 
 
