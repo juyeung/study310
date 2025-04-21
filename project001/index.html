@@ -5,35 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>대전아쿠아리움리뉴얼프로젝트</title>
-    <!-- 외부스타일시트연결 -->
-    <link rel="stylesheet" href="style.css">
+    
     <!-- 폰트어썸 CDN -->
     <script src="https://kit.fontawesome.com/07b05ff9e8.js" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css"> -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <script src="js.js"></script>
+    <!-- 외부스타일시트연결 -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="wrap">
+    <header class="header">
+        <div class="logo">
+            <h1>
+                <a href="index.html">
+                    <img src="img/logo.png" alt="" width="193">
+                </a>
+            </h1>
+        </div>
+        <div class="navi">
+            <a href="" class="lng">
+                <img src="img/i_lng.png" alt="">
+            </a>
+            <a href="" class="toggle">
+                <img src="img/i_navi.png" alt="">
+            </a>
+            <nav class="gnb">
+                <div class="menu" style="display:none ;"></div>
+            </nav>
+        </div>
+</header>
+    <div class="wrap">
         <!-- 랜딩페이지 ################################################### -->
         <section class="landing">
-            <header class="header">
-                    <div class="logo">
-                        <h1>
-                            <a href="index.html">
-                                <img src="img/logo.png" alt="" width="193">
-                            </a>
-                        </h1>
-                    </div>
-                    <div class="navi">
-                        <a href="" class="lng">
-                            <img src="img/i_lng.png" alt="">
-                        </a>
-                        <a href="" class="toggle">
-                            <img src="img/i_navi.png" alt="">
-                        </a>
-                        <nav class="gnb">
-                            <div class="menu" style="display:none ;"></div>
-                        </nav>
-                    </div>
-            </header>
             <div class="title_inner">
                 <div class="title">
                     <h2>우리 가족 즐거운 놀이터 <br>
@@ -41,7 +46,8 @@
                     <p>​대전 도심의 천연동굴을 변화시킨 수족관으로, 국내 최초, 최대인 담수어 아쿠아리움 <br>
                         리모델링을 통해 새롭게 재 탄생한 대전아쿠아리움 많은 사람들의 성원과 대전시민들을 위해!! 새롭게 오픈했습니다.</p>
                     <div class="button">
-                        <a href="">체험 프로그램</a>
+                        <p>체험 프로그램</p>
+                        <span><i class="fa-solid fa-chevron-right"></i></span>
                     </div>
                 </div>
             </div>
@@ -433,7 +439,7 @@
                                     <img src="img/i_ticket_date.png" alt="">
                                     <p>날짜</p>
                                 </div>
-                                <p>2025-01-23</p>
+                                    <input type="text" id="datepicker">
                             </div>
                             <div class="people">
                                 <div class="title">

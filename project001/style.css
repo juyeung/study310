@@ -26,19 +26,29 @@ img {
     border: none;
     vertical-align: bottom;
 }
-
 /* header ###########################################################################*/
 .header {
     display: flex;
+    width: 100%;
     height: 100px;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+    transition: top 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.25);
+    padding: 0 240px;
+    box-sizing: border-box;
 }
 
 .header .logo {
     width: 197px;
     display: flex;
     align-items: center;
+    transition: all 0.8s;
 }
 
 .header .logo h1 {}
@@ -105,27 +115,46 @@ img {
 
 .landing .title .button {
     margin-top: 64px;
-}
-
-.landing .title .button>a {
     display: flex;
-    width: 180px;
+    align-items: center;
+    justify-content: center;
+    width: 160px;
     height: 52px;
     background-color: #3787ff;
     border-radius: 5px;
     color: #fff;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
+    transition: all 0.8s;
+    cursor: pointer;
+    position: relative;
+}
+
+.landing .title .button>p {
     font-size: 20px;
     font-weight: bold;
     font-family: "맑은 고딕", serif;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.landing .title .button>span {
+    color: #fff;
+    font-size: 16px;
+    margin-left: 16px;
+    transition: all ease-in-out 0.3s;
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
 }
 
-.landing .title .button>a:hover {
-    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-    transition: all 0.3s;
+.landing .title .button:hover {
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
+    width: 180px;
+}
+.landing .title .button:hover span {
+    opacity: 1;
 }
 
 /* 슬라이드바 ############################################################################*/
@@ -1290,6 +1319,97 @@ img {
     font-family: "Inter", serif;
 }
 
+/* 달력 스타일 ################################################# */
+.book input {
+    margin-top: 16px;
+    border: 1px solid #e3e3e3;
+    border-radius: 5px;
+    width: 260px;
+    height: 32px;
+    background-color: #fff;
+    color: #3a3a3a;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: "Inter", sans-serif !important;
+    text-align: center;
+  }
+
+  /* datepicker 팝업 내부까지 폰트 적용 */
+.ui-datepicker, .ui-datepicker * {
+    font-family: 'Inter', sans-serif !important;
+}
+.ui-datepicker {
+    width: 240px;
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+}
+.ui-datepicker td {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+}
+.ui-datepicker .ui-datepicker-week-end {
+    color:crimson;
+}
+.ui-datepicker td.ui-datepicker-today a {
+    background-color: #1e90ff;
+    color: #fff !important;
+    border-radius: 50%;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-weight: bold;
+}
+.ui-datepicker-calendar {
+    background-color: #fff;
+    border-radius: 10px;
+}
+.ui-datepicker-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em;
+}
+.ui-datepicker table {
+    width: 100%; /* 팝업 너비에 맞춤 */
+    border-collapse: collapse;
+  }
+
+
+.ui-datepicker-title {
+    order: 0;
+    flex-grow: 1;
+    text-align: center;
+    font-weight: bold;
+  }
+
+.ui-datepicker-prev {
+    order: -1;
+  }
+
+.ui-datepicker-next {
+    order: 1;
+  }
+
+.ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next {
+    top: 8px;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    line-height: 32px;
+    padding: 0.3em;
+    cursor: pointer;
+  }
+  
+.ui-datepicker .ui-datepicker-prev i, .ui-datepicker .ui-datepicker-next i {
+    font-size: 18px;
+    color: #333;
+  }
+
 .ticket .listBox .list .book .people .title {
     display: flex;
     margin-top: 44px;
@@ -1367,7 +1487,7 @@ img {
     transition: all 0.3s;
 }
 
-/* 오시는길 */
+/* 오시는길 ################################################################# */
 .way {
     width: 100%;
     height: 1000px;
@@ -1978,7 +2098,7 @@ img {
 /* 전체설정 */
 /* 1440px이상일때 */
 @media (min-width: 1440px) {
-    .header, .title_inner, .story .wrap, .rough, .table {
+    .title_inner, .story .wrap, .rough, .table {
         width: 1440px;
         margin: 0 auto;
     }

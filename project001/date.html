@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>달력샘플</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            $( "#datepicker" ).datepicker({
+
+                // dateFormat:"yy년 mm월 dd일",
+                onSelect:function(dateText,inst){
+
+                    let year = inst.selectedYear;
+                    let month = inst.selectedMonth +1;
+                    let day = inst.selectedDay;
+
+                    console.log(dateText)
+                    $('.date span').text(year+'년'+month+'월'+day+'일')
+                    $('.day span').eq(0).text(year)
+                    $('.day span').eq(1).text(month)
+                    $('.day span').eq(2).text(day)
+                }
+            });
+            $( "#datepicker2" ).datepicker({
+                dateFormat: "yy년-mm월-dd일"
+            });
+        })
+    </script>
+    <style>
+        a {
+            color: #000;
+            text-decoration: none;
+        }
+        .ui-datepicker-calendar td {
+            width: 30px;
+            height: 30px;
+            border: 1px solid #000;
+            text-align: center;
+        }
+        .ui-datepicker-today {
+            background-color: blueviolet;
+            border-radius: 50%;
+        }
+        .ui-icon-circle-triangle-e {
+
+        }
+        input {
+            color: #f00;
+        }
+        element.style {
+            top: 50px;
+        }
+        .day span:nth-child(1) {color: #f00;}
+        .day span:nth-child(2) {color: #00f;}
+        .day span:nth-child(3) {color: #0f0;}
+       
+    </style>
+</head>
+<body>
+    <h1>달력만들기</h1>
+    <!-- 인라인방식 달력출력하기 -->
+    <div id="datepicker"></div>
+    <div class="date">
+        예약날짜: <span>00</span>
+    </div>
+    <div class="day">
+        예약날짜: <span></span>년<span></span>월<span></span>일
+    </div>
+    <!-- 인풋방식 달력출력하기 -->
+    <p>
+        <input type="text" id="datepicker2">
+    </p>
+    
+</body>
+</html>
