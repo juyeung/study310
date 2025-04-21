@@ -82,7 +82,7 @@ img {
     background-image: url(img/landing_bg_005.png);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 53vw;
+    height: 100vh;
     position: relative;
 }
 
@@ -156,6 +156,24 @@ img {
 .landing .title .button:hover span {
     opacity: 1;
 }
+
+.scroll_line {
+    color: #fff;
+    position: absolute;
+    top: calc(100vh - 160px);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.scroll_line p {}
+.scroll_line img {
+    width: 12px;
+    height: 18px;
+    margin-left: 8px;
+}
+
 
 /* 슬라이드바 ############################################################################*/
 .slideBar {
@@ -266,7 +284,7 @@ img {
 }
 
 /* 스크롤버튼 #############################################################################*/
-.scroll>a {
+.side_btn {
     display: flex;
     flex-direction: column;
     width: 40px;
@@ -278,22 +296,18 @@ img {
     justify-content: center;
     font-size: 16px;
     font-weight: normal;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Inter";
     position: absolute;
     right: 0;
     bottom: 0;
-
+    cursor: pointer;
 }
 
-.scroll>a:hover {}
+.side_btn:hover {}
 
-.scroll>a>span {
+.side_btn span {
     display: inline-block;
     transform: rotate(90deg);
-}
-
-.scroll>a>img {
-    margin-top: 35px;
 }
 
 /* 공지사항 #################################################################################*/
@@ -304,7 +318,8 @@ img {
     background-repeat: no-repeat;
     background-size: cover;
     /* height: 33vw; */
-    height: 66.927vh;
+    /* height: 66.927vh; */
+    height: 100vh;
     min-height: 900px;
     /* max-height: 1000px; */
     /* position: relative; */
