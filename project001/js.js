@@ -124,6 +124,66 @@ $('.leftbtn').click(function () {
     }
 });
 
+  // gnb 아이콘 클릭 시 menu 가 나타나라
+  $('.gnb').click(function(){
+    $('nav').addClass('on')
+  })
+  // 닫기 버튼 클릭 시 팝업 닫기
+  $('nav .close').click(function () {
+    $('nav').removeClass('on');
+});
+
+// ESC 키 누르면 닫기
+$(document).keydown(function (e) {
+    if (e.key === "Escape") {
+        $('nav').removeClass('on');
+    }
+    // $("body").css("overflow", "auto");
+});
+
+// 동물이야기 슬라이드
+let current = 0;
+const total = 4;
+
+// 슬라이드 업데이트 함수
+function updateSlide(index) {
+  const prev = (index + total - 1) % total;
+  const next = (index + 1) % total;
+
+  $(".slide").removeClass("prev active next");
+  $(".slide" + prev).addClass("prev");
+  $(".slide" + index).addClass("active");
+  $(".slide" + next).addClass("next");
+
+  $(".text").removeClass("active");
+  $(".text" + index).addClass("active");
+
+  $(".dot").removeClass("active");
+  $(".dot").eq(index).addClass("active");
+}
+
+// 슬라이드는 container 내부에서만 작동
+$(".story .container").on("wheel", function (e) {
+  // 스크롤 방지
+  e.preventDefault();
+
+  if (e.originalEvent.deltaY > 0) {
+    current = (current + 1) % total;
+  } else {
+    current = (current - 1 + total) % total;
+  }
+
+  updateSlide(current);
+});
+
+// navigator dot 클릭 시에도 반응
+$(".dot").on("click", function() {
+  const index = $(this).index();
+  current = index;
+  updateSlide(current);
+});
+
+
 
 
 
