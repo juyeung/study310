@@ -29,4 +29,12 @@ $(document).ready(function(){
         $('nav p').removeClass('on')
         $('nav p').eq(0).addClass('on')
     })
-})
+
+    // 프로젝트 상세페이지 연결
+    $('article').eq(0).click(function(e){
+        e.preventDefault()
+        $('.wrap>div').removeClass('on')
+        $('section').eq(0).addClass('on')
+    })
+
+}) // 스크립트 끝

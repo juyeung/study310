@@ -183,8 +183,71 @@ $(".dot").on("click", function() {
   updateSlide(current);
 });
 
+// 예매 인원 수 카운트
+$('.box').each(function () {
+  const $box = $(this);
+  const $count = $box.find('.count');
 
+  $box.find('.plus').click(function () {
+      let value = parseInt($count.text());
+      value++;
+      $count.text(value);
+  });
 
+  $box.find('.minus').click(function () {
+      let value = parseInt($count.text());
+      if (value > 0) {
+          value--;
+          $count.text(value);
+      }
+  });
+});
 
+// 갤러리 슬라이드
+function startInfiniteSlide($ul, direction = 'up') {
+  const speed = 1;
+  const interval = 16;
+
+  const $list = $ul.find('li');
+  const listHeight = $list.first().outerHeight(true);
+  const totalHeight = listHeight * $list.length;
+
+  // li 복제: 무한 루프 구현
+  $ul.append($list.clone());
+
+  let scrollTop = (direction === 'down') ? totalHeight : 0;
+  $ul.scrollTop(scrollTop);
+  $ul.data('paused', false);
+
+  const slideInterval = setInterval(() => {
+      if (!$ul.data('paused')) {
+          scrollTop += (direction === 'up') ? speed : -speed;
+          $ul.scrollTop(scrollTop);
+
+          // 무한 루프 포인트
+          if (direction === 'up' && scrollTop >= totalHeight) {
+              scrollTop = 0;
+              $ul.scrollTop(0);
+          } else if (direction === 'down' && scrollTop <= 0) {
+              scrollTop = totalHeight;
+              $ul.scrollTop(totalHeight);
+          }
+      }
+  }, interval);
+
+  // hover 시 슬라이드 일시정지
+  $ul.on('mouseenter', 'li', function () {
+      $ul.data('paused', true);
+  }).on('mouseleave', 'li', function () {
+      $ul.data('paused', false);
+  });
+}
+
+$('.table_inner ul').each(function (i) {
+  const dir = (i === 1) ? 'down' : 'up';
+  startInfiniteSlide($(this), dir);
+});
+
+// sns 무한 자동 슬라이드
 
 }); // 스크립트 끝

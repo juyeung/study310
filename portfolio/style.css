@@ -436,7 +436,11 @@ header .email p {
 .portfolio .prothum article .tech img {
     margin: 0 2px;
 }
-
+.project01 {
+    background-image: url(img/sub_project01.png);
+}
+.project02 {}
+.project03 {}
 
 /* footer */
 footer {

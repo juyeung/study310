@@ -658,31 +658,6 @@ nav .menu ul li .title>p {
     bottom: 32px;
 }
 
-/* .boad .con_box .list_box>div ul li:nth-child(1) {
-    display: flex;
-    height: 520px;
-    width:1120px;
-}
-
-.boad .con_box .list_box>div ul li:nth-child(1) a {
-    width: 374px;
-}
-
-.boad .con_box .list_box>div ul li:nth-child(1) .video {
-    display: flex;
-    width: 747px;
-    height: 520px;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
-    overflow: hidden;
-    justify-content: center;
-    align-items: center;
-}
-
-.boad .con_box .list_box>div ul li:nth-child(1) .video img {
-    height: 520px;
-} */
-
 .boad .list_box .listA .event.on {}
 
 
@@ -912,11 +887,10 @@ nav .menu ul li .title>p {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
     margin: 0 8px;
     transition: all 0.5s;
+    overflow: hidden;
 }
 
-.theme .pro .f01 .rough .f01_01 li a {
-    
-}
+.theme .pro .f01 .rough .f01_01 li a {}
 
 .theme .pro .f01 .rough .f01_01 li a .imgBox {
     display: flex;
@@ -942,7 +916,7 @@ nav .menu ul li .title>p {
     color: #3a3a3a;
     font-size: 24px;
     font-weight: bold;
-    font-family: "맑은 고딕", serif;
+    font-family: "Inter";
     margin-top: 16px;
 }
 
@@ -950,13 +924,11 @@ nav .menu ul li .title>p {
     color: #3a3a3a;
     font-size: 16px;
     font-weight: normal;
-    font-family: "맑은 고딕", serif;
+    font-family: "Inter";
     margin-top: 8px;
 }
 
 .theme .pro .f01 .rough .f01_01 li .text_more {
-    opacity: 0;
-    transition: all 0.2s;
     margin-top: 16px;
 }
 
@@ -977,8 +949,7 @@ nav .menu ul li .title>p {
 .theme .pro .f01 .rough .f01_01 li:hover{
     height: 400px;
 }
-.theme .pro .f01 .rough .f01_01 li:hover .text_more{
-    opacity: 1;
+.theme .pro .f01 .rough .f01_01 li:hover {
 }
 
 .theme .pro .f01 .rough .f01_01 li:hover a .imgBox img {
@@ -998,7 +969,6 @@ nav .menu ul li .title>p {
     right: 100px;
     top: 550px;
     width: 976px;
-    /* background-color: #666666; */
 }
 
 .theme .pro .f01 .rough .f01_02 li {
@@ -1009,6 +979,7 @@ nav .menu ul li .title>p {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
     margin: 0 8px;
     transition: all 0.5s;
+    overflow: hidden;
 }
 
 .theme .pro .f01 .rough .f01_02 li a {
@@ -1052,8 +1023,6 @@ nav .menu ul li .title>p {
 }
 
 .theme .pro .f01 .rough .f01_02 li .text_more {
-    opacity: 0;
-    transition: all 0.2s;
     margin-top: 16px;
 }
 
@@ -1077,10 +1046,6 @@ nav .menu ul li .title>p {
 
 .theme .pro .f01 .rough .f01_02 li:nth-child(2):hover {
     height: 440px;
-}
-
-.theme .pro .f01 .rough .f01_02 li:hover .text_more{
-    opacity: 1;
 }
 
 .theme .pro .f01 .rough .f01_02 li:hover a .imgBox img {
@@ -1131,14 +1096,14 @@ nav .menu ul li .title>p {
     color: #3a3a3a;
     font-size: 36px;
     font-weight: bold;
-    font-family: "맑은 고딕", serif;
+    font-family: "Inter";
 }
 
 .ticket .title_inner .sub>p {
     color: #666666;
     font-size: 14px;
     font-weight: normal;
-    font-family: "맑은 고딕", serif;
+    font-family: "Inter";
     line-height: 130%;
     margin-top: 20px;
 }
@@ -1448,7 +1413,7 @@ nav .menu ul li .title>p {
     text-align: center;
 }
 
-.ticket .textBox>p {
+.ticket .textBox p {
     display: inline-block;
     font-size: 28px;
     font-weight: normal;
@@ -1601,7 +1566,7 @@ nav .menu ul li .title>p {
 .ticket .listBox .list .book .people .title p {
     font-size: 16px;
     font-weight: normal;
-    font-family: '맑은 고딕', serif;
+    font-family: "Inter";
     padding-left: 16px;
 }
 
@@ -1622,7 +1587,7 @@ nav .menu ul li .title>p {
     color: #3a3a3a;
     font-size: 16px;
     font-weight: normal;
-    font-family: '맑은 고딕', serif;
+    font-family: "Inter";
 }
 
 .ticket .listBox .list .book .people ul li .box {
@@ -1639,6 +1604,21 @@ nav .menu ul li .title>p {
     font-weight: bold;
     font-family: '맑은 고딕', serif;
     margin-left: 12px;
+}
+.people ul li .box .minus {
+    font-size: 14px;
+    cursor: pointer;
+    padding: 0 8px;
+    margin: 0 16px;
+}
+.people ul li .box .count {
+    margin: 0 4px;
+}
+.people ul li .box .plus {
+    font-size: 14px;
+    cursor: pointer;
+    padding: 0 8px;
+    margin: 0 16px;
 }
 .book .button {
     width: 260px;
@@ -1861,26 +1841,6 @@ nav .menu ul li .title>p {
     top: 80px;
 }
 
-/* .gallery .title_inner .scroll {
-    width: 1px;
-    height: 400px;
-    background-color: #dddddd;
-    position: absolute;
-    left: 35px;
-    top: 290px;
-}
-
-.gallery .title_inner .point {
-    width: 5px;
-    height: 100px;
-    border-radius: 10px;
-    background-color: #3787ff;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    position: absolute;
-    left: 33px;
-    top: 240px;
-} */
-
 .gallery .table {
     display: flex;
     justify-content: center;
@@ -1895,7 +1855,6 @@ nav .menu ul li .title>p {
     margin-left: 64px;
     margin-right: 64px;
     margin-bottom: 80px;
-    /* background-color: #BF47E8; */
     height: 1240px;
     overflow: hidden;
 }
@@ -1903,11 +1862,15 @@ nav .menu ul li .title>p {
 .gallery .table ul {
     width: 420px;
     margin: 0 8px;
+    overflow: hidden;
+    height: 100%;
+    position: relative;
 }
 
 .gallery .table ul li {
     margin-bottom: 16px;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s;
 }
 
 .gallery .table ul li a {
@@ -2019,17 +1982,54 @@ nav .menu ul li .title>p {
     font-family: "Jua", serif;
 }
 
-.sns .sns_bg .listBox {}
+.sns .sns_bg .listBox {
+    width: 100%;
+}
+.sns .sns_bg .listBox ul.slider {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+@keyframes slideLeft1 {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-50%); /* 첫 번째 복제된 아이템 끝으로 이동 */
+    }
+    100% {
+        transform: translateX(-100%); /* 두 번째 복제된 아이템 끝으로 이동 */
+    }
+}
+
+@keyframes slideLeft2 {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes slideLeft3 {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
 
 .sns .sns_bg .listBox ul:nth-child(1) {
     display: flex;
     flex-wrap: nowrap;
-    width: 5000px;
     margin: 16px 0;
-    margin-left: -60px;
+    width: calc(4085px * 2);
+    animation: slideLeft1 15s linear infinite; /* 애니메이션 추가 */
 }
 
-.sns .sns_bg .listBox ul li {
+.sns .sns_bg .listBox ul.slider li {
     display: flex;
     align-items: center;
     margin-right: 32px;
@@ -2039,24 +2039,27 @@ nav .menu ul li .title>p {
     display: flex;
     width: 80px;
     height: 80px;
-    border-radius: 40px;
+    border-radius: 50%;
     border: 1px solid #fff;
     background-color: rgba(255, 255, 255, 0.6);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.25);
     justify-content: center;
     align-items: center;
     margin-right: 12px;
     box-sizing: border-box;
 }
 
-.sns .sns_bg .listBox ul li .snsIcon img {}
+.sns .sns_bg .listBox ul li .snsIcon img {
+    width: 48px;
+    height: 48px;
+}
 
 .sns .sns_bg .listBox ul li .tag {
     display: flex;
     height: 80px;
     border-radius: 40px;
     background-color: #fff;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.25);
     justify-content: center;
     align-items: center;
     padding: 0 40px;
@@ -2066,7 +2069,7 @@ nav .menu ul li .title>p {
     color: #3a3a3a;
     font-size: 16px;
     font-weight: normal;
-    font-family: "맑은 고딕", serif;
+    font-family: "Inter";
     text-align: center;
 }
 
@@ -2079,17 +2082,17 @@ nav .menu ul li .title>p {
 .sns .sns_bg .listBox ul:nth-child(2) {
     display: flex;
     flex-wrap: nowrap;
-    width: 5000px;
     margin: 16px 0;
-    margin-left: -20px;
+    width: 3779px;
+    animation: slideLeft2 15s linear infinite; /* 애니메이션 추가 */
 }
 
 .sns .sns_bg .listBox ul:nth-child(3) {
     display: flex;
     flex-wrap: nowrap;
-    width: 5000px;
     margin: 16px 0;
-    margin-left: -160px;
+    width: 4390px;
+    animation: slideLeft3 15s linear infinite; /* 애니메이션 추가 */
 }
 
 /* 자주하는질문 */
@@ -2137,7 +2140,7 @@ nav .menu ul li .title>p {
     border-radius: 5px; */
     font-size: 14px;
     font-weight: normal;
-    font-family: "맑은 고딕", serif;
+    font-family: "Inter";
     text-align: center;
 }
 
@@ -2167,7 +2170,7 @@ nav .menu ul li .title>p {
 .faq_list ul li .q p {
     font-size: 16;
     font-weight: bold;
-    font-family: '맑은 고딕', serif;
+    font-family: "Inter";
 }
 
 .faq_list ul li .q i {
@@ -2214,7 +2217,7 @@ nav .menu ul li .title>p {
     font-size: 16;
     color: #e3e3e3;
     font-weight: normal;
-    font-family: '맑은 고딕', serif;
+    font-family: "Inter";
 }
 
 .faq .title_inner .faq_list ul li .q:hover {
@@ -2238,7 +2241,7 @@ nav .menu ul li .title>p {
     /* color: #3a3a3a; */
     font-size: 20px;
     font-weight: bold;
-    font-family: "맑은 고딕", serif;
+    font-family: "Inter";
 }
 
 .faq .title_inner .imgBox {
