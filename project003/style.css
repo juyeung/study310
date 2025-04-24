@@ -1,0 +1,1102 @@
+/* 언어설정 */
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Shippori+Mincho&display=swap');
+@font-face {
+    font-family: 'Cafe24Shiningstar';
+    src: url('font/Cafe24Shiningstar.woff2') format('woff2'),
+        url('font/Cafe24Shiningstar.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    /* font-display: swap; */
+}
+@font-face {
+    font-family: 'Athletic';
+    src: url('font/Athletic.woff2') format('woff2'),
+        url('font/Athletic.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Quentin';
+    src: url('font/Quentin.woff2') format('woff2'),
+        url('font/Quentin.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'S-Core Dream 3';
+    src: url('font/S-CoreDream-3Light.woff2') format('woff2'),
+        url('font/S-CoreDream-3Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'S-Core Dream 6';
+    src: url('font/S-CoreDream-6Bold.woff2') format('woff2'),
+        url('font/S-CoreDream-6Bold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* resetCSS */
+* {
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+ul,ol {
+    list-style: none;
+}
+img {
+    border: none;
+    vertical-align: bottom;
+}
+/* logo */
+.logoTop {
+    width: 60px;
+    height: 53px;
+    position: fixed;
+    top: 20px;
+    left: 50px;
+    z-index: 999;
+    background-image: url(img/logo_black.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+    display: none;
+}
+/* wrap설정 */
+#wrap.on {
+    position: relative;
+    /* perspective: 800px; */
+}
+
+/* navi설정 */
+nav {
+    position: fixed;
+    width: 150px;
+    left: 50px;
+    top: 50%;
+    z-index: 999;
+    margin-top: -125px;
+}
+
+nav ul {}
+nav li {
+    width: 150px;
+    height: 50px;
+    font-family: "Anton", sans-serif;
+    transition: all 0.8s;
+    cursor: pointer;
+    position: relative;
+}
+nav li:hover .dot{
+    opacity: 0;
+}
+nav li:hover p {
+    opacity: 1;
+}
+nav li.on p{
+    opacity: 1;
+}
+nav li.on .dot {
+    opacity: 0;
+}
+nav .dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #b9b9b6;
+    opacity: 1;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -8px;
+}
+nav p {
+    font-size: 20px;
+    opacity: 0;
+    position: absolute;
+    color: #66655d;
+    top: 50%;
+    left: 0;
+    margin-top: -15px;
+}
+nav {display: none;}
+
+/* section설정 */
+#wrap>div {
+    width: 100%;
+    height: 100vh;
+    background-color:#fbfbfa;
+}
+
+/* 영화소개 */
+.box1 {
+    color: #66655d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box1 .txt {}
+.box1 .txt .txt01 {
+    margin-bottom: 20px;
+}
+.box1 .txt .txt01 {}
+.box1 .txt .txt01 em {
+    font-size: 40px;
+    font-family: 'Cafe24Shiningstar';
+    font-style: normal;
+    color: #111;
+}
+.box1 .txt .txt01 p {
+    font-size: 16px;
+    line-height: 140%;
+}
+.box1 .txt .txt01 b {
+    font-size: 20px;
+    font-family: 'S-Core Dream 6';
+    color: #111;
+    line-height: 1.5;
+}
+.box1 .txt .txt02 p {
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+.box1 .txt .btn {}
+.box1 .txt .btn p {
+    font-size: 12px;
+    color: #fff;
+    margin: 16px 0;
+    border-radius: 2px;
+    width: 115px;
+    height: 40px;
+    background-color: #66655d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.box1 img {
+    height: 826px;
+}
+
+/* 인물소개 */
+.box2 {
+    overflow: hidden;
+    position: relative;
+}
+.box2 img {
+    position: absolute;
+    animation: bgani 1s ease-in-out forwards;
+    right: 0;
+    top: 0;
+}
+.box2 .bg {}
+@keyframes bgani {
+    0% {transform: translateX(50px);}
+    100% {transform: translateX(0);}
+}
+.box2 .topBox {
+    transform-origin: left top;
+    transform: rotate(15deg);
+}
+.box2 .topBox>div {
+    width: 2000px;
+    height: 500px;
+    position: absolute;
+    top: -700px;
+    left: 0;
+    background-color: #fbfbfa;
+    animation: line1 0.5s ease-out forwards;
+}
+
+@keyframes line1 {
+    0% {transform: translateX(100%);}
+    100% {transform: translateX(0);}
+}
+@keyframes line2 {
+    0% {transform: translateX(-100%);}
+    100% {transform: translateX(0);}
+}
+.box2 .bottomBox {
+    transform-origin: left top;
+    transform: rotate(15deg);
+}
+.box2 .bottomBox>div {
+    width: 2500px;
+    height: 500px;
+    position: absolute;
+    background-color: #fbfbfa;
+    top: 550px;
+    left: 0;
+    animation: line2 0.5s ease-out forwards;
+}
+.box2 .txtA {
+    position: absolute;
+    top: 90px;
+    left: 582px;
+    font-family: 'Anton';
+    color: #393936;
+    animation: txt2 0.3s ease-out forwards;
+}
+.box2 .txtA em {
+    display: inline-block;
+    font-size: 180px;
+    font-style: normal;
+    font-family: "Shippori Mincho", serif;
+}
+.box2 .txtA p {
+    font-size: 240px;
+    line-height: 1.2;
+}
+.box2 .txtB {
+    position: absolute;
+    top: 320px;
+    left: 590px;
+    font-family: 'Anton';
+    line-height: 1.2;
+    color: #393936;
+    animation: txt1 0.3s ease-out forwards;
+}
+.box2 .txtB p {
+    font-size: 52px;
+    margin-bottom: 226px;
+}
+.box2 .txtC {
+    position: absolute;
+    top: 351px;
+    left: 582px;
+    font-family: 'Anton';
+    line-height: 1.2;
+    color: #393936;
+    animation: txt2 0.3s ease-in-out forwards;
+}
+.box2 .txtC p {
+    font-size: 240px;
+    color: transparent; /* fill을 투명하게 설정 */
+  -webkit-text-stroke: 2px #393936; /* stroke 설정 */
+}
+
+@keyframes txt1 {
+    0% {transform: translateX(-100%); opacity: 0; filter: blur(5px);}
+    65% {transform: translateX(30px);}
+    100% {transform: translateX(0); opacity: 1;}
+}
+@keyframes txt2 {
+    0% {transform: translateX(100%); opacity: 0; filter: blur(5px);}
+    65% {transform: translateX(-50px);}
+    100% {transform: translateX(0); opacity: 1;}
+}
+.box2 .text {
+    position: absolute;
+    bottom: 0;
+    left: 100px;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    animation: text 1s ease-in-out 0.3s forwards;
+}
+.box2 .text>p{
+    font-size: 200px;
+    color: #b9b9b6;
+    opacity: 0.2;
+    font-family: 'Athletic';
+}
+.box2 .text>div {
+    position: absolute;
+    width: 600px;
+    bottom: 70px;
+    left: 0;
+    margin-left: 16px;
+}
+.box2 .text>div p:nth-child(1) {
+    font-size: 40px;
+    font-family: 'Cafe24Shiningstar';
+}
+.box2 .text>div p:nth-child(2) {
+    font-size: 16px;
+    font-family: 'S-Core Dream 3';
+}
+
+@keyframes text {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.box2 .navi {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    margin-left: -177px;
+    color: #b9b9b6;
+    display: flex;
+}
+.box2 .navi p {
+    font-size: 20px;
+    font-family: 'S-Core Dream 6';
+    margin: 0 8px;
+    cursor: pointer;
+}
+.box2 .navi p.on {
+    font-family: 'S-Core Dream 6';
+    color: #66655d;
+}
+
+.box2>div {
+    display: none;
+}
+.box2>div.on {
+    display: block;
+}
+
+
+/* 갤러리 */
+.box3 {
+    position: relative;
+    overflow: hidden;
+}
+.box3 .bgimg {
+    float: right;
+    height: 100vh;
+}
+
+.box3 .txt {
+    width: 723px;
+    text-align: center;
+    margin: 0 auto;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    margin-left: -361px;
+}
+.box3 .txt p:nth-child(1) {
+    font-size: 90px;
+    font-family: 'Quentin';
+    line-height: 140%;
+    letter-spacing: -2.5;
+    margin-bottom: 8px;
+    width: 723px;
+}
+.box3 .txt p:nth-child(2) {
+    font-size: 20px;
+    font-family: 'S-Core Dream 6';
+    margin-bottom: 20px;
+}
+.box3 .txt p:nth-child(3) {
+    font-size: 14px;
+    font-family: 'S-Core Dream 3';
+}
+.box3 .bt {
+    position: absolute;
+    left: 50%;
+    bottom: 80px;
+    margin-left: -264px;
+}
+
+.box3 .player {
+    display: none;
+    z-index: 10;
+}
+.box3 .player.on{
+    display: block;
+    z-index: 999;
+
+}
+
+.box3 .cha {
+    position: absolute;
+    left: 50%;
+    bottom: 80px;
+    margin-left: -125px;
+}
+
+.box3 .navi {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    margin-left: -120px;
+    color: #b9b9b6;
+    display: flex;
+    justify-content: space-around;
+    width: 240px;
+}
+.box3 .navi p {
+    font-size: 16px;
+    font-family: 'S-Core Dream 3';
+    padding: 0 10px;
+    cursor: pointer;
+}
+.box3 .navi p.on {
+    font-family: 'S-Core Dream 3';
+    color: #66655d;
+}
+.box3 .panolama {
+    width: 800px;
+    height: 450px;
+    position: absolute;
+    top: 50%;
+    margin-top: -250px;
+    left: 50%;
+    margin-left: -400px;
+    animation: ani linear 40s infinite;
+    transform-style: preserve-3d;
+}
+.box3 .panolama>article {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform-origin: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: -1;
+    /* display: none; */
+}
+.box3 .panolama>article img {
+    width: 100%;
+}
+/* 3D 배치 */
+.face1 {
+    transform: rotateY(0deg) translateZ(-1019px);
+    
+}
+.face2 {
+    transform: rotateY(45deg) translateZ(-1019px);
+}
+.face3 {
+    transform: rotateY(90deg) translateZ(-1019px);
+}
+.face4 {
+    transform: rotateY(135deg) translateZ(-1019px);
+}
+.face5 {
+    transform: rotateY(180deg) translateZ(-1019px);
+}
+.face6 {
+    transform: rotateY(225deg) translateZ(-1019px);
+}
+.face7 {
+    transform: rotateY(270deg) translateZ(-1019px);
+}
+.face8 {
+    transform: rotateY(315deg) translateZ(-1019px);
+}
+
+.panolama article:hover img {
+    transform: scale(1.1);
+    transition: all 0.8s;
+}
+
+/* 뒷면이 보이는 부분을 안보이게 해라 */
+.panolama article {
+    backface-visibility: hidden;
+}
+
+/* 회전시키기 */
+@keyframes ani {
+    0% {transform: perspective(1000px) rotateY(0deg);}
+    100% {transform: perspective(1000px) rotateY(360deg);}
+}
+
+.panolama.on {
+    animation-play-state: paused;
+}
+
+/* 팝업 배경 */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    display: none;
+}
+
+/* 팝업 이미지 */
+.modal img {
+    height: 800px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+    display: block;
+    
+}
+
+/* 닫기 버튼 */
+.modal .close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+
+
+/* 비디오 */
+.box4 {
+    background-image: url(img/video_bg.png);
+    background-size: cover;
+    /* position: relative; */
+    overflow: hidden;
+    position: relative;
+}
+.box4 .videoBox {
+    width: 48%;
+    height: 90%;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.box4 .videoBox .blk {
+    width: 96%;
+    height: 100%;
+    background-color: #111;
+}
+.box4 .videoBox .logored {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e32b30;
+    width: 100%;
+    height: 15vh;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.box4 .videoBox .logoBox {
+    width: 96%;
+    height: 11vh;
+    background-color: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box4 .videoBox .logored img {
+    height: 8vh;
+}
+.box4 .videoBox .vid {
+    width: 100%;
+    height: 56vh;
+    position: absolute;
+    top: 18vh;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid #111;
+    box-sizing: border-box;
+    background-color: #111;
+}
+.box4 .videoBox .title {
+    position: absolute;
+    background-color: #e32b30;
+    width: 100%;
+    height: 11vh;
+    top: 77vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box4 .videoBox .title p {
+    padding: 0 8vw;
+    font-size: 28px;
+    color: #fff;
+    font-family: 'S-Core Dream 6';
+}
+
+/* 비디오 썸네일 */
+.box4 .thum {
+    max-width: 467px;
+    height: 90%;
+    position: absolute;
+    top: 5%;
+    right: 1%;
+}
+.thum>img {
+    top: 0;
+    left: 0;
+}
+.thum .thum01 img{
+    transition: all 0.5s;
+    width: 100%;
+}
+.box4 .thum01 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    clip-path: polygon(13% 3%, 89% 16.5%, 88.5% 51.5%, 11.5% 59.5%);
+    cursor: pointer;
+}
+.thum01:hover img {transform: scale(1.2);}
+.thum .thum02 img{
+    transition: all 0.5s;
+    width: 100%;
+}
+.box4 .thum02 {
+    position: absolute;
+    top: 173px;
+    left: 0;
+    overflow: hidden;
+    clip-path: polygon(8.5% 32%, 90% 10%, 91% 75%, 9% 67%);
+    cursor: pointer;
+}
+.thum02:hover img {transform: scale(1.2);}
+.thum .thum03 img{
+    transition: all 0.5s;
+    width: 100%;
+}
+.box4 .thum03 {
+    position: absolute;
+    top: 414px;
+    left: 0;
+    overflow: hidden;
+    clip-path: polygon(7.5% 4%, 95.5% 16%, 96.5% 54%, 10% 75%);
+    cursor: pointer;
+}
+.thum03:hover img {transform: scale(1.2);}
+.thum .thum04 img{
+    transition: all 0.5s;
+    width: 100%;
+}
+.box4 .thum04 {
+    position: absolute;
+    top: 579px;
+    left: 0;
+    overflow: hidden;
+    clip-path: polygon(5% 27%, 92.5% 4%, 94% 73%, 5% 64%);
+    cursor: pointer;
+}
+.thum04:hover img {transform: scale(1.2);}
+
+/* 비디오 오브젝트 */
+.box4 .obj {
+    width: 100%;
+    height: 100vh;
+}
+.box4 .obj .obj1 {}
+.box4 .obj img {
+    position: absolute;
+}
+.box4 .obj .obj1 img:nth-child(1) {
+    bottom: 5%;
+    left: 4%;
+    width: 16vw;
+}
+.box4 .obj .obj1 img:nth-child(2) {
+    left: 24%;
+    bottom: 5%;
+    width: 7vw;
+}
+.box4 .obj .obj1 img:nth-child(3) {
+    right: 22%;
+    bottom: 5%;
+    width: 9vw;
+}
+.box4 .obj .obj1 img:nth-child(4) {
+    left: 12%;
+    top: 12%;
+    width: 10vw;
+}
+
+.box4 .obj .obj2 img:nth-child(1) {
+    left: 16%;
+    bottom: 40%;
+    width: 9vw;
+}
+.box4 .obj .obj2 img:nth-child(2) {
+    left: 4%;
+    top: 18%;
+    width: 5vw;
+    transform: rotate(15deg);
+}
+.box4 .obj .obj2 img:nth-child(3) {
+    right: 2%;
+    top: 5%;
+    width: 5vw;
+    transform: rotate(-15deg);
+}
+
+.box4 .obj .obj3 img {
+    width: 5vw;
+}
+.box4 .obj .obj3 img:nth-child(1) {
+    top: 2%;
+    right: 23%;
+}
+.box4 .obj .obj3 img:nth-child(2) {
+    top: 10%;
+    left: 23%;
+    transform: rotate(-15deg);
+}
+.box4 .obj .obj3 img:nth-child(3) {
+    bottom: 24%;
+    left: 5%;
+    transform: rotate(-15deg);
+}
+.box4 .obj .obj3 img:nth-child(4) {
+    bottom: 20%;
+    left: 17%;
+    transform: rotate(15deg);
+}
+.box4 .obj .obj3 img:nth-child(5) {
+    right: 20%;
+    top: 42%;
+    transform: rotate(15deg);
+}
+
+/* ost */
+.box5 {
+    position: relative;
+    overflow: hidden;
+}
+.box5 .txt {
+    width: 723px;
+    text-align: center;
+    margin: 0 auto;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    margin-left: -361px;
+}
+.box5 .txt p:nth-child(1) {
+    font-size: 90px;
+    font-family: 'Quentin';
+    line-height: 140%;
+    letter-spacing: -2.5;
+    margin-bottom: 8px;
+    width: 723px;
+}
+.box5 .txt p:nth-child(2) {
+    font-size: 20px;
+    font-family: 'S-Core Dream 6';
+    margin-bottom: 20px;
+}
+.box5 .txt p:nth-child(3) {
+    font-size: 14px;
+    font-family: 'S-Core Dream 3';
+}
+.box5 .listBox {
+    color: #fff;
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+.box5 .listBox>div {
+    width: 158px;
+    height: 320px;
+    margin: 0 8px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+.box5 .listBox>div img {
+    transition: all 1.5s;
+}
+.box5 .listBox>div:hover img {
+    transform: scale(1.2);
+}
+.listBox > div {
+    transition: transform 0.3s ease-in-out;
+}
+/* 클릭 시 유지 */
+.listBox > div.selected {
+    transform: scale(1.1);
+}
+
+/* 다른 리스트 클릭 시 원래 크기로 돌아감 */
+.listBox > div:not(.selected) {
+    transform: scale(1);
+}
+
+.box5 .listBox .title {
+    width: 300px;
+    height: 40px;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    margin-top: 10px;
+    margin-left: -10px;
+    transform: rotate(90deg);
+    transform-origin: 0 0;
+}
+.box5 .listBox .title p {
+    font-size: 16px;
+    font-family: 'S-Core Dream 6';
+    float: left bottom;
+}
+.box5 .listBox .title span {
+    font-size: 14px;
+    font-family: 'S-Core Dream 3';
+}
+.box5 .listBox>div>p{
+    font-size: 20px;
+    font-family: 'Athletic';
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+
+.box5 .lizerBox {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    height: auto;
+}
+.box5 .lizerBox .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #2196F3; */
+}
+.box5 .lizerBox .btn>div {
+    margin: 0 8px;
+}
+.box5 .lizerBox .play {
+    width: 44px;
+    height: 44px;
+    /* background-color: aquamarine;
+    border-radius: 50%;
+    background-color: #b9b9b6; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.box5 .lizerBox .play i {
+    font-size: 16px;
+    color: #66655d;
+    margin-left: 3px;
+}
+.box5 .lizerBox .stop {
+    width: 44px;
+    height: 44px;
+    /* background-color: blueviolet;
+    border-radius: 50%;
+    background-color: #b9b9b6; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.box5 .lizerBox .stop i {
+    font-size: 16px;
+    color: #66655d;
+}
+.box5 .lizerBox .vlizer {
+    width: 800px;
+    height: 100px;
+    margin: 0 40px;
+    z-index: 9999;
+}
+.box5 .lizerBox .sound {
+    width: 44px;
+    height: 44px;
+    /* background-color: cadetblue;
+    border-radius: 50%;
+    background-color: #b9b9b6; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.box5 .lizerBox .sound i {
+    font-size: 16px;
+    color: #66655d;
+    margin-left: 3px;
+}
+
+/* 진행 바 컨테이너 */
+.progress-container {
+    width: 800px;
+    height: 10px;
+    background-color: #aaa;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 진행 바 */
+.progress-bar {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 100%;
+    background-color: #ebc26b;
+    outline: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+    position: absolute;
+}
+
+/* 진행 바 슬라이더 (디스크 형태) */
+.progress-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-image: url(img/ball.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.time-display {
+    display: flex;
+    width: 800px;
+    justify-content: space-between;
+    margin-top: 10px;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.time-display span {
+    font-size: 14px;
+    color: #666;
+}
+
+.progress-bar::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #2196F3;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.progress-bar::-ms-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #2196F3;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+/* 인트로 */
+.intro.on {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.intro .pimg img {
+    position: absolute;
+}
+.intro .pimg {
+    width: 606px;
+    height: 860px;
+    position: relative;
+    margin-top: 80px;
+}
+.intro .pimg img:nth-child(1) {
+    right: 65px;
+    top: 0;
+    width: 314px;
+    height: 338px;
+    animation: introAni1 0.8s ease-in-out 3.5s forwards;
+}
+.intro .pimg img:nth-child(2) {
+    left: 74px;
+    top: 0;
+    width: 217px;
+    height: 336px;
+    animation: introAni1 0.8s ease-in-out 3s forwards;
+}
+.intro .pimg img:nth-child(3) {
+    right: 0;
+    top: 274px;
+    width: 348px;
+    height: 369px;
+    animation: introAni1 0.8s ease-in-out 2.5s forwards;
+}
+.intro .pimg img:nth-child(4) {
+    left: 0;
+    top: 287px;
+    width: 332px;
+    height: 390px;
+    animation: introAni1 0.8s ease-in-out 2s forwards;
+}
+.intro .pimg img:nth-child(5) {
+    left: 156px;
+    top: 345px;
+    width: 269px;
+    height: 376px;
+    animation: introAni1 0.8s ease-in-out 1.5s forwards;
+}
+.intro .logo {
+    position: absolute;
+    opacity: 0;
+    top: 50%;
+    margin-top: -108px;
+    left: 50%;
+    margin-left: -122px;
+    animation: introAni2 0.3s ease-in-out 4.8s forwards;
+    cursor: pointer;
+}
+.intro .logo img {
+    width: 245px;
+    height: 216px;
+}
+.intro .logo p {
+    font-size: 16px;
+    font-family: 'S-Core Dream 3';
+    text-align: center;
+    margin-top: 12px;
+    opacity: 0;
+    animation: introAni3 1.5s ease-in-out 5.5s infinite;
+}
+
+@keyframes introAni1 {
+    0% {transform: scale(1); opacity: 1;}
+    100% {transform: scale(5); opacity: 0;
+    }
+}
+@keyframes introAni2 {
+    0% {transform: scale(5); opacity: 0;}
+    100% {transform: scale(1); opacity: 1;}
+}
+@keyframes introAni3 {
+    0% {opacity: 0;}
+    50% {opacity: 1;}
+    100% {opacity: 0;}
+}

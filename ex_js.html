@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>성적표만들기_김주영</title>
+</head>
+<body>
+    <form action="">
+        <table border="1">
+            <tr>
+                <td>국어</td>
+                <td>영어</td>
+                <td>수학</td>
+                <td>과학</td>
+            </tr>
+            <tr>
+                <td><input type="text" id="k"></td>
+                <td><input type="text" id="e"></td>
+                <td><input type="text" id="m"></td>
+                <td><input type="text" id="s"></td>
+            </tr>
+            <td>총점</td>
+                <td id="add">00</td>
+                <td>평균</td>
+                <td id="ever">00</td>
+        </table>
+        <div><button id="btn">학점확인하기</button></div>
+        <div><p>당신의 학점은 <span id="grade">00</span>학점입니다.</p></div>
+    </form>
+    <script>
+        document.getElementById('btn').addEventListener('click',function(e){
+            e.preventDefault()
+
+       let kor = Number (document.getElementById('k').value);
+       let eng = Number (document.getElementById('e').value);
+       let math = Number (document.getElementById('m').value);
+       let sic = Number (document.getElementById('s').value);
+
+       let add = kor + eng  + math + sic;
+       let ever = add / 4;
+
+       document.getElementById('add').textContent = add
+       document.getElementById('ever').textContent = ever;
+
+       let grade = "";
+
+       if(ever>=90) grade = "A"
+       else if (ever < 90 && ever >= 80) grade = "B"
+       else if (ever < 80 && ever >= 70) grade = "C"
+       else if (ever < 70 && ever >= 60) grade = "D"
+       else grade = "F"
+
+       document.getElementById('grade').textContent = grade
+       })
+    </script>
+    <style>
+        * {
+            margin: 0 auto;
+        }
+        table {
+            text-align: center;
+        }
+        #btn {
+            width: 200px;
+            height: 40px;
+            background-color: deeppink;
+            border-radius: 10px;
+            font-size: 24px;
+            color: aliceblue;
+            border: 2px solid rgb(140, 0, 255);
+            
+        }
+        #grade {
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+    
+</body>
+</html>

@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로젝트003</title>
+    
+    <!-- 외부스타일시트 -->
+    <link rel="stylesheet" href="style.css">
+    <!-- 폰트어썸 CDN -->
+    <script src="https://kit.fontawesome.com/07b05ff9e8.js" crossorigin="anonymous"></script>
+    <!-- 제이쿼리 CDN -->
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.mousewheel.min.js"></script>
+    <!-- 외부스크립트연결 -->
+    <script src="js/js.js"></script>
+</head>
+<body>
+    <div class="intro on">
+        <div class="pimg">
+            <img src="img/sk01.png" alt="">
+            <img src="img/sk02.png" alt="">
+            <img src="img/sk05.png" alt="">
+            <img src="img/sk04.png" alt="">
+            <img src="img/sk03.png" alt="">
+        </div>
+        <div class="logo">
+            <img src="img/logo_black.png" alt="">
+            <p>-Click-</p>
+        </div>
+    </div>
+    <div class="logoTop"></div>
+    <nav>
+        <ul>
+            <li class="on">
+                <div class="dot"></div>
+                <p>THE FIRST STORY</p>
+            </li>
+            <li>
+                <div class="dot"></div>
+                <p>PLAYER</p></li>
+            <li>
+                <div class="dot"></div>
+                <p>MEMORY COURT</p>
+            </li>
+            <li>
+                <div class="dot"></div>
+                <p>RE:PLAY</p>
+            </li>
+            <li>
+                <div class="dot"></div>
+                <p>Court Beats</p>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="wrap" class="on">
+        <!-- 영화소개 -->
+        <div class="box1">
+            <div class="txt">
+                <div class="txt01">
+                    <em>당신의 영광의 시대는 언제인가요?</em>
+                    <p>우리 모두에게 가슴 뛰던 순간이 있습니다.<br>
+                        모든 것을 걸고 최선을 다했던, 그때 그 순간 말이죠.<br>
+                        북산고 농구부의 포인트 가드 송태섭(미야기 료타)의 시선에서 펼쳐지는 이야기로,<br>
+                        우리가 기억하는 전설적인 경기 북산 vs 산왕공고전을 새롭게 그려냅니다.<br>
+                        3D와 2D 애니메이션이 결합된 감각적인 연출,<br>
+                        그리고 숨 막히는 경기 장면으로 팬들의 심장을 다시 한 번 뛰게 만듭니다.<br>
+                        그때 그 시절, 당신의 영광의 시대를 떠올리게 할 영화.<br>
+                        <b>다시 한번, 뜨거운 승부가 시작됩니다!</b>
+                    </p>
+                </div>
+                <div class="txt02">
+                    <p>감독: 이노우에 다케히코</p>
+                    <p>장르: 스포츠, 일본 애니메이션, 애니메이션</p>
+                    <p>공개일: 2022</p>
+                    <p>관람 등급: 12+</p>
+                </div>
+                <div class="btn">
+                    <p>예고편 보러가기</p>
+                </div>
+            </div>
+            <img src="img/intro.png" alt="">
+        </div>
+
+        <!-- 인물소개 -->
+        <div class="box2">
+            <div class="on">
+                <img src="img/player01_w.png" alt="" class="bg">
+                <div class="txtA">
+                    <em>宮城 リョータ</em>
+                    <p>MIYAGI</p>
+                    <P>RYOTA</P>
+                </div>
+                <div class="topBox"><div></div></div>
+                <img src="img/player01_on.png" alt="">
+                <div class="txtB">
+                    <p>POINT GUARD</p>
+                    <p>MIYAGI RYOTA</p>
+                </div>
+                <div class="txtC">
+                    <p>MIYAGI</p>
+                    <P>RYOTA</P>
+                </div>
+                <div class="bottomBox"><div></div></div>
+                <div class="text">
+                    <p>7</p>
+                    <div>
+                        <p>"No1. 가드"</p>
+                        <p>-송태섭-</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <img src="img/player02_w.png" alt="" class="bg">
+                <div class="txtA">
+                    <em>桜木 花道</em>
+                    <p>SAKURAGI</p>
+                    <P>HANAMICHI</P>
+                </div>
+                <div class="topBox"><div></div></div>
+                <img src="img/player02_on.png" alt="">
+                <div class="txtB">
+                    <p>POWER FORWARD</p>
+                    <p>SAKURAGI HANAMICHI</p>
+                </div>
+                <div class="txtC">
+                    <p>SAKURAGI</p>
+                    <P>HANAMICHI</P>
+                </div>
+                <div class="bottomBox"><div></div></div>
+                <div class="text">
+                    <p>10</p>
+                    <div>
+                        <p>"왼손은 거들뿐"</p>
+                        <p>-강백호-</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <img src="img/player03_w.png" alt="" class="bg">
+                <div class="txtA">
+                    <em>流川 楓</em>
+                    <p>RYUKAWA</p>
+                    <P>KAEDE</P>
+                </div>
+                <div class="topBox"><div></div></div>
+                <img src="img/player03_on.png" alt="">
+                <div class="txtB">
+                    <p>SMALL FORWARD</p>
+                    <p>RYUKAWA KAEDE</p>
+                </div>
+                <div class="txtC">
+                    <p>RYUKAWA</p>
+                    <P>KAEDE</P>
+                </div>
+                <div class="bottomBox"><div></div></div>
+                <div class="text">
+                    <p>11</p>
+                    <div>
+                        <p>"천재적인 재능을 가진 냉정한 에이스"</p>
+                        <p>-서태웅-</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <img src="img/player04_w.png" alt="" class="bg">
+                <div class="txtA">
+                    <em>赤木 剛憲</em>
+                    <p>AKAGI</p>
+                    <P>TAKENORI</P>
+                </div>
+                <div class="topBox"><div></div></div>
+                <img src="img/player04_on.png" alt="">
+                <div class="txtB">
+                    <p>CENTER</p>
+                    <p>AKAGI TAKENORI</p>
+                </div>
+                <div class="txtC">
+                    <p>AKAGI</p>
+                    <P>TAKENORI</P>
+                </div>
+                <div class="bottomBox"><div></div></div>
+                <div class="text">
+                    <p>4</p>
+                    <div>
+                        <p>"리바운드를 제압하는 자가 시합을 제압한다"</p>
+                        <p>-채치수-</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <img src="img/player05_w.png" alt="" class="bg">
+                <div class="txtA">
+                    <em>三井 寿</em>
+                    <p>MITSUI</p>
+                    <P>HISASHI</P>
+                </div>
+                <div class="topBox"><div></div></div>
+                <img src="img/player05_on.png" alt="">
+                <div class="txtB">
+                    <p>SHOOTING GUARD</p>
+                    <p>MITSUI HISASHI</p>
+                </div>
+                <div class="txtC">
+                    <p>MITSUI</p>
+                    <P>HISASHI</P>
+                </div>
+                <div class="bottomBox"><div></div></div>
+                <div class="text">
+                    <p>14</p>
+                    <div>
+                        <p>"포기를 모르는 남자. 불꽃남자"</p>
+                        <p>-정대만-</p>
+                    </div>
+                </div>
+            </div>
+            <div class="navi">
+                <p class="on">송태섭</p>
+                <p>강백호</p>
+                <p>서태웅</p>
+                <p>채치수</p>
+                <p>정대만</p>
+            </div>
+        </div>
+
+        <!-- 갤러리 -->
+        <div class="box3">
+            <div class="txt">
+                <p>MEMORY COURT</p>
+                <p>"추억이 깃든 코트, 그 순간을 다시 만나다"</p>
+                <p>이곳은 슬램덩크의 감동적인 순간들을 다시 만날 수 있는 공간, MEMORY COURT입니다.<br>
+                    북산고의 치열했던 경기, 가슴을 울린 명장면, 그리고 우리에게 깊은 인상을 남긴 캐릭터들의 순간들이 이곳에 담겨 있습니다.<br>
+                    당신이 사랑했던 슬램덩크의 모든 기억을 함께 나누고, 다시 한번 느껴보세요.<br>
+                    당신에게 가장 잊지 못할 순간은 언제인가요?</p>
+            </div>
+            <img src="img/gel_btlogo.png" alt="" class="bt">
+            <div class="player on">
+                <img src="img/gel_bg01.png" alt="" class="bgimg">
+                <div class="panolama">
+                    <article class="face1">
+                        <img src="img/gel_01_01.jpg" alt="">
+                    </article>
+                    <article class="face2">
+                        <img src="img/gel_01_02.jpg" alt="">
+                    </article>
+                    <article class="face3">
+                        <img src="img/gel_01_03.jpg" alt="">
+                    </article>
+                    <article class="face4">
+                        <img src="img/gel_01_04.jpg" alt="">
+                    </article>
+                    <article class="face5">
+                        <img src="img/gel_01_05.jpg" alt="">
+                    </article>
+                    <article class="face6">
+                        <img src="img/gel_01_06.jpg" alt="">
+                    </article>
+                    <article class="face7">
+                        <img src="img/gel_01_07.jpg" alt="">
+                    </article>
+                    <article class="face8">
+                        <img src="img/gel_01_08.jpg" alt="">
+                    </article>
+                </div>
+                <img src="img/gel_01.png" alt="" class="cha">
+            </div>
+            <div class="player">
+                <img src="img/gel_bg02.png" alt="" class="bgimg">
+                <div class="panolama">
+                    <article class="face1">
+                        <img src="img/gel_02_01.jpg" alt="">
+                    </article>
+                    <article class="face2">
+                        <img src="img/gel_02_02.jpg" alt="">
+                    </article>
+                    <article class="face3">
+                        <img src="img/gel_02_03.jpg" alt="">
+                    </article>
+                    <article class="face4">
+                        <img src="img/gel_02_04.jpg" alt="">
+                    </article>
+                    <article class="face5">
+                        <img src="img/gel_02_05.jpg" alt="">
+                    </article>
+                    <article class="face6">
+                        <img src="img/gel_02_06.jpg" alt="">
+                    </article>
+                    <article class="face7">
+                        <img src="img/gel_02_07.jpg" alt="">
+                    </article>
+                    <article class="face8">
+                        <img src="img/gel_02_08.jpg" alt="">
+                    </article>
+                </div>
+                <img src="img/gel_02.png" alt="" class="cha">
+            </div>
+            <div class="player">
+                <img src="img/gel_bg03.png" alt="" class="bgimg">
+                <div class="panolama">
+                    <article class="face1">
+                        <img src="img/gel_03_01.jpg" alt="">
+                    </article>
+                    <article class="face2">
+                        <img src="img/gel_03_02.jpg" alt="">
+                    </article>
+                    <article class="face3">
+                        <img src="img/gel_03_03.jpg" alt="">
+                    </article>
+                    <article class="face4">
+                        <img src="img/gel_03_04.jpg" alt="">
+                    </article>
+                    <article class="face5">
+                        <img src="img/gel_03_05.jpg" alt="">
+                    </article>
+                    <article class="face6">
+                        <img src="img/gel_03_06.jpg" alt="">
+                    </article>
+                    <article class="face7">
+                        <img src="img/gel_03_07.jpg" alt="">
+                    </article>
+                    <article class="face8">
+                        <img src="img/gel_03_08.jpg" alt="">
+                    </article>
+                </div>
+                <img src="img/gel_03.png" alt="" class="cha">
+            </div>
+            <div class="player">
+                <img src="img/gel_bg04.png" alt="" class="bgimg">
+                <div class="panolama">
+                    <article class="face1">
+                        <img src="img/gel_04_01.jpg" alt="">
+                    </article>
+                    <article class="face2">
+                        <img src="img/gel_04_02.jpg" alt="">
+                    </article>
+                    <article class="face3">
+                        <img src="img/gel_04_03.jpg" alt="">
+                    </article>
+                    <article class="face4">
+                        <img src="img/gel_04_04.jpg" alt="">
+                    </article>
+                    <article class="face5">
+                        <img src="img/gel_04_05.jpg" alt="">
+                    </article>
+                    <article class="face6">
+                        <img src="img/gel_04_06.jpg" alt="">
+                    </article>
+                    <article class="face7">
+                        <img src="img/gel_04_07.jpg" alt="">
+                    </article>
+                    <article class="face8">
+                        <img src="img/gel_04_08.jpg" alt="">
+                    </article>
+                </div>
+                <img src="img/gel_04.png" alt="" class="cha">
+            </div>
+            <div class="player">
+                <img src="img/gel_bg05.png" alt="" class="bgimg">
+                <div class="panolama">
+                    <article class="face1">
+                        <img src="img/gel_05_01.jpg" alt="">
+                    </article>
+                    <article class="face2">
+                        <img src="img/gel_05_02.jpg" alt="">
+                    </article>
+                    <article class="face3">
+                        <img src="img/gel_05_03.jpg" alt="">
+                    </article>
+                    <article class="face4">
+                        <img src="img/gel_05_04.jpg" alt="">
+                    </article>
+                    <article class="face5">
+                        <img src="img/gel_05_05.jpg" alt="">
+                    </article>
+                    <article class="face6">
+                        <img src="img/gel_05_06.png" alt="">
+                    </article>
+                    <article class="face7">
+                        <img src="img/gel_05_07.jpg" alt="">
+                    </article>
+                    <article class="face8">
+                        <img src="img/gel_05_09.png" alt="">
+                    </article>
+                </div>
+                <img src="img/gel_05.png" alt="" class="cha">
+            </div>
+            <div class="navi">
+                <p class="on">4</p>
+                <p>7</p>
+                <p>10</p>
+                <p>11</p>
+                <p>14</p>
+            </div>
+        </div>
+        
+        <!-- 비디오 -->
+        <div class="box4">
+            <div class="videoBox">
+                <div class="blk"></div>
+                <div class="logored">
+                    <div class="logoBox">
+                        <img src="img/logo_wd.png" alt="">
+                    </div>
+                </div>
+                <div class="vid"></div>
+                <div class="title">
+                    <p>더 퍼스트 슬램덩크 공식 예고편</p>
+                </div>
+            </div>
+            <div class="thum">
+                <img src="img/video_thum.png" alt="">
+                <div class="thum01">
+                    <img src="img/video_thum01.png" alt="">
+                </div>
+                <div class="thum02">
+                    <img src="img/video_thum02.jpg" alt="">
+                </div>
+                <div class="thum03">
+                    <img src="img/video_thum03.jpg" alt="">
+                </div>
+                <div class="thum04">
+                    <img src="img/video_thum04.jpg" alt="">
+                </div>
+            </div>
+            
+            <div class="obj">
+                <img src="img/mov_oj08.png" alt="" width="400">
+                <div class="obj1">
+                    <img src="img/mov_oj01.png" alt="" class="oj01">
+                    <img src="img/mov_oj02.png" alt="" class="oj02">
+                    <img src="img/mov_oj03.png" alt="" class="oj03">
+                    <img src="img/mov_oj04.png" alt="" class="oj04">
+                </div>
+                <div class="obj2">
+                    <img src="img/mov_oj05.png" alt="" class="oj05">
+                    <img src="img/mov_oj06.png" alt="" class="oj06">
+                    <img src="img/mov_oj07.png" alt="" class="oj07">
+                </div>
+                <div class="obj3">
+                    <img src="img/mov_sd01.png" alt="" class="oj08">
+                    <img src="img/mov_sd02.png" alt="" class="oj09">
+                    <img src="img/mov_sd03.png" alt="" class="oj10">
+                    <img src="img/mov_sd04.png" alt="" class="oj11">
+                    <img src="img/mov_sd05.png" alt="" class="oj12">
+                </div>
+            </div>
+        </div>
+
+        <!-- ost -->
+        <div class="box5">
+            <div class="txt">
+                <p>COURT BEATS</p>
+                <p>슬램덩크의 열정 넘치는 순간들을 더욱 빛나게 하는 OST</p>
+                <p>농구 코트 위에서 펼쳐지는 격렬한 경기는 물론, 선수들의 감정을 더욱 깊게 표현하는 음악들이 여러분을 기다립니다.<br>
+                    '슬램덩크'의 사운드트랙은 단순히 배경음악이 아닌, 그 자체로 이야기를 풀어나가는 중요한 요소입니다.<br>
+                    경기의 긴장감, 감동적인 순간들, 모든 순간을 기억하게 해주는 음악들을 감상해보세요.</p>
+            </div>
+            <div class="listBox">
+                <div class="list1" data-src="media/1_LoveRockets.mp3">
+                    <img src="img/ost_01.jpg" alt="">
+                    <div class="title">
+                        <p>Love Rockets (Movie Version)</p>
+                        <span>The Birthday</span>
+                    </div>
+                    <p>1</p>
+                </div>
+                <div class="list2" data-src="media/2_AkatsukiNoSunadokei.mp3">
+                    <img src="img/ost_02.png" alt="">
+                    <div class="title">
+                        <p>暁の砂時計</p>
+                        <span>10-FEET</span>
+                    </div>
+                    <p>2</p>
+                </div>
+                <div class="list3" data-src="media/3_BLIZZARDGUNNER.mp3">
+                    <img src="img/ost_03.jpg" alt="">
+                    <div class="title">
+                        <p>BLIZZARD GUNNER</p>
+                        <span>10-FEET</span>
+                    </div>
+                    <p>3</p>
+                </div>
+                <div class="list4" data-src="media/4_DoublecrutchZERO.mp3">
+                    <img src="img/ost_04.png" alt="">
+                    <div class="title">
+                        <p>Double crutch ZERO</p>
+                        <span>10-FEET</span>
+                    </div>
+                    <p>4</p>
+                </div>
+                <div class="list5" data-src="media/5_SlashSnake.mp3">
+                    <img src="img/ost_05.jpg" alt="">
+                    <div class="title">
+                        <p>Slash Snake</p>
+                        <span>10-FEET</span>
+                    </div>
+                    <p>5</p>
+                </div>
+                <div class="list6" data-src="media/6_BLIZZARDGUNNER.mp3">
+                    <img src="img/ost_06.jpg" alt="">
+                    <div class="title">
+                        <p>Alert of oz</p>
+                        <span>10-FEET</span>
+                    </div>
+                    <p>6</p>
+                </div>
+                <div class="list7" data-src="media/7_DaiZeroKan.mp3">
+                    <img src="img/ost_07.jpg" alt="">
+                    <div class="title">
+                        <p>第ゼロ感</p>
+                        <span>10-FEET</span>
+                    </div>
+                    <p>7</p>
+                </div>
+            </div>
+            <div class="lizerBox">
+                <div class="btn">
+                    <div class="play">
+                        <i class="fa-solid fa-play"></i>
+                    </div>
+                    <div class="stop">
+                        <i class="fa-solid fa-stop"></i>
+                    </div>
+                    <div class="sound">
+                        <i class="fa-solid fa-volume-xmark"></i>
+                    </div>
+                </div>
+                <canvas class="vlizer"></canvas>
+                
+            </div>
+            <div class="time-display">
+                <span class="current-time">0:00</span><span class="duration-time">0:00</span>
+            </div>
+            <div class="progress-container">
+                <input type="range" class="progress-bar" value="0" max="100">
+            </div>
+        </div>
+    </div>
+    <div class="modal">
+        <span class="close">&times;</span>
+        <img src="" alt="Popup Image">
+    </div>
+    
+</body>
+</html>
