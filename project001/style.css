@@ -40,7 +40,7 @@ img {
     transform: translateX(-50%);
     z-index: 999;
     transition: top 0.3s ease;
-    background-color: rgba(0, 0, 0, 0.25);
+    background-color: rgba(1, 20, 59, 0.8);
     padding: 0 240px;
     box-sizing: border-box;
 }
@@ -87,7 +87,8 @@ nav.on{
     left: 0;
     width: 100%;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(1, 20, 59, 0.8);
+    backdrop-filter: blur(10px);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -114,7 +115,9 @@ nav .close:hover img {
     transform: rotate(180deg);
 }
 nav .menu {}
-nav .menu ul {}
+nav .menu ul {
+    width: 800px;
+}
 nav .menu ul li {
     color: #fff;
     margin: 24px 0;
@@ -126,22 +129,23 @@ nav .menu ul li:hover .line {
 nav .menu ul li:hover .title>p {
     color: #3787ff;
 }
-nav .menu ul li:hover {
-    scale: 1.2;
+nav .menu ul li:hover .submenu p{
+    font-size: 24px;
 }
 .menu ul .line {
     transition: all 0.8s;
     opacity: 0;
+    margin-top: 8px;
 }
 .menu ul .line .line1 {
     width: 100%;
     height: 1px;
-    background-color: #999;
+    background-color: rgb(156, 176, 187);
 }
 .menu ul .line .line2 {
     width: 100%;
     height: 1px;
-    background-color: #000;
+    background-color: rgb(13, 0, 58);
 }
 nav .menu ul li .title {
     display: flex;
@@ -161,6 +165,7 @@ nav .menu ul li .title>p {
     padding: 2px 0;
     margin: 0 24px;
     cursor: pointer;
+    transition: all 0.5s;
     /* border-bottom: 2px solid transparent; */
 }
 .submenu p:hover {
@@ -254,11 +259,38 @@ nav .menu ul li .title>p {
     height: 100vh;
     position: relative;
 }
+.landing .video_bg {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.landing .video_bg video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 0;
+}
 
 .landing .title_inner {
-    /* display: flex; */
-    height: 53vw;
+    height: 100vh;
     position: relative;
+}
+.landing .title_bg {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.landing .title_bg p {
+    font-size: 140px;
+    font-weight: 600;
+    font-family: "Inter";
+    color: rgba(255, 255, 255, 0.2);
 }
 
 .landing .title {
@@ -357,15 +389,15 @@ nav .menu ul li .title>p {
     position: absolute;
 }
 
-.slide {
+.slideBar .slide_win {
     width: 90%;
 }
 
-.slideBar .slide .sub {
+.slideBar .slide_win .sub {
     display: flex;
 }
 
-.slideBar .slide .sub>p:nth-child(1) {
+.slideBar .slide_win .sub p:nth-child(1) {
     width: 50%;
     height: auto;
     font-size: 18px;
@@ -374,7 +406,7 @@ nav .menu ul li .title>p {
     color: #fff;
 }
 
-.slideBar .slide .sub>p:nth-child(2) {
+.slideBar .slide_win .sub p:nth-child(2) {
     width: 50%;
     height: auto;
     font-size: 18px;
@@ -384,7 +416,7 @@ nav .menu ul li .title>p {
     margin-left: 78px;
 }
 
-.deg {
+.weather .deg {
     width: 50%;
     height: auto;
     font-size: 70px;
@@ -417,20 +449,20 @@ nav .menu ul li .title>p {
     align-items: center;
 }
 
-.info {
+.slide_body .info {
     width: 50%;
     height: auto;
     margin-left: 78px;
 }
 
-.info>span:nth-child(1) {
+.slide_body .info span:nth-child(1) {
     font-size: 70px;
     font-weight: normal;
     font-family: "Inter", serif;
     color: #fff;
 }
 
-.info>span:nth-child(2) {
+.slide_body .info span:nth-child(2) {
     font-size: 28px;
     font-weight: normal;
     font-family: "맑은 고딕", serif;
@@ -687,6 +719,7 @@ nav .menu ul li .title>p {
     position: relative;
     overflow: hidden;
     width: 50%;
+    text-align: center;
   }
   .slide {
     position: absolute;
@@ -713,7 +746,7 @@ nav .menu ul li .title>p {
     z-index: 0;
   }
   .slide img {
-      width: 500px;
+      width: auto;
       height: 700px;
   }
 
@@ -754,7 +787,9 @@ nav .menu ul li .title>p {
   }
   .story_body .text p {
     font-size: 16px;
-    font-family: "Nanum Gothic";
+    font-family: "Inter";
+    color: #666;
+    line-height: 140%;
   }
   .story_body .more {
     display: flex;
@@ -1487,7 +1522,12 @@ nav .menu ul li .title>p {
     border: 1px solid #ccc;
     padding: 10px;
     border-radius: 8px;
+    display: none;
 }
+.ui-datepicker[style*="block"] {
+    display: block !important;
+}
+
 .ui-datepicker td {
     width: 40px;
     height: 40px;
@@ -1985,57 +2025,91 @@ nav .menu ul li .title>p {
 .sns .sns_bg .listBox {
     width: 100%;
 }
-.sns .sns_bg .listBox ul.slider {
+.sns .sns_bg .listBox .slider {
     display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+    position: relative;
+}
+.sns .sns_bg .listBox .slider .sliderA_1 {
+    display: flex;
+    position: absolute;
+    flex-wrap: nowrap;
+    width: 4085px;
+    animation: slideLeft1 80s linear infinite; /* 애니메이션 추가 */
+}
+.sns .sns_bg .listBox .slider .sliderA_2 {
+    display: flex;
+    position: absolute;
+    flex-wrap: nowrap;
+    width: 4085px;
+    animation: slideLeft2 80s linear infinite; /* 애니메이션 추가 */
+}
+.sns .sns_bg .listBox .slider .sliderB_1 {
+    display: flex;
+    position: absolute;
+    top: 96px;
+    flex-wrap: nowrap;
+    width: 3779px;
+    animation: slideLeft1 95s linear infinite reverse; /* 애니메이션 추가 */
+}
+.sns .sns_bg .listBox .slider .sliderB_2 {
+    display: flex;
+    position: absolute;
+    top: 96px;
+    flex-wrap: nowrap;
+    width: 3779px;
+    animation: slideLeft2 95s linear infinite reverse; /* 애니메이션 추가 */
+}
+.sns .sns_bg .listBox .slider .sliderC_1 {
+    display: flex;
+    position: absolute;
+    top: 192px;
+    flex-wrap: nowrap;
+    width: 4390px;
+    animation: slideLeft1 75s linear infinite; /* 애니메이션 추가 */
+}
+.sns .sns_bg .listBox .slider .sliderC_2 {
+    display: flex;
+    position: absolute;
+    top: 192px;
+    flex-wrap: nowrap;
+    width: 4390px;
+    animation: slideLeft2 75s linear infinite; /* 애니메이션 추가 */
 }
 @keyframes slideLeft1 {
     0% {
         transform: translateX(0);
     }
     50% {
-        transform: translateX(-50%); /* 첫 번째 복제된 아이템 끝으로 이동 */
+        transform: translateX(-100%); /* 첫 번째 복제된 아이템 끝으로 이동 */
+    }
+    50.00001% {
+        transform: translateX(100%); /* 첫 번째 복제된 아이템 끝으로 이동 */
     }
     100% {
-        transform: translateX(-100%); /* 두 번째 복제된 아이템 끝으로 이동 */
+        transform: translateX(0); /* 두 번째 복제된 아이템 끝으로 이동 */
     }
 }
 
 @keyframes slideLeft2 {
     0% {
+        transform: translateX(100%);
+    }
+    50% {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-50%);
+        transform: translateX(-100%);
     }
 }
 
-@keyframes slideLeft3 {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
-}
 
-.sns .sns_bg .listBox ul:nth-child(1) {
-    display: flex;
-    flex-wrap: nowrap;
-    margin: 16px 0;
-    width: calc(4085px * 2);
-    animation: slideLeft1 15s linear infinite; /* 애니메이션 추가 */
-}
-
-.sns .sns_bg .listBox ul.slider li {
+.sns .sns_bg .listBox .slider li {
     display: flex;
     align-items: center;
     margin-right: 32px;
 }
 
-.sns .sns_bg .listBox ul li .snsicon {
+.sns .sns_bg .listBox li .snsicon {
     display: flex;
     width: 80px;
     height: 80px;
@@ -2049,12 +2123,12 @@ nav .menu ul li .title>p {
     box-sizing: border-box;
 }
 
-.sns .sns_bg .listBox ul li .snsIcon img {
+.sns .sns_bg .listBox .slider li .snsIcon img {
     width: 48px;
     height: 48px;
 }
 
-.sns .sns_bg .listBox ul li .tag {
+.sns .sns_bg .listBox .slider .tag {
     display: flex;
     height: 80px;
     border-radius: 40px;
@@ -2065,7 +2139,7 @@ nav .menu ul li .title>p {
     padding: 0 40px;
 }
 
-.sns .sns_bg .listBox ul li .tag p {
+.sns .sns_bg .listBox .slider .tag p {
     color: #3a3a3a;
     font-size: 16px;
     font-weight: normal;
@@ -2073,33 +2147,19 @@ nav .menu ul li .title>p {
     text-align: center;
 }
 
-.sns .sns_bg .listBox ul li .tag em {
+.sns .sns_bg .listBox .slider .tag em {
     font-weight: bold;
     font-style: normal;
     margin-right: 4px;
 }
 
-.sns .sns_bg .listBox ul:nth-child(2) {
-    display: flex;
-    flex-wrap: nowrap;
-    margin: 16px 0;
-    width: 3779px;
-    animation: slideLeft2 15s linear infinite; /* 애니메이션 추가 */
-}
-
-.sns .sns_bg .listBox ul:nth-child(3) {
-    display: flex;
-    flex-wrap: nowrap;
-    margin: 16px 0;
-    width: 4390px;
-    animation: slideLeft3 15s linear infinite; /* 애니메이션 추가 */
-}
-
 /* 자주하는질문 */
 .faq {
     width: 100%;
+    height: 800px;
     background-color: #000;
     color: #fff;
+    position: relative;
 }
 
 .faq .title_inner {
@@ -2158,12 +2218,13 @@ nav .menu ul li .title>p {
     border-bottom: 1px solid rgba(255, 255, 255, 0.4);
     align-items: center;
     position: relative;
+    cursor: pointer;
 }
 
 .faq_list ul li .q h4 {
     font-size: 20;
     font-weight: bold;
-    font-family: 'inter', serif;
+    font-family: "Inter";
     margin: 0 12px;
 }
 
@@ -2179,11 +2240,10 @@ nav .menu ul li .title>p {
     right: 12px;
     top: 50%;
     margin-top: -8px;
+    transition: transform 0.3s ease;
 }
 
-.faq_list ul li:nth-child(2) .q i {
-    transform: rotate(180deg);
-}
+.faq_list ul li:nth-child(2) .q i {}
 
 .faq .title_inner .faq_list ul li .a {
     display: flex;
@@ -2192,24 +2252,13 @@ nav .menu ul li .title>p {
     padding-bottom: 16px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.4);
     position: relative;
-}
-
-.faq .title_inner .faq_list ul li:nth-child(1) .a {
-    display: none;
-}
-
-.faq .title_inner .faq_list ul li:nth-child(2) .a {
-    /* display: none; */
-}
-
-.faq .title_inner .faq_list ul li:nth-child(3) .a {
     display: none;
 }
 
 .faq_list ul li .a h4 {
     font-size: 20;
     font-weight: bold;
-    font-family: 'inter', serif;
+    font-family: "Inter";
     margin: 0 12px;
 }
 
@@ -2218,6 +2267,7 @@ nav .menu ul li .title>p {
     color: #e3e3e3;
     font-weight: normal;
     font-family: "Inter";
+    margin-left: 16px;
 }
 
 .faq .title_inner .faq_list ul li .q:hover {
@@ -2238,7 +2288,6 @@ nav .menu ul li .title>p {
 }
 
 .faq_list .call p {
-    /* color: #3a3a3a; */
     font-size: 20px;
     font-weight: bold;
     font-family: "Inter";
@@ -2249,10 +2298,14 @@ nav .menu ul li .title>p {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .faq .title_inner .imgBox img {
     width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 
 /* 전체설정 */

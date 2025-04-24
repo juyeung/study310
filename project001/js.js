@@ -21,7 +21,7 @@ $(document).ready(function(){
     //   스크롤 이동
       $(".landing .title .button>p").click(function () {
         $("html, body").animate({
-          scrollTop: 3300 // 원하는 위치(px 단위)
+          scrollTop: 2950 // 원하는 위치(px 단위)
         }, 1000); // 0.5초 동안 스크롤 이동
       });
 
@@ -44,7 +44,7 @@ $(document).ready(function(){
   if (st === 0) {
     $(".header").css("background-color", "transparent");
   } else {
-    $(".header").css("background-color", "rgba(0, 0, 0, 0.4)");
+    $(".header").css("background-color", "rgba(1, 20, 59, 0.8)");
   }
   });
   
@@ -203,6 +203,7 @@ $('.box').each(function () {
   });
 });
 
+
 // 갤러리 슬라이드
 function startInfiniteSlide($ul, direction = 'up') {
   const speed = 1;
@@ -248,6 +249,25 @@ $('.table_inner ul').each(function (i) {
   startInfiniteSlide($(this), dir);
 });
 
-// sns 무한 자동 슬라이드
+// faq 아코디언 스크립트
+$(".faq_list ul li .a").hide(); // 처음에 모든 답변 숨김
+
+    $(".faq_list ul li .q").click(function () {
+        const answer = $(this).next(".a");
+
+        // 이미 열려있는 경우 닫기
+        if (answer.is(":visible")) {
+            answer.slideUp();
+            $(this).find("i").css("transform", "rotate(0deg)");
+        } else {
+            // 다른 모든 답변 닫기
+            $(".faq_list ul li .a").slideUp();
+            $(".faq_list ul li .q i").css("transform", "rotate(0deg)");
+
+            // 현재 선택한 답변 열기
+            answer.slideDown();
+            $(this).find("i").css("transform", "rotate(180deg)");
+        }
+    });
 
 }); // 스크립트 끝
