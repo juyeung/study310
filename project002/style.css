@@ -246,7 +246,7 @@ animation-direction: reverse;
 .heroTitle h3 {
     text-align: center;
     font-size: 24px;
-    font-family: 'nanum gothic';
+    font-family: "Inter";
 }
 .heroTitle h3 em {
     font-size: 32px;
@@ -312,7 +312,7 @@ animation-direction: reverse;
 .info01 .objectImg img {}
 .info01 .objectImg img:nth-child(1) {
     position: absolute;
-    top: -130px;
+    top: 0px;
 }
 .info01 .objectImg img:nth-child(2) {
     position: absolute;
@@ -433,7 +433,6 @@ animation-direction: reverse;
     overflow: hidden;
     display: flex;
     flex-wrap: wrap;
-    background-color: #45AAE0;
 }
 .list li {
     width: 240px;
@@ -493,7 +492,7 @@ animation-direction: reverse;
 }
 .list li .prolink p {
     text-align: center;
-    font-family: 'nanum gothic';
+    font-family: "Inter";
     font-weight: normal;
     /* line-height: 140%; */
     font-size: 14px;
@@ -595,12 +594,12 @@ animation-direction: reverse;
 }
 .side .cart_sub li .txt p {
     color: #3e3e3e;
-    font-family: 'nanum gothic';
+    font-family: "Inter";
     font-weight: normal;
 }
 .side .cart_sub li .txt p span {
     color: #3e3e3e;
-    font-family: 'nanum gothic';
+    font-family: "Inter";
     font-weight: normal;
 }
 .side .cart_sub li .close {
@@ -650,7 +649,8 @@ animation-direction: reverse;
 .side .cart_sub .btn .coupon a {
     width: 114px;
     height: 40px;
-    background: url(img/coupon_Red.png) 0 0 / cover no-repeat;
+    /* background: url(img/coupon_Red.png) 0 0 / cover no-repeat; */
+    background-color: #C10C1A;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -658,8 +658,11 @@ animation-direction: reverse;
     transition: all 0.3s;
 }
 .side .cart_sub .btn .coupon a:hover {
-    background: url(img/coupon_White.png) 0 0 / cover no-repeat;
+    /* background: url(img/coupon_White.png) 0 0 / cover no-repeat; */
     color: #C10C1A;
+    background-color: #fff;
+    border: 1px solid #C10C1A;
+    box-sizing: border-box;
 }
 
 .side .cart_sub .btn .checkout a {
@@ -677,7 +680,6 @@ animation-direction: reverse;
     background-color: #fff;
     border: 1px solid #C10C1A;
     box-sizing: border-box;
-    font-weight: 600;
 }
 
 /* filter #################################### */
@@ -783,7 +785,7 @@ animation-direction: reverse;
 }
 .wnpro .txt p {
     color: #3e3e3e;
-    font-family: 'nanum gothic';
+    font-family: "Inter";
     font-weight: normal;
 }
 .wn li .line {
@@ -846,7 +848,7 @@ animation-direction: reverse;
     font-size: 14px;
     font-family: "nanum gothic";
     letter-spacing: -2.5%;
-    line-height: 32px;
+    line-height: 140%;
     text-align: center;
 }
 .aboutMe .objectImg {
@@ -1008,7 +1010,7 @@ animation: marquee 40s linear infinite;
     height: auto;
     background-color: #45AAE0;
     color: #fff;
-    font-family: "nanum gothic";
+    font-family: "Inter";
 }
 .story h2 {
     color: #fff;
@@ -1029,16 +1031,7 @@ animation: marquee 40s linear infinite;
     position: relative;
     width: 33.3333%;
 }
-.story_box>div:nth-child(1) {
-    /* background-color: #f00; */
-}
-.story_box>div:nth-child(2) {
-    /* background-color: yellow; */
-}
-.story_box>div:nth-child(3) {
-    /* background-color: blue; */
-}
-.left_box {}
+
 .left_box ul {}
 .left_box li {
     display: flex;
@@ -1077,20 +1070,79 @@ animation: marquee 40s linear infinite;
     display: flex;
     align-items:flex-end;
     justify-content: center;
+    transform: translateY(100%);
+    transition: all 0.3s ease;
+    z-index: 9;
 }
+/* 초기 상태 (숨김 + 방향 설정) */
+.left_box,
+.right_box{
+}
+
+.left_box li {
+    transition: all 0.8s ease-in-out;
+    opacity: 0;
+    transform: translateX(80%); /* 오른쪽에서 왼쪽으로 이동할 준비 */
+}
+.right_box li {
+    transition: all 0.8s ease-in-out;
+    opacity: 0;
+    transform: translateX(-80%); /* 왼쪽에서 오른쪽으로 이동할 준비 */
+}
+.img_box {
+    transform: translateY(100%); /* 아래에서 위로 */
+}
+.story_box .left_box.on li {
+    opacity: 1;
+}
+.story_box .right_box.on li {
+    opacity: 1;
+}
+.story_box .left_box.on li:nth-child(1) {
+    transition-delay: 0.8s;
+    transform: translateX(0);
+}
+.story_box .left_box.on li:nth-child(2) {
+    transition-delay: 1s;
+    transform: translateX(0);
+}
+.story_box .left_box.on li:nth-child(3) {
+    transition-delay: 1.2s;
+    transform: translateX(0);
+}
+.story_box .right_box.on li:nth-child(1) {
+    transition-delay: 0.8s;
+    transform: translateX(0);
+}
+.story_box .right_box.on li:nth-child(2) {
+    transition-delay: 1s;
+    transform: translateX(0);
+}
+.story_box .right_box.on li:nth-child(3) {
+    transition-delay: 1.2s;
+    transform: translateX(0);
+}
+
+/* on 클래스 추가 시 자연스럽게 제자리로 */
+.left_box.on,
+.right_box.on {
+    opacity: 1;
+    transform: translateX(0);
+}
+.img_box.on {
+    transform: translateY(0);
+}
+
+
 .img_box img {
     text-align: center;
     height: 100%;
     max-height: 100%;
     position: relative;
-    top: 100%;
-    transition: all 1.5s;
-}
-.img_box.on img {
     top: 0;
+    background-color: #45AAE0;
 }
 
-.right_box {}
 .right_box ul {}
 .right_box li {
     display: flex;
@@ -1128,24 +1180,30 @@ animation: marquee 40s linear infinite;
     font-size: 36px;
 }
 
+
 /* history ##################################### */
 .history {
     width: 100%;
-    height: 52vw;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    font-family: "nanum gothic";
-    font-size: 14px;
+    font-family: "Inter";
 }
 .history .slide {
     width: 100%;
+    height: 100%;
     display: flex;
 }
 .history .title {
-    margin-right: 40px;
-    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 80px;
+    margin-top: -160px;
+    width: 30%;
 }
 .history .title h2 {
     font-size: 120px;
@@ -1155,48 +1213,101 @@ animation: marquee 40s linear infinite;
     margin: 12px 0;
 }
 .history .title p {
+    font-size: 16px;
     width: 304px;
+    line-height: 140%;
 }
 .history .line {
-    width: 100%;
-    height: auto;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    width: 70%;
 }
-.history .line .top {
+.history .line>div {
+    width: 2613px;
+    height: auto;
+    position: absolute;
+}
+.history .line .line1 {
+    animation: his1 60s linear infinite;
+}
+.history .line .line2 {
+    animation: his2 60s linear infinite;
+}
+@keyframes his1 {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-100%); /* 첫 번째 복제된 아이템 끝으로 이동 */
+    }
+    50.00001% {
+        transform: translateX(100%); /* 첫 번째 복제된 아이템 끝으로 이동 */
+    }
+    100% {
+        transform: translateX(0); /* 두 번째 복제된 아이템 끝으로 이동 */
+    }
+}
+
+@keyframes his2 {
+    0% {
+        transform: translateX(100%);
+    }
+    50% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+.history .line>div .top {
     margin-left: 464px;
     margin-bottom: 20px;
 }
-.history .line ul {
+.history .line>div ul {
     display: flex;
 }
-.history .line li {
+.history .line>div li {
     display: flex;
     margin-right: 170px;
+    width: 500px;
 }
-.history .line img {
+.history .line>div img {
     width: 160px;
     height: 160px;
     margin-right: 16px;
 }
-.history .line .top p{
+.history .line>div .top p{
+    font-size: 14px;
+    line-height: 140%;
     width: 264px;
     height: auto;
     display: flex;
     align-items: flex-end;
 }
-.history .line>img {
+.history .line>div>img {
     width: 2613px;
     height: 234px;
 }
-.history .line .bottom {
+.history .line>div .bottom {
     margin-left: 160px;
     margin-top: 20px;
 }
-.history .line .bottom p{
+.history .line>div .bottom p{
+    font-size: 14px;
+    line-height: 140%;
     width: 264px;
     height: auto;
 }
-.history .line .bottom li:last-child {
+.history .line>div .bottom li:last-child {
     margin: 0 0;
+}
+.history .line>img {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 /* gallery #################################### */
@@ -1226,6 +1337,15 @@ animation: marquee 40s linear infinite;
 }
 .gallery li img {
     width: 100%;
+}
+.gallery li img {
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+    filter: grayscale(100%);
+}
+.gallery li:hover img {
+    filter: grayscale(0%) saturate(120%);
+    transform: scale(1.05);
 }
 /* .beer {
     width: 100%;
@@ -1464,7 +1584,7 @@ animation: marquee 40s linear infinite;
     font-size: 24px;
     color: #fff;
 }
-.dt .pic .text {
+.dt .pic .textBox {
     width: 50%;
     height: auto;
     margin-left: 40px;
@@ -1474,7 +1594,7 @@ animation: marquee 40s linear infinite;
     flex-direction: column;
     justify-content: space-between;
 }
-.dt .pic .text h3 {
+.dt .pic .textBox .text h3 {
     font-size: 40px;
     font-family: "roboto";
     font-weight: 600;
@@ -1507,13 +1627,12 @@ animation: marquee 40s linear infinite;
     color: #3e3e3e;
     font-size: 14px;
 }
-
-.dt .pic .text>p {
+.dt .pic .textBox .text>p {
     font-size: 28px;
     margin: 16px 0;
 }
-.dt .pic .text .txt {}
-.dt .pic .text .txt h4 {
+.dt .pic .textBox .text .txt {}
+.dt .pic .textBox .text .txt h4 {
     font-family: "nanum gothic";
     font-size: 20px;
     font-weight: 600;
@@ -1521,15 +1640,15 @@ animation: marquee 40s linear infinite;
     margin-bottom: 8px;
     color: #111;
 }
-.dt .pic .text .txt p {
+.dt .pic .textBox .text .txt p {
     font-size: 16px;
     line-height: 140%;
     color: #3e3e3e;
 }
-.dt .pic .text .btn {
+.dt .pic .textBox .btn {
     display: flex;
 }
-.dt .pic .text .btn .count {
+.dt .pic .textBox .btn .count {
     width: 140px;
     height: 40px;
     border-radius: 20px;
@@ -1541,21 +1660,21 @@ animation: marquee 40s linear infinite;
     align-items: center;
     margin-right: 16px;
 }
-.dt .pic .text .btn .count span {
+.dt .pic .textBox .btn .count span {
     display: inline-block;
     cursor: pointer;
 }
-.dt .pic .text .btn .count span:nth-child(1) {
+.dt .pic .textBox .btn .count span:nth-child(1) {
     padding: 0 20px;
 }
-.dt .pic .text .btn .count span:nth-child(2) {
+.dt .pic .textBox .btn .count span:nth-child(2) {
     font-size: 16px;
 }
-.dt .pic .text .btn .count span:nth-child(3) {
+.dt .pic .textBox .btn .count span:nth-child(3) {
     padding: 0 20px;
 }
 
-.dt .pic .text .btn .add {
+.dt .pic .textBox .btn .add {
     width: 140px;
     height: 40px;
     border-radius: 20px;
@@ -1569,7 +1688,7 @@ animation: marquee 40s linear infinite;
     transition: all 0.5s;
     cursor: pointer;
 }
-.dt .pic .text .btn .add:hover {
+.dt .pic .textBox .btn .add:hover {
     color: #C10C1A;
     background-color: #fff;
     border: 1px solid #C10C1A;

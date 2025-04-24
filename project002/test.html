@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Parallax Test</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f0f0f0;
+      font-family: sans-serif;
+    }
+
+    .info {
+      display: flex;
+      width: 100%;
+      height: 800px;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .text {
+      width: 50%;
+      text-align: center;
+    }
+
+    .objectImg {
+      width: 50%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .objectImg img {
+      max-width: 150px;
+      margin: 0 10px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      will-change: transform, opacity;
+      position: absolute;
+    }
+
+    .info01 { background: #111; color: white; }
+    .info02 { background: #256D3B; color: white; }
+    .info03 { background: #0D385B; color: white; }
+  </style>
+</head>
+<body>
+
+  <div class="info info01">
+    <div class="text"><h2>Rose Flavor</h2></div>
+    <div class="objectImg">
+      <img src="img/chili.png" alt="">
+      <img src="img/rose.png" alt="">
+      <img src="img/pringles_ROSE.png" alt="">
+    </div>
+  </div>
+
+  <div class="info info02">
+    <div class="text"><h2>Garlic Cheese</h2></div>
+    <div class="objectImg">
+      <img src="img/cheese_01.png" alt="">
+      <img src="img/cheese_02.png" alt="">
+      <img src="img/pringles_GARLIC_s.png" alt="">
+    </div>
+  </div>
+
+  <div class="info info03">
+    <div class="text"><h2>Caramel</h2></div>
+    <div class="objectImg">
+      <img src="img/caramel_01.png" alt="">
+      <img src="img/caramel_02.png" alt="">
+      <img src="img/pringles_CARAMEL_s.png" alt="">
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    function applyEnhancedParallax(wrapperSelector, speedMap) {
+      $(window).on('scroll', function () {
+        const scrollTop = $(window).scrollTop();
+        const windowHeight = $(window).height();
+
+        $(wrapperSelector).each(function () {
+          const $wrapper = $(this);
+          const offsetTop = $wrapper.offset().top;
+          const height = $wrapper.outerHeight();
+          const visibleRatio = Math.min(1, Math.max(0, (scrollTop + windowHeight - offsetTop) / windowHeight));
+
+          if (scrollTop + windowHeight > offsetTop && scrollTop < offsetTop + height) {
+            const scrollAmount = scrollTop - offsetTop;
+
+            $wrapper.find('img').each(function (index) {
+              const speed = speedMap[index] || 0.3;
+              const translateY = scrollAmount * speed;
+
+              $(this).css({
+                transform: `translateY(${translateY}px) scale(${1 + visibleRatio * 0.1})`,
+                
+              });
+            });
+          }
+        });
+      });
+    }
+
+    function applyMouseParallax(wrapperSelector, movementMap) {
+      $(wrapperSelector).on('mousemove', function (e) {
+        const $wrapper = $(this);
+        const offset = $wrapper.offset();
+        const relX = e.pageX - offset.left;
+        const relY = e.pageY - offset.top;
+        const centerX = $wrapper.width() / 2;
+        const centerY = $wrapper.height() / 2;
+
+        $wrapper.find('img').each(function (index) {
+          const moveX = ((relX - centerX) / centerX) * (movementMap[index]?.x || 10);
+          const moveY = ((relY - centerY) / centerY) * (movementMap[index]?.y || 10);
+          $(this).css('transform', `translate(${moveX}px, ${moveY}px)`);
+        });
+      });
+
+      $(wrapperSelector).on('mouseleave', function () {
+        $(this).find('img').css('transform', 'translate(0, 0)');
+      });
+    }
+
+    $(document).ready(function () {
+      applyEnhancedParallax('.info01 .objectImg', [0.4, 0.2, 0]);
+      applyEnhancedParallax('.info02 .objectImg', [0.3, 0.2, 0]);
+      applyEnhancedParallax('.info03 .objectImg', [0.2, 0.3, 0]);
+
+      applyMouseParallax('.info01 .objectImg', [
+        { x: 30, y: 30 },
+        { x: 20, y: 20 },
+        { x: 10, y: 10 }
+      ]);
+      applyMouseParallax('.info02 .objectImg', [
+        { x: 25, y: 25 },
+        { x: 15, y: 15 },
+        { x: 10, y: 10 }
+      ]);
+      applyMouseParallax('.info03 .objectImg', [
+        { x: 20, y: 20 },
+        { x: 15, y: 15 },
+        { x: 10, y: 10 }
+      ]);
+    });
+  </script>
+</body>
+</html>

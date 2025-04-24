@@ -2308,6 +2308,16 @@ nav .menu ul li .title>p {
     top: 0;
 }
 
+/* footer ############################ */
+footer {
+    margin: 0 auto;
+    height: 80px;
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    font-size: 14px;
+}
+
 /* 전체설정 */
 /* 1440px이상일때 */
 @media (min-width: 1440px) {

@@ -280,4 +280,76 @@ $(document).ready(function(){
     })
     
 
+    // 페럴랙스 스크롤링
+    function applyImageParallax(sectionSelector, configMap) {
+        $(window).on('scroll', function () {
+          const scrollTop = $(window).scrollTop();
+          const windowHeight = $(window).height();
+      
+          $(sectionSelector).each(function () {
+            const $section = $(this);
+            const offsetTop = $section.offset().top;
+            const sectionHeight = $section.outerHeight();
+      
+            if (scrollTop + windowHeight > offsetTop && scrollTop < offsetTop + sectionHeight) {
+              const scrollAmount = scrollTop - offsetTop;
+      
+              $section.find('.objectImg img').each(function (index) {
+                const config = configMap[index] || {
+                  speedX: 0.2,
+                  speedY: 0.2,
+                  directionX: 1,
+                  directionY: 1,
+                  scale: 0,
+                  startX: 0, // 초기 X 위치
+                  startY: 0, // 초기 Y 위치
+                };
+      
+                // 이미지의 초기 위치 지정
+                const translateX = scrollAmount * config.speedX * config.directionX + config.startX;
+                const translateY = scrollAmount * config.speedY * config.directionY + config.startY;
+                const scaleAmount = 1 + scrollAmount * config.scale;
+      
+                $(this).css({
+                  transform: `translateX(${translateX}px) translateY(${translateY}px) scale(${scaleAmount})`
+                });
+              });
+            }
+          });
+        });
+      }
+      applyImageParallax('.info01', [
+        { speedX: 0.6, speedY: 1, directionX: 1, directionY: -1, scale: 0.0005, startX: 200, startY: 0 },
+        { speedX: 0, speedY: 0.2, directionX: -1, directionY: -1, scale: 0, startX: 0, startY: 50 },
+        { speedX: 0.05, speedY: 0.05, directionX: 1, directionY: 1, scale: 0, startX: 0, startY: 0 }
+      ]);
+    
+      applyImageParallax('.info02', [
+        { speedX: 0.2, speedY: 0.3, directionX: -1, directionY: 1, scale: 0.0002, startX: 20, startY: 100 },
+        { speedX: 0.15, speedY: 0.25, directionX: 1, directionY: -1, scale: 0.0001, startX: -20, startY: 40 },
+        { speedX: 0.05, speedY: 0.05, directionX: -1, directionY: 1, scale: 0, startX: 0, startY: 0 }
+      ]);
+    
+      applyImageParallax('.info03', [
+        { speedX: 0.3, speedY: 0.35, directionX: 1, directionY: -1, scale: 0.0004, startX: 100, startY: -150 },
+        { speedX: 0.1, speedY: 0.1, directionX: 1, directionY: 1, scale: 0.0002, startX: -50, startY: 30 },
+        { speedX: 0.02, speedY: 0.05, directionX: 1, directionY: -1, scale: 0.0001, startX: 0, startY: 0 }
+      ]);
+
+    //   story 스크롤 무브
+    function checkScroll() {
+        var scrollTop = $(window).scrollTop();
+        var windowHeight = $(window).height();
+        var trigger = $('.story').offset().top;
+
+        if (scrollTop + windowHeight > trigger + 500) {
+            $('.left_box').addClass('on');
+            $('.right_box').addClass('on');
+            $('.img_box').addClass('on');
+        }
+    }
+
+    $(window).on('scroll', checkScroll);
+    checkScroll(); // 새로고침 시 바로 확인
+      
 }) // 제이쿼리 끝.
