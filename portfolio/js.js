@@ -9,6 +9,7 @@ $(document).ready(function(){
         e.preventDefault()
         $('.wrap>div').removeClass('on')
         $('.wrap>div').eq(0).addClass('on')
+        $('.header02').css('background-color','#FFFAEE')
     })
     $('nav p').eq(1).click(function(e){
         e.preventDefault()
@@ -28,23 +29,45 @@ $(document).ready(function(){
         $('.wrap>div').eq(0).addClass('on')
         $('nav p').removeClass('on')
         $('nav p').eq(0).addClass('on')
+        $('.header02').css('background-color','#FFFAEE')
     })
 
     // 프로젝트 상세페이지 연결d
-    $('article, .latestBox>div').eq(0).click(function(e){
+    $('article').eq(0).click(function(e){
         e.preventDefault()
         $('.wrap>div').removeClass('on')
         $('.wrap .project01').addClass('on')
+        $('.header02').css('background-color','#F9FBFF')
     })
-    $('article, .latestBox>div').eq(1).click(function(e){
+    $('article').eq(1).click(function(e){
         e.preventDefault()
         $('.wrap>div').removeClass('on')
         $('.wrap .project02').addClass('on')
+        $('.header02').css('background-color','#FFFAEE')
     })
-    $('article, .latestBox>div').eq(2).click(function(e){
+    $('article').eq(2).click(function(e){
         e.preventDefault()
         $('.wrap>div').removeClass('on')
         $('.wrap .project03').addClass('on')
+        $('.header02').css('background-color','#FBFBFA')
+    })
+    $('.latestBox>div').eq(0).click(function(e){
+        e.preventDefault()
+        $('.wrap>div').removeClass('on')
+        $('.wrap .project01').addClass('on')
+        $('.header02').css('background-color','#F9FBFF')
+    })
+    $('.latestBox>div').eq(1).click(function(e){
+        e.preventDefault()
+        $('.wrap>div').removeClass('on')
+        $('.wrap .project02').addClass('on')
+        $('.header02').css('background-color','#FFFAEE')
+    })
+    $('.latestBox>div').eq(2).click(function(e){
+        e.preventDefault()
+        $('.wrap>div').removeClass('on')
+        $('.wrap .project03').addClass('on')
+        $('.header02').css('background-color','#FBFBFA')
     })
 
     // 깃허브페이지 연결
