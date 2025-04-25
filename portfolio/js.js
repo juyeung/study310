@@ -31,17 +31,17 @@ $(document).ready(function(){
     })
 
     // 프로젝트 상세페이지 연결d
-    $('article').eq(0).click(function(e){
+    $('article, .latestBox>div').eq(0).click(function(e){
         e.preventDefault()
         $('.wrap>div').removeClass('on')
         $('.wrap .project01').addClass('on')
     })
-    $('article').eq(1).click(function(e){
+    $('article, .latestBox>div').eq(1).click(function(e){
         e.preventDefault()
         $('.wrap>div').removeClass('on')
         $('.wrap .project02').addClass('on')
     })
-    $('article').eq(2).click(function(e){
+    $('article, .latestBox>div').eq(2).click(function(e){
         e.preventDefault()
         $('.wrap>div').removeClass('on')
         $('.wrap .project03').addClass('on')
