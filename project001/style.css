@@ -310,7 +310,7 @@ nav .menu ul li .title>p {
     font-size: 20px;
     color: #fff;
     font-weight: normal;
-    font-family: "맑은 고딕", serif;
+    font-family: "Inter";
     margin-top: 16px;
     margin-bottom: 80px;
 }
@@ -351,12 +351,22 @@ nav .menu ul li .title>p {
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: scrollani 2s linear infinite;
 }
-.scroll_line p {}
+.scroll_line p {
+    font-size: 14px;
+    font-family: "Inter";
+}
 .scroll_line img {
     width: 12px;
     height: 18px;
     margin-left: 8px;
+}
+
+@keyframes scrollani {
+    0% {opacity: 0; transform: translateY(-100%);}
+    50% {opacity: 1; transform: translateY(0);}
+    100% {opacity: 0; transform: translateY(100%);}
 }
 
 
@@ -402,7 +412,7 @@ nav .menu ul li .title>p {
     height: auto;
     font-size: 18px;
     font-weight: normal;
-    font-family: "맑은 고딕", serif;
+    font-family: "Inter";
     color: #fff;
 }
 
@@ -411,7 +421,7 @@ nav .menu ul li .title>p {
     height: auto;
     font-size: 18px;
     font-weight: normal;
-    font-family: "맑은 고딕", serif;
+    font-family: "Inter";
     color: #fff;
     margin-left: 78px;
 }
@@ -438,7 +448,7 @@ nav .menu ul li .title>p {
     height: auto;
     font-size: 12px;
     font-weight: normal;
-    font-family: "맑은 고딕", serif;
+    font-family: "Inter";
     color: #fff;
     margin-top: 8px;
 }
@@ -465,7 +475,7 @@ nav .menu ul li .title>p {
 .slide_body .info span:nth-child(2) {
     font-size: 28px;
     font-weight: normal;
-    font-family: "맑은 고딕", serif;
+    font-family: "Inter";
     color: #fff;
 }
 
@@ -671,20 +681,20 @@ nav .menu ul li .title>p {
 .boad .con_box .list_box .listA>div .wrap h3 {
     font-size: 24px;
     font-weight: bold;
-    font-family: "맑은 고딕", serif;
+    font-family: "Inter";
     margin-top: 28px;
 }
 .boad .con_box .list_box .listA>div .wrap p {
     font-size: 16px;
     font-weight: normal;
-    font-family: "맑은 고딕", serif;
+    font-family: "Inter";
     margin-top: 20px;
 }
 .boad .con_box .list_box .listA>div .wrap .date {
     display: flex;
     font-size: 14px;
     font-weight: normal;
-    font-family: "맑은 고딕", serif;
+    font-family: "Inter";
     position: absolute;
     left: 24px;
     bottom: 32px;
@@ -877,14 +887,14 @@ nav .menu ul li .title>p {
     color: #3a3a3a;
     font-size: 36px;
     font-weight: bold;
-    font-family: "맑은 고딕", serif;
+    font-family: "Inter";
 }
 
 .theme .title_inner .sub>p {
     color: #666666;
     font-size: 14px;
     font-weight: normal;
-    font-family: "맑은 고딕", serif;
+    font-family: "Inter";
     line-height: 130%;
     margin-top: 20px;
 }
@@ -903,7 +913,7 @@ nav .menu ul li .title>p {
 
 .theme .pro .f01 .rough .img {}
 
-/* f01_02 ############################################################# */
+/* f01_01 ############################################################# */
 .theme .pro .f01 .rough .f01_01 {
     display: flex;
     flex-wrap: wrap;
@@ -982,7 +992,7 @@ nav .menu ul li .title>p {
 }
 
 .theme .pro .f01 .rough .f01_01 li:hover{
-    height: 400px;
+    height: 416px;
 }
 .theme .pro .f01 .rough .f01_01 li:hover {
 }
@@ -1045,7 +1055,7 @@ nav .menu ul li .title>p {
     color: #3a3a3a;
     font-size: 24px;
     font-weight: bold;
-    font-family: "맑은 고딕", serif;
+    font-family: "Inter";
     margin-top: 16px;
 }
 
@@ -1053,7 +1063,7 @@ nav .menu ul li .title>p {
     color: #3a3a3a;
     font-size: 16px;
     font-weight: normal;
-    font-family: "맑은 고딕", serif;
+    font-family: "Inter";
     margin-top: 8px;
 }
 
@@ -1076,7 +1086,7 @@ nav .menu ul li .title>p {
 }
 
 .theme .pro .f01 .rough .f01_02 li:hover{
-    height: 400px;
+    height: 416px;
 }
 
 .theme .pro .f01 .rough .f01_02 li:nth-child(2):hover {
@@ -1205,7 +1215,7 @@ nav .menu ul li .title>p {
 .ticket .listBox .list .normal .body .text01 .sale {
     font-size: 16px;
     font-weight: normal;
-    font-family: "맑은 고딕", serif;
+    font-family: "Inter";
     color: #666;
     text-decoration: line-through;
 }
@@ -1219,7 +1229,7 @@ nav .menu ul li .title>p {
 
 .ticket .listBox .list .normal .body .text01 .price span {
     font-size: 36px;
-    font-family: "맑은 고딕", serif;
+    font-family: "Inter";
     letter-spacing: -10px;
 }
 
@@ -1287,7 +1297,7 @@ nav .menu ul li .title>p {
 .ticket .listBox .list .year .body .text01 .sale {
     font-size: 16px;
     font-weight: normal;
-    font-family: "맑은 고딕", serif;
+    font-family: "Inter";
     color: #666;
     text-decoration: line-through;
 }
@@ -1301,7 +1311,7 @@ nav .menu ul li .title>p {
 
 .ticket .listBox .list .year .body .text01 .price span {
     font-size: 36px;
-    font-family: "맑은 고딕", serif;
+    font-family: "Inter";
     letter-spacing: -10px;
 }
 
@@ -1369,7 +1379,7 @@ nav .menu ul li .title>p {
 .ticket .listBox .list .team .body .text01 .sale {
     font-size: 16px;
     font-weight: normal;
-    font-family: "맑은 고딕", serif;
+    font-family: "Inter";
     color: #666;
     text-decoration: line-through;
 }
@@ -1383,7 +1393,7 @@ nav .menu ul li .title>p {
 
 .ticket .listBox .list .team .body .text01 .price span {
     font-size: 36px;
-    font-family: "맑은 고딕", serif;
+    font-family: "Inter";
     letter-spacing: -10px;
 }
 
@@ -1694,7 +1704,7 @@ nav .menu ul li .title>p {
     color: #3a3a3a;
     font-size: 16px;
     font-weight: normal;
-    font-family: "맑은 고딕", serif;
+    font-family: "Inter";
 }
 
 .way .title_inner .sub .local {
@@ -1706,7 +1716,7 @@ nav .menu ul li .title>p {
     color: #3a3a3a;
     font-size: 20px;
     font-weight: bold;
-    font-family: "맑은 고딕", serif;
+    font-family: "Inter";
 }
 
 .way .title_inner .sub .call {
@@ -1725,7 +1735,7 @@ nav .menu ul li .title>p {
     color: #3a3a3a;
     font-size: 20px;
     font-weight: bold;
-    font-family: "맑은 고딕", serif;
+    font-family: "Inter";
 }
 
 .way .title_inner .sub .link_btn {
@@ -1772,7 +1782,7 @@ nav .menu ul li .title>p {
     color: #3a3a3a;
     font-size: 16px;
     font-weight: bold;
-    font-family: "맑은 고딕", serif;
+    font-family: "Inter";
     margin-bottom: 12px;
 }
 
@@ -1784,9 +1794,8 @@ nav .menu ul li .title>p {
     color: #666;
     font-size: 16px;
     font-weight: normal;
-    font-family: "맑은 고딕", serif;
+    font-family: "Inter";
     letter-spacing: -0.5px;
-    text-align: justify;
     margin-bottom: 8px;
 }
 
@@ -1794,9 +1803,8 @@ nav .menu ul li .title>p {
     color: #666;
     font-size: 16px;
     font-weight: normal;
-    font-family: "맑은 고딕", serif;
+    font-family: "Inter";
     letter-spacing: -1.5px;
-    text-align: justify;
 }
 
 .way .title_inner .sub .textBox .textA .car>p>em {
@@ -1826,7 +1834,7 @@ nav .menu ul li .title>p {
     color: #3a3a3a;
     font-size: 16px;
     font-weight: bold;
-    font-family: "맑은 고딕", serif;
+    font-family: "Inter";
     margin-bottom: 12px;
 }
 
@@ -1834,7 +1842,7 @@ nav .menu ul li .title>p {
     color: #3a3a3a;
     font-size: 16px;
     font-weight: normal;
-    font-family: "맑은 고딕", serif;
+    font-family: "Inter";
     margin-bottom: 12px;
 }
 
@@ -1930,7 +1938,7 @@ nav .menu ul li .title>p {
 .gallery .table ul li a .text01 .title {
     font-size: 36px;
     font-weight: bold;
-    font-family: "맑은 고딕", serif;
+    font-family: "Inter";
     text-align: right;
     margin-top: 16px;
     margin-bottom: 8px;
@@ -1940,7 +1948,7 @@ nav .menu ul li .title>p {
 .gallery .table ul li a .text01 .sub {
     font-size: 16px;
     font-weight: normal;
-    font-family: "맑은 고딕", serif;
+    font-family: "Inter";
     text-align: center;
     margin-bottom: 16px;
 }
@@ -1963,7 +1971,7 @@ nav .menu ul li .title>p {
 .gallery .table ul li a .text02 .title {
     font-size: 36px;
     font-weight: bold;
-    font-family: "맑은 고딕", serif;
+    font-family: "Inter";
     text-align: center;
     margin-top: 8px;
 }
@@ -1971,7 +1979,7 @@ nav .menu ul li .title>p {
 .gallery .table ul li a .text02 .sub {
     font-size: 16px;
     font-weight: normal;
-    font-family: "맑은 고딕", serif;
+    font-family: "Inter";
     text-align: center;
     margin-top: 8px;
     margin-bottom: 36px;

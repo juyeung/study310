@@ -125,57 +125,56 @@ $(document).ready(function(){
     });
     
     // 수량 증가
-    $(document).on('click', '.increase', function() {
-        let itemId = $(this).closest('li').data('id');
-        let quantity = $(this).siblings('.quantity');
-        let currentQty = parseInt(quantity.text());
-        let newQty = currentQty + 1;
-    
+$(document).on('click', '.increase', function() {
+    let itemId = $(this).closest('li').data('id');
+    let quantity = $(this).siblings('.quantity');
+    let currentQty = parseInt(quantity.text());
+    let newQty = currentQty + 1;
+
+    // 수량 갱신
+    quantity.text(newQty);
+
+    // .cartpro에서 수량 갱신
+    let cartSubItem = $(`[data-id="${itemId}"]`);
+    cartSubItem.find('.cart-quantity').data('count', newQty).text(newQty);  // data 속성으로 수량 저장 및 텍스트 갱신
+
+    // 총 금액 갱신 (3330원 * 수량)
+    let totalPrice = 3330 * newQty;
+    cartSubItem.find('.total span').text(totalPrice.toLocaleString());  // 장바구니 항목의 금액 갱신
+
+    // cartPage에서 수량 갱신
+    let cartPageItem = $(`[data-id="${itemId}"]`);
+    cartPageItem.find('.quantity').text(newQty);  // cartPage에서 수량 갱신
+    cartPageItem.find('.total span').text(totalPrice.toLocaleString());  // cartPage 총액 갱신
+});
+
+// 수량 감소
+$(document).on('click', '.decrease', function() {
+    let itemId = $(this).closest('li').data('id');
+    let quantity = $(this).siblings('.quantity');
+    let currentQty = parseInt(quantity.text());
+
+    if (currentQty > 1) {
+        let newQty = currentQty - 1;
+
         // 수량 갱신
         quantity.text(newQty);
-    
+
         // .cartpro에서 수량 갱신
         let cartSubItem = $(`[data-id="${itemId}"]`);
         cartSubItem.find('.cart-quantity').data('count', newQty).text(newQty);  // data 속성으로 수량 저장 및 텍스트 갱신
-    
-        // 총 금액 갱신
+
+        // 총 금액 갱신 (3330원 * 수량)
         let totalPrice = 3330 * newQty;
-        cartSubItem.find('.total span').text(totalPrice.toLocaleString());
-    
+        cartSubItem.find('.total span').text(totalPrice.toLocaleString());  // 장바구니 항목의 금액 갱신
+
         // cartPage에서 수량 갱신
         let cartPageItem = $(`[data-id="${itemId}"]`);
         cartPageItem.find('.quantity').text(newQty);  // cartPage에서 수량 갱신
-        cartPageItem.find('.total span').text((3330 * newQty).toLocaleString());  // cartPage 총액 갱신
-    
-    });
-    
-    // 수량 감소
-    $(document).on('click', '.decrease', function() {
-        let itemId = $(this).closest('li').data('id');
-        let quantity = $(this).siblings('.quantity');
-        let currentQty = parseInt(quantity.text());
-    
-        if (currentQty > 1) {
-            let newQty = currentQty - 1;
-    
-            // 수량 갱신
-            quantity.text(newQty);
-    
-            // .cartpro에서 수량 갱신
-            let cartSubItem = $(`[data-id="${itemId}"]`);
-            cartSubItem.find('.cart-quantity').data('count', newQty).text(newQty);  // data 속성으로 수량 저장 및 텍스트 갱신
-    
-            // 총 금액 갱신
-            let totalPrice = 3330 * newQty;
-            cartSubItem.find('.total span').text(totalPrice.toLocaleString());
-    
-            // cartPage에서 수량 갱신
-            let cartPageItem = $(`[data-id="${itemId}"]`);
-            cartPageItem.find('.quantity').text(newQty);  // cartPage에서 수량 갱신
-            cartPageItem.find('.total span').text((3330 * newQty).toLocaleString());  // cartPage 총액 갱신
-    
-        }
-    });
+        cartPageItem.find('.total span').text(totalPrice.toLocaleString());  // cartPage 총액 갱신
+    }
+});
+
 
     $('.add').click(function(){
 
@@ -183,6 +182,100 @@ $(document).ready(function(){
         $('.util').find('.num').text(count);
     })
     
+    // 제품상세페이지에서 카운트 설정 후 장바구니 추가 할때
+    $('.dtadd').click(function() {
+        let text = $(this).closest('li').find('h3').text();
+        let img = $(this).closest('li').find('img').attr('src');
+        let quantity = $(this).closest('li').find('.quantity').text();  // 현재 수량
+    
+        // 상품의 고유한 itemId 생성
+        let itemId = 'item-' + text.replace(/\s+/g, '-').toLowerCase() + '-' + img.split('/').pop().replace(/\.[^/.]+$/, "");
+    
+        // 이미 장바구니에 해당 상품이 있는지 확인
+        let existingItem = $('.cart_sub ul li').filter(function() {
+            return $(this).data('id') === itemId;
+        });
+    
+        if (existingItem.length > 0) {
+            // 이미 상품이 있으면 수량만 증가
+            let quantityText = existingItem.find('.cart-quantity');
+            let currentQty = parseInt(quantityText.data('count'));
+            let newQty = currentQty + parseInt(quantity);
+    
+            // 수량 갱신
+            quantityText.data('count', newQty);
+            quantityText.text(newQty);  // 텍스트도 수량에 맞게 갱신
+    
+            // 총 금액 갱신
+            let totalPrice = 3330 * newQty;
+            existingItem.find('.total span').text(totalPrice.toLocaleString());
+    
+            // cartPage에서 수량 갱신
+            let cartPageItem = $('.cartPage-item').filter(function() {
+                return $(this).data('id') === itemId;
+            });
+            cartPageItem.find('.quantity').text(newQty);  // cartPage에서 수량 갱신
+            cartPageItem.find('.total span').text((3330 * newQty).toLocaleString());  // cartPage 총액 갱신
+    
+        } else {
+            // 상품이 없다면 새 항목 추가
+            let cartSubItem = `<li data-id="${itemId}">
+                <div class="cartpro">
+                    <div class="imgBox">
+                        <img src="${img}" alt="${text}">
+                    </div>
+                    <div class="txt">
+                        <h4>${text}</h4>
+                        <p>3,330원 x <span class="cart-quantity" data-count="${quantity}">${quantity}</span></p>
+                    </div>
+                </div>
+                <div class="close">
+                    <img src="img/close_01.png" alt="삭제">
+                </div>
+            </li>`;
+    
+            let cartPageItem = `<li class="cartPage-item" data-id="${itemId}">
+                <div class="listBox">
+                    <div class="proBox">
+                        <div class="close">
+                            <i class="fa-regular fa-circle-xmark"></i>
+                        </div>
+                        <div class="proImg">
+                            <div class="imgBox">
+                                <img src="${img}" alt="${text}">
+                            </div>
+                            <p>${text}</p>
+                        </div>
+                    </div>
+                    <p>3,330원</p>
+                    <div class="count">
+                        <div class="countBox">
+                            <p class="decrease"><i class="fa-solid fa-minus"></i></p>
+                            <p class="quantity">${quantity}</p>
+                            <p class="increase"><i class="fa-solid fa-plus"></i></p>
+                        </div>
+                    </div>
+                    <div class="total">
+                        <p><span>${3330 * quantity}</span>원</p>
+                    </div>
+                </div>
+                <div class="line_a"></div>
+            </li>`;
+    
+            // 장바구니에 추가
+            $('.cart_sub ul').append(cartSubItem);
+            $('.cartPage ul').append(cartPageItem);
+        }
+    
+        // 장바구니 아이템 수 갱신
+        let count = $('.cartPage ul li').length;
+        $('.util').find('.num').text(count);
+    
+        updateTotalPrice();  // 총액 업데이트 함수
+    });
+    
+    
+
     // 삭제 버튼 클릭 시 아이템 삭제
     $(document).on('click', '.close, .fa-circle-xmark', function() {
         let itemId = $(this).closest('li').data('id');
@@ -206,9 +299,13 @@ $(document).ready(function(){
         // 총 금액 업데이트
         $('.price span').text(total.toLocaleString());
 
+        // 배송비 계산
+        let shipping = total > 10000 ? 0 : 5000; // 10,000원 이상이면 무료, 아니면 50,00원
+        $('.del p:last-child').text(shipping === 0 ? '무료' : `${shipping.toLocaleString()}원`);
+
         // 쿠폰 적용
-        let couponDiscount = parseInt($('.cpcheck span').text().replace(/,/g, '').replace(/[^0-9-]/g, '')) || 0;
-        let finalPrice = total + couponDiscount; // 할인 금액이 음수이므로 더하기
+        let couponDiscount = parseInt($('.cp .minus span').text().replace(/,/g, '').replace(/[^0-9-]/g, '')) || 0;
+        let finalPrice = total + shipping + couponDiscount; // 할인 금액이 음수이므로 더하기
 
         // 결제 금액 업데이트
         $('.chout span').text(finalPrice.toLocaleString());
@@ -216,11 +313,6 @@ $(document).ready(function(){
     
     // 상품 추가, 수량 증가/감소, 삭제 시 총 금액 업데이트
     $(document).on('click', '.add, .increase, .decrease, .close, .fa-circle-xmark', function() {
-        updateTotalPrice();
-    });
-
-    // 쿠폰 값이 변경될 때도 업데이트 (쿠폰 적용 버튼이 있으면 거기에 이벤트 추가)
-    $(document).on('input', '.cpcheck span', function() {
         updateTotalPrice();
     });
     
@@ -235,15 +327,28 @@ $(document).ready(function(){
         $('.contents>div').eq(1).addClass('on')
     })
 
+    // gnb 클릭시 해당 위치로 스크롤 이동
+    $(".gnb ul li").eq(0).click(function () {
+        $('.contents').removeClass('loginBig')
+        $('.contents>div').removeClass('on')
+        $('.contents>div').eq(0).addClass('on')
+        $("html, body").animate({
+          scrollTop: 5667 // 원하는 위치(px 단위)
+        }, 1000); // 0.5초 동안 스크롤 이동
+      });
+
     // logo를 클릭했을때, main에 on이 붙어라
     $('.logo').click(function(e){
         e.preventDefault()
         $('.contents').removeClass('loginBig')
         $('.contents>div').removeClass('on')
         $('.contents>div').eq(0).addClass('on')
+        $("html, body").animate({
+            scrollTop: 0 // 원하는 위치(px 단위)
+          }, 1000); // 0.5초 동안 스크롤 이동
     })
-
-    $('.login h2').click(function(){
+    $('.login h2').click(function(e){
+        e.preventDefault()
         $('.contents').removeClass('loginBig')
         $('.contents>div').removeClass('on')
         $('.contents>div').eq(0).addClass('on')
@@ -278,6 +383,35 @@ $(document).ready(function(){
         $('.contents>div').removeClass('on')
         $('.contents>div').eq(2).addClass('on')
     })
+
+    // side 에 pro의 li들을 클릭했을때, product 에 on이 붙어라
+    $('.pro_list li').click(function(){
+        $('.contents').removeClass('loginBig')
+        $('.contents>div').removeClass('on')
+        $('.contents>div').eq(1).addClass('on')
+    })
+
+    // 장바구니 페이지에 쿠폰 클릭시 가격 변경
+    $('.cartPage .cp .cpcheck .btn').click(function() {
+        var $em = $('.cartPage .cp .cpcheck > p em');
+        var $span = $('.cartPage .cp .minus span'); // 쿠폰 금액을 표시하는 span
+        var $i = $('.cartPage .cp .cpcheck .btn i');
+    
+        if ($em.text() === '1') {
+            $em.text('0');
+            $span.text('-1000');
+            $i.css('color', '#c10c1a');
+            $('.cpcheck > p').text('쿠폰이 적용되었습니다');
+        } else {
+            $em.text('1');
+            $span.text('0');
+            $i.css('color', '#aaa');
+            $('.cpcheck > p').html('사용가능한 쿠폰이 <em>1</em>개 있습니다 사용하시겠습니까?');
+        }
+        // ✅ 총 금액 다시 계산
+        updateTotalPrice();
+    });
+    
     
 
     // 페럴랙스 스크롤링

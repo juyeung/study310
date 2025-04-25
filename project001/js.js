@@ -269,5 +269,18 @@ $(".faq_list ul li .a").hide(); // 처음에 모든 답변 숨김
             $(this).find("i").css("transform", "rotate(180deg)");
         }
     });
+  
+
+    // lang 토글 체크 시 영어 버전
+    $('#langToggle').on('change', function () {
+      const lang = $(this).is(':checked') ? 'en' : 'ko';
+      
+      $('.switch-text').each(function () {
+        const newText = $(this).data(lang);
+        $(this).html(newText);  // text()에서 html()로 변경
+      });
+    });
+    
+    
 
 }); // 스크립트 끝

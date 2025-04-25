@@ -66,22 +66,24 @@ body {
     display: block;
     /* padding: 10px; */
 }
-.header .logo a:hover {
+.header .logo:hover a {
     transition: all 0.8s;
     transform: translateY(30px);
 }
 .gnb {}
-.gnb>ul {
+.gnb ul {
     display: flex;
 }
-.gnb>ul>li {}
-.gnb>ul>li>a {
+.gnb ul li {
+    cursor: pointer;
+}
+.gnb ul li p {
     display: block;
     color: #fff;
     font-size: 18px;
     padding: 20px;
 }
-.gnb>ul>li>a:hover {
+.gnb ul li:hover p {
     color: #FFC700;
 }
 
@@ -256,6 +258,26 @@ animation-direction: reverse;
 .heroTitle h2 {
     font-size: 120px;
     font-family: 'Radiance';
+}
+.scroll {
+    position: absolute;
+    text-align: center;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    width: 100%;
+    bottom: 15%;
+    animation: scrollani 2s linear infinite;
+    color: #fff;
+    font-size: 14px;
+}
+@keyframes scrollani {
+    0% {opacity: 0; transform: translateY(-100%);}
+    50% {opacity: 1; transform: translateY(0);}
+    100% {opacity: 0; transform: translateY(100%);}
+}
+.scroll i {
+    font-size: 14px;
 }
 
 .hero .btn {
@@ -646,7 +668,7 @@ animation-direction: reverse;
     width: 240px;
     justify-content: space-between;
 }
-.side .cart_sub .btn .coupon a {
+.side .cart_sub .btn .viewcart a {
     width: 114px;
     height: 40px;
     /* background: url(img/coupon_Red.png) 0 0 / cover no-repeat; */
@@ -657,7 +679,7 @@ animation-direction: reverse;
     color: #fff;
     transition: all 0.3s;
 }
-.side .cart_sub .btn .coupon a:hover {
+.side .cart_sub .btn .viewcart:hover a {
     /* background: url(img/coupon_White.png) 0 0 / cover no-repeat; */
     color: #C10C1A;
     background-color: #fff;
@@ -1396,8 +1418,11 @@ animation: marquee 40s linear infinite;
     color: #fff;
 }
 .copyright img {
-    width: 200px;
+    height: 130px;
     margin-top: 80px;
+}
+.copyright img:hover {
+    content: url('img/chips_broken.png'); /* hover 시 이미지 변경 */
 }
 .copyright h3 {
     font-size: 24px;
@@ -1564,8 +1589,21 @@ animation: marquee 40s linear infinite;
     padding: 10px;
     box-sizing: border-box;
     position: relative;
+    overflow: hidden;
 }
 .dt .pic .imgBox img {
+    height: 100%;
+}
+.dt .pic .imgBox:hover img {
+    transform: scale(1.2); /* 이미지 확대 */
+}
+.dt .pic .imgBox .scaleImg {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1); /* 중앙 정렬과 초기 크기 설정 */
+    transition: transform 0.3s ease; /* 부드러운 트랜지션 */
+    width: 100%;
     height: 100%;
 }
 .zoom {
@@ -1648,7 +1686,7 @@ animation: marquee 40s linear infinite;
 .dt .pic .textBox .btn {
     display: flex;
 }
-.dt .pic .textBox .btn .count {
+.dt .pic .textBox .btn .countBox {
     width: 140px;
     height: 40px;
     border-radius: 20px;
@@ -1660,21 +1698,21 @@ animation: marquee 40s linear infinite;
     align-items: center;
     margin-right: 16px;
 }
-.dt .pic .textBox .btn .count span {
+.dt .pic .textBox .btn .countBox p {
     display: inline-block;
     cursor: pointer;
 }
-.dt .pic .textBox .btn .count span:nth-child(1) {
+.dt .pic .textBox .btn .countBox p:nth-child(1) {
     padding: 0 20px;
 }
-.dt .pic .textBox .btn .count span:nth-child(2) {
+.dt .pic .textBox .btn .countBox p:nth-child(2) {
     font-size: 16px;
 }
-.dt .pic .textBox .btn .count span:nth-child(3) {
+.dt .pic .textBox .btn .countBox p:nth-child(3) {
     padding: 0 20px;
 }
 
-.dt .pic .textBox .btn .add {
+.dt .pic .textBox .btn .dtadd {
     width: 140px;
     height: 40px;
     border-radius: 20px;
@@ -1688,7 +1726,7 @@ animation: marquee 40s linear infinite;
     transition: all 0.5s;
     cursor: pointer;
 }
-.dt .pic .textBox .btn .add:hover {
+.dt .pic .textBox .btn .dtadd:hover {
     color: #C10C1A;
     background-color: #fff;
     border: 1px solid #C10C1A;
@@ -2032,9 +2070,15 @@ animation: marquee 40s linear infinite;
 }
 .login h2 {
     cursor: pointer;
+    animation: logos 1s ease-in-out infinite;
 }
 .login .loginBox>img {
     height: 100%;
+}
+@keyframes logos {
+    0% {transform: translateY(0);}
+    50% {transform: translateY(-10px);}
+    100% {transform: translateY(0);}
 }
 .login .loginInp {
     display: flex;
@@ -2325,29 +2369,55 @@ animation: marquee 40s linear infinite;
     align-items: center;
     margin: 20px 0;
 }
+.cartPage .cp>p {
+    width: 120px;
+}
 .cartPage .cp .cpcheck {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.cartPage .cp .cpcheck p {
-    width: 114px;
-    height: 40px;
-    background: url(img/coupon_Red.png) 0 0 / cover no-repeat;
+.cartPage .cp .cpcheck>p {
+    font-size: 12px;
+    color: #666;
+    margin-right: 16px;
+}
+.cartPage .cp .cpcheck>p em {}
+.cartPage .cp .cpcheck .btn {
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #fff;
+}
+.cartPage .cp .cpcheck .btn i {
+    font-size: 20px;
+    color: #aaa;
+}
+.cartPage .cp .cpcheck .btn p {
+    width: 114px;
+    height: 40px;
+    background: url(img/coupon_White.png) 0 0 / cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #C10C1A;
     transition: all 0.3s;
     font-size: 14px;
     margin: 0 20px;
 }
-.cartPage .cp .cpcheck p:hover {
-    background: url(img/coupon_White.png) 0 0 / cover no-repeat;
-    color: #C10C1A;
+
+.cartPage .cp .cpcheck .btn:hover p {
+    background: url(img/coupon_Red.png) 0 0 / cover no-repeat;
+    color: #fff;
 }
-.cartPage .cp .cpcheck span {
+.cartPage .cp .cpcheck .btn p.on {
+    background: url(img/coupon_Red.png) 0 0 / cover no-repeat;
+    color: #fff;
+}
+.cartPage .cp .minus {
+    width: 120px;
     color: #C10C1A;
+    text-align: end;
 }
 
 .cartPage .line_a {
