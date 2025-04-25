@@ -428,8 +428,13 @@ $(".logoTop").click(function () {
     $('.logoTop').fadeOut()
 });
 
+    // 인트로의 로고 클릭 시 메인 화면 불러오기
+    $('.intro .logo').click(function(){
+        $('#wrap').addClass('on')
+    })
+
 
     
     
 
-})
+}) // 스크립트 끝
