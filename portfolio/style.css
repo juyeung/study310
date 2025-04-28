@@ -1,5 +1,11 @@
 /* 언어설정 */
 @charset "utf-8";
+@font-face {
+    font-family: 'jalnan2'; /* 폰트 이름을 지정 */
+    src: url('fonts/Jalnan2.otf') format('opentype'); /* 폰트 파일 경로와 형식 */
+    font-weight: normal; /* 폰트 굵기 설정 */
+    font-style: normal; /* 폰트 스타일 설정 */
+}
 
 /* resetCSS */
 * {
@@ -125,27 +131,45 @@ header .email p {
     width: 100%;
     height: calc(100vh - 40px);
     box-shadow: 4px 10px 20px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
 }
 .mainImg {
     width: 100%;
     height: 600px;
+    margin: 0 auto;
+    display: flex;
+    overflow: hidden;
     position: relative;
 }
-.mainImg img {
+
+.mainImg .leftBox {
+    width: 100%;
+    height: 100%;
     position: absolute;
+    cursor: pointer;
 }
-.mainImg img:nth-child(1) {
-    top: 30%;
-    left: 20%;
+
+.mainImg .leftBox img {
+    width: 100%;
+    height: 100%;
 }
-.mainImg img:nth-child(2) {
-    top: 30%;
-    right: 20%;
+
+.mainImg .rightBox {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    cursor: pointer;
+    transition: clip-path 0.2s ease;
 }
-.mainImg img:nth-child(3) {
-    bottom: 10%;
-    right: 20%;
+
+.mainImg .rightBox img {
+    width: 100%;
+    height: 100%;
 }
+
+
+
 .LatestWork {
     display: flex;
     justify-content: center;
@@ -215,18 +239,21 @@ header .email p {
 .about {
     background-color: #FFFAEE;
     width: 100%;
-    height: 1400px;
+    height: auto;
     box-shadow: 4px 10px 20px rgba(0, 0, 0, 0.25);
     padding: 56px 80px;
     box-sizing: border-box;
+    text-align: center;
 }
 .about .title {
-    display: flex;
-    align-items: flex-end;
-    margin-top: 40px;
+    /* display: flex;
+    align-items: flex-end; */
+    margin-top: 80px;
 }
 .about .title h2 {
-    font-size: 80px;
+    font-size: 72px;
+    font-family: "jalnan2";
+    font-weight: normal;
 }
 .about .title span {
     font-size: 16px;
@@ -235,7 +262,7 @@ header .email p {
     font-weight: 600;
 }
 .about>span {
-    font-size: 20px;
+    font-size: 18px;
 }
 .about>p {
     font-size: 16px;
@@ -250,16 +277,18 @@ header .email p {
     width: 100%;
     height: 1px;
     background-color: #c9c9c9;
-    margin-bottom: 80px;
+    margin-bottom: 160px;
 }
 .about h3 {
     font-size: 40px;
+    font-family: "jalnan2";
+    font-weight: normal;
 }
 .about .graph {
     width: 1020px;
     margin: 0 auto;
     display: flex;
-    margin-top: 80px;
+    margin-top: 56px;
 }
 .about .graph .level {
 }
@@ -346,6 +375,13 @@ header .email p {
     background: linear-gradient(to bottom, #FCE19A, #F6D784);
     border: 1px solid #F6D784;
 }
+.like {
+    text-align: center;
+    margin-top: 56px;
+    margin-bottom: 80px;
+    font-size: 16px;
+    line-height: 140%;
+}
 
 /* protfolio */
 .portfolio {
@@ -355,10 +391,13 @@ header .email p {
     box-shadow: 4px 10px 20px rgba(0, 0, 0, 0.25);
     padding: 56px 80px;
     box-sizing: border-box;
+    text-align: center;
 }
 .portfolio h2 {
-    font-size: 80px;
-    margin-top: 40px;
+    font-size: 72px;
+    margin-top: 80px;
+    font-family: "jalnan2";
+    font-weight: normal;
 }
 .portfolio .prothum {
     display: flex;
@@ -372,19 +411,21 @@ header .email p {
     flex-direction: column;
     /* justify-content: center; */
     align-items: center;
-    cursor: pointer;
     margin: 0 40px;
 }
-.portfolio .prothum article .mockup01 {
+.portfolio .prothum article .mockup {
+    cursor: pointer;
+}
+.portfolio .prothum article .mockup .mockup01 {
     display: flex;
     justify-content: center;
 }
-.portfolio .prothum article .mockup01>img {
+.portfolio .prothum article .mockup .mockup01>img {
     position: relative;
     display: flex;
     justify-content: center;
 }
-.portfolio .prothum article .mockup01 .imgBox {
+.portfolio .prothum article .mockup .mockup01 .imgBox {
     width: 143px;
     height: 254px;
     overflow: hidden;
@@ -393,7 +434,7 @@ header .email p {
     margin-left: -2px;
     margin-top: 3px;
 }
-.portfolio .prothum article .mockup01 .imgBox img {
+.portfolio .prothum article .mockup .mockup01 .imgBox img {
     width: 143px;
     top: 0;
     left: 0;
@@ -402,26 +443,33 @@ header .email p {
     top: 0;
     transition: all ease-in-out 1.5s;
 }
-.portfolio .prothum article:nth-child(1):hover .imgBox img {
+.portfolio .prothum article:nth-child(1) .mockup:hover .imgBox img {
     transform: translateY(-548px);
 }
-.portfolio .prothum article:nth-child(2):hover .imgBox img {
+.portfolio .prothum article:nth-child(2) .mockup:hover .imgBox img {
     transform: translateY(-509px);
 }
-.portfolio .prothum article:nth-child(3):hover .imgBox img {
+.portfolio .prothum article:nth-child(3) .mockup:hover .imgBox img {
     transform: translateY(-145px);
 }
 .portfolio .prothum article h3 {
     font-size: 32px;
     text-align: center;
 }
-.portfolio .prothum article span {
+.portfolio .prothum article .mockup span {
     font-size: 14px;
     margin-top: 4px;
 }
+article a {
+    color: #3787FF;
+    margin-top: 12px;
+}
+article a:hover {
+    text-decoration: underline;
+}
 .portfolio .prothum article p {
     font-size: 16px;
-    margin-top: 32px;
+    margin-top: 24px;
     line-height: 140%;
 }
 .portfolio .prothum article em {
@@ -431,7 +479,7 @@ header .email p {
 }
 .portfolio .prothum article .tech {
     display: flex;
-    margin-top: 24px;
+    margin-top: 16px;
 }
 .portfolio .prothum article .tech img {
     margin: 0 2px;

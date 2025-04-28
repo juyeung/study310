@@ -817,10 +817,14 @@ animation-direction: reverse;
     opacity: 20%;
     margin-top: 16px;
 }
+/* youtube ############################ */
 .youtube {
     text-align: center;
+    background-color: #000;
 }
-.youtube video {vertical-align: bottom;}
+.youtube video {
+    vertical-align: bottom;
+}
 
 /* aboutme ############################################# */
 .aboutMe {
@@ -1335,7 +1339,7 @@ animation: marquee 40s linear infinite;
 /* gallery #################################### */
 .gallery {
     width: 100%;
-    height: 48vw;
+    height: 60vh;
     background-color: #FFC700;
     display: flex;
     flex-direction: column;
@@ -1343,7 +1347,7 @@ animation: marquee 40s linear infinite;
     align-items: center;
 }
 .gallery>div {
-    width: 80%;
+    width: 50%;
 }
 .gallery ul {
     width: 100%;
@@ -1421,7 +1425,7 @@ animation: marquee 40s linear infinite;
     height: 130px;
     margin-top: 80px;
 }
-.copyright img:hover {
+.copyright:hover img {
     content: url('img/chips_broken.png'); /* hover 시 이미지 변경 */
 }
 .copyright h3 {

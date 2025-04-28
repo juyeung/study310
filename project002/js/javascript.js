@@ -327,14 +327,14 @@ $(document).on('click', '.decrease', function() {
         $('.contents>div').eq(1).addClass('on')
     })
 
-    // gnb 클릭시 해당 위치로 스크롤 이동
+    // gnb ourbrand 클릭시 해당 위치로 스크롤 이동
     $(".gnb ul li").eq(0).click(function () {
         $('.contents').removeClass('loginBig')
         $('.contents>div').removeClass('on')
         $('.contents>div').eq(0).addClass('on')
         $("html, body").animate({
-          scrollTop: 5667 // 원하는 위치(px 단위)
-        }, 1000); // 0.5초 동안 스크롤 이동
+          scrollTop: $('.aboutMe').offset().top
+        }, 1000); // 1초 동안 스크롤 이동
       });
 
     // logo를 클릭했을때, main에 on이 붙어라
