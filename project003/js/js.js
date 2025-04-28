@@ -1,23 +1,50 @@
 $(document).ready(function(){
+    // 페이지 로드 시 초기 세팅
+    $('nav').hide();
+    $('.logoTop').hide();
+    $('#wrap').hide();
+    $('.intro').show().addClass('on');
+
     // 화면의 높이값을 구해라
     let ht = $(window).height()
     console.log(ht);
-    // $('#wrap>div').eq(2).height(ht+300)
 
-    // ==================================================================
     $('#wrap>div').height(ht);
 
     // 화면의 크기가 변경될때마다 화면의 크기를 찾아서 
     // section의 높이를 설정해라
 
-    $(window).resize(function(){
-
-        
-    let ht = $(window).height();
-    $('#wrap>div').height(ht);
-
-
+    $(window).resize(function(){  
+        let ht = $(window).height();
+        $('#wrap>div').height(ht);
     })
+
+    // 인트로 클릭 이벤트
+    $('.intro .logo').click(function(){
+        $('.intro').fadeOut(function() {
+            $(this).removeClass('on').hide();
+        });
+        $('#wrap').fadeIn().addClass('on');
+        $('nav').fadeIn();
+        $('.logoTop').fadeIn();
+    });
+
+    // 인트로 자동 넘어가기 (5초 후)
+    setTimeout(function(){
+        if ($('.intro').is(':visible')) {
+            $('.intro .logo').trigger('click');
+        }
+    }, 8000);
+
+    // 메인 로고 클릭 시 다시 인트로로 복귀
+    $('.logoTop').click(function(){
+        $('#wrap').fadeOut(function() {
+            $(this).removeClass('on').hide();
+        });
+        $('.intro').fadeIn().addClass('on');
+        $('nav').fadeOut();
+        $('.logoTop').fadeOut();
+    });
 
     // 윈도우에서 스크롤했을때 스크롤top 값을 찾아라.
 
@@ -409,32 +436,5 @@ $(".progress-bar").on('input', function() {
     audio.currentTime = newTime;
 });
 
-
-
-// logo 클릭시 
-
-$('.logo').click(function(){
-
-    $('nav').fadeIn()
-    $('.intro').fadeOut()
-    $('.logoTop').fadeIn()
-    $('#wrap').fadeIn()
-})
-
-$(".logoTop").click(function () {
-    $('#wrap').fadeOut()
-    $('.intro').fadeIn()
-    $('nav').fadeOut()
-    $('.logoTop').fadeOut()
-});
-
-    // 인트로의 로고 클릭 시 메인 화면 불러오기
-    $('.intro .logo').click(function(){
-        $('#wrap').addClass('on')
-    })
-
-
-    
-    
 
 }) // 스크립트 끝
