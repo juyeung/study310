@@ -61,6 +61,9 @@ img {
     border: none;
     vertical-align: bottom;
 }
+body.intro-active {
+    overflow: hidden;
+}
 /* logo */
 .logoTop {
     width: 60px;
@@ -79,6 +82,7 @@ img {
 #wrap.on {
     position: relative;
     /* perspective: 800px; */
+    display: none;
 }
 
 /* navi설정 */
