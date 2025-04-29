@@ -4,7 +4,6 @@ $(document).ready(function(){
     $('.logoTop').hide();
     $('#wrap').hide();
     $('.intro').show().addClass('on');
-    $('body').addClass('intro-active');
 
     // 화면의 높이값을 구해라
     let ht = $(window).height()
@@ -28,7 +27,6 @@ $(document).ready(function(){
         $('#wrap').fadeIn().addClass('on');
         $('nav').fadeIn();
         $('.logoTop').fadeIn();
-        $('body').removeClass('intro-active');
     });
 
     // 인트로 자동 넘어가기 (5초 후)
