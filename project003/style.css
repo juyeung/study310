@@ -76,6 +76,9 @@ img {
     display: none;
 }
 /* wrap설정 */
+#wrap {
+    display: none;
+}
 #wrap.on {
     position: relative;
     /* perspective: 800px; */
@@ -1046,6 +1049,9 @@ nav {display: none;}
 }
 
 /* 인트로 */
+.intro {
+    display: flex;
+}
 .intro.on {
     position: fixed;
     top: 0;
