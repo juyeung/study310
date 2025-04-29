@@ -35,19 +35,19 @@ $(document).ready(function(){
     })
 
     // 프로젝트 상세페이지 연결d
-    $('article').eq(0).children('mockup').click(function(e){
+    $('article').eq(0).children('.mockup').click(function(e){
         e.preventDefault()
         $('.wrap>div').removeClass('on')
         $('.wrap .project01').addClass('on')
         $('.header02').css('background-color','#F9FBFF')
     })
-    $('article').eq(1).children('mockup').click(function(e){
+    $('article').eq(1).children('.mockup').click(function(e){
         e.preventDefault()
         $('.wrap>div').removeClass('on')
         $('.wrap .project02').addClass('on')
         $('.header02').css('background-color','#FFFAEE')
     })
-    $('article').eq(2).children('mockup').click(function(e){
+    $('article').eq(2).children('.mockup').click(function(e){
         e.preventDefault()
         $('.wrap>div').removeClass('on')
         $('.wrap .project03').addClass('on')
