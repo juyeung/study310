@@ -106,46 +106,39 @@ $(document).ready(function(){
         $(this).addClass('on');
 
         $('html,body').stop().animate({'scrollTop':ht*i},1400)
-
-
-
-
     })
 
 
     // section에서 마우스 휠을 했을때, 다음화면으로 또는 이전화면으로 이동해라
-
-
     $('#wrap>div').mousewheel(function(event,delta){
         event.preventDefault();
 
         // 마우스를 올렸을때
-
         if(delta > 0) {
-
             let prev = $(this).prev().offset().top;
-          
-
             $('html,body').stop().animate({'scrollTop':prev},800)
-           
-
-
         }
 
 
         // 마우스를 내렸을때 
-
         else if (delta < 0){
             let next = $(this).next().offset().top;
             $('html,body').stop().animate({'scrollTop':next},800)
-
         }
-
-
     });
+
+    // btn 클릭 시 4번째 div로 이동
+    $('.btn').click(function(e) {
+        e.preventDefault();
+        let target = $('#wrap > div').eq(3);
+        $('html, body').animate({
+            scrollTop: target.offset().top
+        }, 800); // 1400ms 동안 부드럽게 스크롤
+    });
+
     // ===================================================================
 
-    // nav li 에 마우스가 들어갔을때, 나 자신에게 addClass를 해라
+    // nav li 에 클릭을때, 나 자신에게 addClass를 해라
     $('nav li').click(function(){
         $('nav li').removeClass('on')
         $(this).addClass('on');

@@ -175,23 +175,35 @@ nav {display: none;}
 .box1 .txt .txt02 p {
     font-size: 14px;
     margin-bottom: 8px;
+    line-height: 140%;
 }
 .box1 .txt .btn {}
 .box1 .txt .btn p {
-    font-size: 12px;
-    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    color: #66655d;
     margin: 16px 0;
     border-radius: 2px;
-    width: 115px;
+    width: 135px;
     height: 40px;
-    background-color: #66655d;
+    background-color: #fff;
+    border: 2px solid #66655d;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    box-sizing: border-box;
+}
+.box1 .txt .btn p:hover {
+    box-shadow: 6px 6px 1px rgba(0, 0, 0, 0.8);
+    background-color: #FAC52A;
+    border: 2px solid #E34318;
+    color: #fff;
+    
 }
 .box1 img {
-    height: 826px;
+    height: 740px;
+    margin-left: 40px;
 }
 
 /* 인물소개 */
@@ -341,19 +353,28 @@ nav {display: none;}
     position: absolute;
     bottom: 20px;
     left: 50%;
-    margin-left: -177px;
+    transform: translateX(-50%);
     color: #b9b9b6;
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .box2 .navi p {
-    font-size: 20px;
+    width: 80px;
+    height: 24px;
+    text-align: center;
+    font-size: 16px;
     font-family: 'S-Core Dream 6';
     margin: 0 8px;
     cursor: pointer;
 }
 .box2 .navi p.on {
-    font-family: 'S-Core Dream 6';
-    color: #66655d;
+    /* -webkit-text-stroke: 1px #E34318; */
+    /* color: #FAC52A; */
+    border: 3px solid #111;
+    background-color: #E34318;
+    color: #111;
+    box-shadow: 4px 4px 1px #111;
 }
 
 .box2>div {
@@ -428,21 +449,28 @@ nav {display: none;}
     position: absolute;
     bottom: 20px;
     left: 50%;
-    margin-left: -120px;
+    transform: translateX(-50%);
     color: #b9b9b6;
     display: flex;
-    justify-content: space-around;
-    width: 240px;
+    justify-content: center;
+    align-items: center;
 }
 .box3 .navi p {
+    width: 80px;
+    height: 24px;
+    text-align: center;
     font-size: 16px;
-    font-family: 'S-Core Dream 3';
-    padding: 0 10px;
+    font-family: 'S-Core Dream 6';
+    margin: 0 8px;
     cursor: pointer;
 }
 .box3 .navi p.on {
-    font-family: 'S-Core Dream 3';
-    color: #66655d;
+    /* -webkit-text-stroke: 1px #E34318; */
+    /* color: #FAC52A; */
+    border: 3px solid #111;
+    background-color: #E34318;
+    color: #111;
+    box-shadow: 4px 4px 1px #111;
 }
 .box3 .panolama {
     width: 800px;
