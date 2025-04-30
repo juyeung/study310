@@ -25,7 +25,7 @@ img {
 }
 
 body {
-    background-color: #FF7A1A;
+    /* background-color: #FF7A1A; */
     letter-spacing: -2.5%;
     color: #332E2A;
     margin: 0 auto;
@@ -49,13 +49,9 @@ header {
     color: #332E2A;
     position: fixed;
     z-index: 999;
+    top: 0;
 }
-header .header01 {
-    width: 100%;
-    height: 20px;
-    background-color: #FF7A1A;
-}
-header .header02 {
+header .box2 {
     width: 100%;
     height: 60px;
     display: flex;
@@ -66,21 +62,26 @@ header .header02 {
     background-color: #FFFAEE;
     box-shadow: 0px -6px 6px rgba(53, 17, 3, 0.15);
 }
-header h1 {
+header .box1 {
+    width: 100%;
+    height: 20px;
+    background-color: #FF7A1A;
+}
+header .box2 h1 {
     width: 200px;
     font-size: 24px;
     cursor: pointer;
     transition: all 0.3s;
 }
-header h1:hover {
+header .box2 h1:hover {
     color: #FF7A1A;
 }
-header nav {
+header .box2 nav {
     display: flex;
     justify-content: center;
     align-items: center;
 }
-header nav p {
+header .box2 nav p {
     font-size: 16px;
     margin: 0 12px;
     cursor: pointer;
@@ -89,12 +90,12 @@ header nav p {
     border-bottom: 2px solid transparent;
     box-sizing: border-box;
 }
-header nav p:hover {
+header .box2 nav p:hover {
     color: #FF7A1A;
     border-bottom: 2px solid #FF7A1A;
     box-sizing: border-box;
 }
-header nav p.on {
+header .box2 nav p.on {
     color: #FF7A1A;
     border-bottom: 2px solid #FF7A1A;
     box-sizing: border-box;
@@ -102,25 +103,25 @@ header nav p.on {
 /* header nav p.on {
     color: #FF7A1A;
 } */
-header nav .vline {
+header .box2 nav .vline {
     width: 1px;
     height: 12px;
     background-color: #c9c9c9;
 }
-header .email {
+header .box2 .email {
     width: 200px;
     display: flex;
     align-items: center;
     cursor: pointer;
     transition: all 0.3s;
 }
-header .email:hover {
+header .box2 .email:hover {
     color: #FF7A1A;
 }
-header .email i {
+header .box2 .email i {
     margin-right: 8px;
 }
-header .email p {
+header .box2 .email p {
     font-size: 16px;
     font-weight: 600;
 }
@@ -129,14 +130,16 @@ header .email p {
 .home {
     background-color: #FFFAEE;
     width: 100%;
-    height: calc(100vh - 40px);
+    /* height: calc(100vh - 160px) ; */
     box-shadow: 4px 10px 20px rgba(0, 0, 0, 0.25);
     display: flex;
     justify-content: center;
+    padding-bottom: 40px;
+    margin-top: 80px;
 }
 .mainImg {
     width: 100%;
-    height: 600px;
+    height: 500px;
     margin: 0 auto;
     display: flex;
     overflow: hidden;
@@ -244,12 +247,9 @@ header .email p {
     padding: 56px 80px;
     box-sizing: border-box;
     text-align: center;
-}
-.about .title {
-    /* display: flex;
-    align-items: flex-end; */
     margin-top: 80px;
 }
+.about .title {}
 .about .title h2 {
     font-size: 72px;
     font-family: "jalnan2";
@@ -387,15 +387,16 @@ header .email p {
 .portfolio {
     background-color: #FFFAEE;
     width: 100%;
-    height: calc(100vh - 40px);
+    /* height: calc(100vh - 40px); */
     box-shadow: 4px 10px 20px rgba(0, 0, 0, 0.25);
     padding: 56px 80px;
     box-sizing: border-box;
     text-align: center;
+    margin-top: 80px;
+    padding-bottom: 40px;
 }
 .portfolio h2 {
     font-size: 72px;
-    margin-top: 80px;
     font-family: "jalnan2";
     font-weight: normal;
 }
@@ -484,35 +485,119 @@ article a:hover {
 .portfolio .prothum article .tech img {
     margin: 0 2px;
 }
-.project01 {
-    display: flex;
+
+/* 프로젝트 상세 */
+.pro {
     position: relative;
+    overflow: hidden;
+    transition: all 0.8s;
+    height: 100%;
+    box-shadow: 4px 10px 20px rgba(0, 0, 0, 0.25);
+    margin-top: 80px;
 }
 .gitadd {
-    display: flex;
     position: absolute;
-    top: 360px;
+    top: 400px;
     left: 260px;
     cursor: pointer;
     font-weight: 600;
 }
-.project01 .gitadd:hover {
+.gitadd p {
+    font-size: 14px;
+    margin: 4px 0;
+}
+.project01 .gitadd:hover p:nth-child(2) {
     color: #3787FF;
     border-bottom: 1px solid #3787FF;
 }
-.project02 {
-    position: relative;
-}
-.project02 .gitadd:hover {
+.project02 .gitadd:hover p:nth-child(2) {
     color: #FFC700;
     border-bottom: 1px solid #FFC700;
 }
-.project03 {
-    position: relative;
-}
-.project03 .gitadd:hover {
+.project03 .gitadd:hover p:nth-child(2) {
     color: #E32B30;
     border-bottom: 1px solid #E32B30;
+}
+.project01 .move .right {
+    position: fixed;
+    top: 50%;
+    right: 80px;
+    transform: translateY(-50%);
+}
+.project02 .move .left {
+    position: fixed;
+    top: 50%;
+    left: 80px;
+    transform: translateY(-50%);
+}
+.project02 .move .right {
+    position: fixed;
+    top: 50%;
+    right: 80px;
+    transform: translateY(-50%);
+}
+.project03 .move .left {
+    position: fixed;
+    top: 50%;
+    left: 80px;
+    transform: translateY(-50%);
+}
+.pro .move>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #666;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.pro .move .left:hover {
+    animation: moveani 2s ease-in-out infinite;
+}
+.pro .move .right:hover {
+    animation: moveani 2s ease-in-out infinite reverse;
+}
+.pro .move>div i {}
+.pro .move>div p {
+    margin: 0 4px;
+    margin-bottom: 2px;
+}
+
+@keyframes moveani {
+    0% {transform: translate(-0px, -50%); opacity: 1;}
+    50% {transform: translate(-20px, -50%); opacity: 0;}
+    50.00001% {transform: translate(20px, -50%); opacity: 0;}
+    100% {transform: translate(0px, -50%); opacity: 1;}
+}
+
+.pro .top {
+    position: fixed;
+    bottom: 10%;
+    right: 80px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.4);
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    transition: all 0.8s;
+    cursor: pointer;
+}
+.pro .top p {
+    font-size: 14px;
+}
+.pro .top:hover {
+    animation: topani 1s ease-in-out infinite;
+}
+
+@keyframes topani {
+    0% {transform: translateY(0);}
+    50% {transform: translateY(-10px);}
+    100% {transform: translateY(0px);}
 }
 
 /* footer */
