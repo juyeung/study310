@@ -25,7 +25,7 @@ img {
 }
 
 body {
-    /* background-color: #FF7A1A; */
+    background-color: #FE7D95;
     letter-spacing: -2.5%;
     color: #332E2A;
     margin: 0 auto;
@@ -59,13 +59,13 @@ header .box2 {
     justify-content: space-between;
     padding: 0 80px;
     box-sizing: border-box;
-    background-color: #FFFAEE;
+    background-color: #FFF;
     box-shadow: 0px -6px 6px rgba(53, 17, 3, 0.15);
 }
 header .box1 {
     width: 100%;
     height: 20px;
-    background-color: #FF7A1A;
+    background-color: #FE7D95;
 }
 header .box2 h1 {
     width: 200px;
@@ -74,7 +74,7 @@ header .box2 h1 {
     transition: all 0.3s;
 }
 header .box2 h1:hover {
-    color: #FF7A1A;
+    color: #FE7D95;
 }
 header .box2 nav {
     display: flex;
@@ -91,13 +91,13 @@ header .box2 nav p {
     box-sizing: border-box;
 }
 header .box2 nav p:hover {
-    color: #FF7A1A;
-    border-bottom: 2px solid #FF7A1A;
+    color: #FE7D95;
+    border-bottom: 2px solid #FE7D95;
     box-sizing: border-box;
 }
 header .box2 nav p.on {
-    color: #FF7A1A;
-    border-bottom: 2px solid #FF7A1A;
+    color: #FE7D95;
+    border-bottom: 2px solid #FE7D95;
     box-sizing: border-box;
 }
 /* header nav p.on {
@@ -116,7 +116,7 @@ header .box2 .email {
     transition: all 0.3s;
 }
 header .box2 .email:hover {
-    color: #FF7A1A;
+    color: #FE7D95;
 }
 header .box2 .email i {
     margin-right: 8px;
@@ -128,7 +128,7 @@ header .box2 .email p {
 
 /* home = */
 .home {
-    background-color: #FFFAEE;
+    background-color: #FFF;
     width: 100%;
     /* height: calc(100vh - 160px) ; */
     box-shadow: 4px 10px 20px rgba(0, 0, 0, 0.25);
@@ -151,11 +151,11 @@ header .box2 .email p {
     height: 100%;
     position: absolute;
     cursor: pointer;
+    text-align: center;
 }
 
 .mainImg .leftBox img {
-    width: 100%;
-    height: 100%;
+    background-color: #fff;
 }
 
 .mainImg .rightBox {
@@ -164,11 +164,11 @@ header .box2 .email p {
     position: absolute;
     cursor: pointer;
     transition: clip-path 0.2s ease;
+    text-align: center;
 }
 
 .mainImg .rightBox img {
-    width: 100%;
-    height: 100%;
+    background-color: #fff;
 }
 
 
@@ -196,6 +196,7 @@ header .box2 .email p {
 .latestBox>div {
     width: 250px;
     height: 220px;
+    border: 1px solid #c9c9c9;
     border-radius: 10px;
     background-color: #fff;
     padding: 8px;
@@ -204,6 +205,7 @@ header .box2 .email p {
     cursor: pointer;
     transition: all 0.5s;
     position: relative;
+    box-sizing: border-box;
 }
 .latestBox>div:hover {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
@@ -240,7 +242,7 @@ header .box2 .email p {
 
 /* about */
 .about {
-    background-color: #FFFAEE;
+    background-color: #FFF;
     width: 100%;
     height: auto;
     box-shadow: 4px 10px 20px rgba(0, 0, 0, 0.25);
@@ -385,7 +387,7 @@ header .box2 .email p {
 
 /* protfolio */
 .portfolio {
-    background-color: #FFFAEE;
+    background-color: #FFF;
     width: 100%;
     /* height: calc(100vh - 40px); */
     box-shadow: 4px 10px 20px rgba(0, 0, 0, 0.25);
