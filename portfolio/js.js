@@ -29,6 +29,16 @@ $(document).ready(function(){
         $('header .box1').css('background-color','#FE7D95')
         $('header .box2').css('background-color','#FFF')
     })
+    $('.leftBox img').click(function(e){
+        e.preventDefault()
+        $('.wrap>div').removeClass('on')
+        $('.wrap>div').eq(1).addClass('on')
+    })
+    $('.rightBox img').click(function(e){
+        e.preventDefault()
+        $('.wrap>div').removeClass('on')
+        $('.wrap>div').eq(2).addClass('on')
+    })
 
     // logo를 클릭했을때, main에 on이 붙어라
     $('.logo').click(function(e){
