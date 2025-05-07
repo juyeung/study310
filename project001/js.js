@@ -164,16 +164,23 @@ function updateSlide(index) {
 
 // 슬라이드는 container 내부에서만 작동
 $(".story .container").on("wheel", function (e) {
-  // 스크롤 방지
-  e.preventDefault();
-
   if (e.originalEvent.deltaY > 0) {
-    current = (current + 1) % total;
+    // 아래로 스크롤할 때
+    if (current < total - 1) {
+      e.preventDefault();
+      current = (current + 1) % total;
+      updateSlide(current);
+    }
+    // 마지막 슬라이드일 경우엔 웹페이지 스크롤 허용
   } else {
-    current = (current - 1 + total) % total;
+    // 위로 스크롤할 때
+    if (current > 0) {
+      e.preventDefault();
+      current = (current - 1 + total) % total;
+      updateSlide(current);
+    }
+    // 첫 번째 슬라이드에서는 페이지 스크롤 허용
   }
-
-  updateSlide(current);
 });
 
 // navigator dot 클릭 시에도 반응
@@ -202,6 +209,78 @@ $('.box').each(function () {
       }
   });
 });
+// 예매티켓 클릭 시 필터 적용
+// 리스트 항목 클릭 시 회색 처리
+$(".listBox .list>li").on("click", function (e) {
+  if ($(this).hasClass("book")) return;
+
+  e.stopPropagation(); // 문서 클릭 이벤트가 여기까지 전파되지 않도록 막음
+
+  // 나머지 항목 회색 처리, .book 제외
+  $(".listBox .list>li").not(this).not(".book").addClass("gray").removeClass("selected");
+  $(this).removeClass("gray").addClass("selected");
+});
+
+// 바깥 클릭 시 초기화 (.book 내부 클릭 제외)
+$(document).on("click", function (e) {
+  const $target = $(e.target);
+  if ($target.closest(".book").length || $target.closest(".listBox .list>li").length) return;
+
+  $(".listBox .list>li").removeClass("gray selected");
+});
+
+
+// 예매팝업
+$(".book .button").on("click", function () {
+  const $selectedTicket = $(".listBox .list li.selected"); // 선택된 이용권
+  const selectedDate = $("#datepicker").val();
+  let totalCount = 0;
+
+  // 인원 수 계산
+  $(".people .count").each(function () {
+    totalCount += parseInt($(this).text());
+  });
+
+  const $pop = $(".pop");
+  const $title = $pop.find("h4");
+  const $message = $pop.find("p").eq(0); // <p></p> 메시지
+  const $dateText = $pop.find(".pop_date p").eq(1);
+  const $peopleText = $pop.find(".pop_people p").eq(1);
+
+  // 이용권 미선택 시
+  if ($selectedTicket.length === 0) {
+    $title.text("이용권을 선택해주세요");
+    $message.text("");
+    $dateText.text("");
+    $peopleText.text("");
+  } else if (!selectedDate || totalCount === 0) {
+    // 날짜 or 인원 미선택
+    $title.text("입력 정보가 부족합니다");
+    $message.text("날짜와 인원을 모두 선택해주세요.");
+    $dateText.text("");
+    $peopleText.text("");
+  } else {
+    // 이용권 이름 판별
+    const index = $(".listBox .list li").index($selectedTicket);
+    const ticketNames = ["일반이용권", "연간이용권", "단체이용권"];
+    const ticketName = ticketNames[index];
+
+    $title.text(ticketName);
+    $message.text("예매되었습니다.");
+    $dateText.text(selectedDate);
+    $peopleText.text(totalCount + "명");
+  }
+
+  $pop.fadeIn();
+});
+
+// 팝업 닫기
+$(".pop .button").on("click", function () {
+  $(".pop").fadeOut();
+});
+
+
+
 
 
 // 갤러리 슬라이드

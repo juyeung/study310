@@ -78,7 +78,7 @@ header .box2 h1:hover {
 }
 
 header .box2 .logo {
-    width: 200px;
+    width: 250px;
     cursor: pointer;
     transition: all 0.3s;
     display: flex;
@@ -93,6 +93,7 @@ header .box2 .logo {
     margin-left: 8px;
     white-space: nowrap;
     overflow: hidden;
+    letter-spacing: -2.5%;
 }
 .hidden {
     visibility: hidden;
@@ -131,9 +132,10 @@ header .box2 nav .vline {
     background-color: #c9c9c9;
 }
 header .box2 .email {
-    width: 200px;
+    width: 250px;
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     cursor: pointer;
     transition: all 0.3s;
 }
@@ -344,6 +346,7 @@ header .box2 .email p {
 }
 .about .graph .level_line .stick {
     position: absolute;
+    height: 100%;
     left: 50%;
     bottom: 0;
     transform: translateX(-50%);
@@ -352,6 +355,7 @@ header .box2 .email p {
 }
 .about .graph .level_line .stick>div {
     width: 120px;
+    height: 100%;
     padding: 20px 0;
     display: flex;
     flex-direction: column;
@@ -381,32 +385,32 @@ header .box2 .email p {
     font-size: 16px;
 }
 .about .graph .level_line .stick .stick01 {
-    height: 281px;
+    height: 90%;
     background: linear-gradient(to bottom, #FFB6B6, #FF9292);
     border: 1px solid #FF9292;
 }
 .about .graph .level_line .stick .stick02 {
-    height: 299px;
+    height: 95%;
     background: linear-gradient(to bottom, #97D3FF, #60BCFF);
     border: 1px solid #60BCFF;
 }
 .about .graph .level_line .stick .stick03 {
-    height: 264px;
+    height: 90%;
     background: linear-gradient(to bottom, #FFA088, #FF896A);
     border: 1px solid #FF896A;
 }
 .about .graph .level_line .stick .stick04 {
-    height: 264px;
+    height: 90%;
     background: linear-gradient(to bottom, #9BB9FF, #799FF6);
     border: 1px solid #799FF6;
 }
 .about .graph .level_line .stick .stick05 {
-    height: 248px;
+    height: 80%;
     background: linear-gradient(to bottom, #D1E1EB, #BFD0DB);
     border: 1px solid #BFD0DB;
 }
 .about .graph .level_line .stick .stick06 {
-    height: 299px;
+    height: 95%;
     background: linear-gradient(to bottom, #FCE19A, #F6D784);
     border: 1px solid #F6D784;
 }
